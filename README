@@ -1,0 +1,6 @@
+<pre>
+cd ~
+ln -s /Users/nkumar/dev/dotfiles/bash_profile .bash_profile
+ln -s  /Users/nkumar/dev/dotfiles/bashrc .bashrc
+</pre>
+

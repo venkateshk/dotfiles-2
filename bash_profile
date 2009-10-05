@@ -4,39 +4,12 @@ if [ -z "$PS1" ]; then
 fi
 
 source /etc/bashrc
-source ~/scripts/prompt.txt
 source ~/scripts/mktouch.txt
-
-export PATH=$PATH:/Users/nkumar/scripts
-export PATH="/usr/local/bin:$PATH"
-export EDITOR='/usr/bin/mate -w'
-export SVN_EDITOR='/usr/bin/mate -w'
-
-# a nice function to send authorized keys to the server
-# picked up from deploying rails applications ( pragprog.com) 
-# Usage: authme 123.45.67.89
-function authme {
-   ssh $1 'cat >> .ssh/authorized_keys' < ~/.ssh/id_dsa.pub
- }
-
-#don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
-
-#Check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-
-# configure command prompt
-export PS1="\n\[\e[36;1m\]\u:\w\n> \[\e[0m\]" 
-
-# mvim
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 
 # Usage: finder abc.html xyz.pdf
 alias finder="open -a finder.app ."
 
-alias t3='ruby /Users/nkumar/dev/working/t3/bin/t3client.rb'
 
 alias sc=' ruby script/console'
 
@@ -58,6 +31,7 @@ alias gitb='git show-branch'
 alias tree='/usr/nkumar/tree'
 
 # quick directories
+alias t3='ruby /Users/nkumar/dev/working/t3/bin/t3client.rb'
 alias scriptsd='cd /Users/nkumar/scripts'
 alias t3d='cd /Users/nkumar/dev/working/t3server'
 alias roll_my_blogd='cd /Users/nkumar/dev/working/roll_my_blog'
@@ -86,7 +60,7 @@ alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
 
-alias rdbm='rake db:migrate'
+alias rdbm='rake db:migrate && rake db:test:prepare'
 
 alias rsdl='rake rs:sample_data:load'
 
@@ -100,3 +74,33 @@ alias h='history'
 alias ..='cd ..' # move up 1 directory
 alias ...='cd ../..' #  move up 2 directories
 
+# a nice function to send authorized keys to the server
+# picked up from deploying rails applications ( pragprog.com) 
+# Usage: authme 123.45.67.89
+function authme {
+   ssh $1 'cat >> .ssh/authorized_keys' < ~/.ssh/id_dsa.pub
+ }
+
+#don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+
+#Check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+export PATH=$PATH:/Users/nkumar/scripts
+export PATH="/usr/local/bin:$PATH"
+export EDITOR='/usr/bin/mate -w'
+export SVN_EDITOR='/usr/bin/mate -w'
+
+# configure command prompt
+#export PS1="\n\[\e[36;1m\]\u:\w\n> \[\e[0m\]" 
+
+# \n: newline
+# \u : the username of the current user
+# \w : the current working directory, with $HOME abbreviated with a tilde
+# \e : an ASCII escape character (033)
+# In this case \e[ starts the color scheme
+# 36;1m color pair to use
+# \] end of color scheme
+export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n> "
