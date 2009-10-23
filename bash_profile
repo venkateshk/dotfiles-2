@@ -5,18 +5,19 @@ fi
 
 source /etc/bashrc
 source ~/scripts/mktouch.txt
+
+# mac
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 
 # Usage: finder abc.html xyz.pdf
 alias finder="open -a finder.app ."
 
-
+# rails
 alias sc=' ruby script/console'
+alias rdbm='rake db:migrate && rake db:test:prepare'
 
 # slicehost boxes
 alias ssh_eii='ssh www.eventsinindia.com'
-alias ssh_blog='ssh nkumar@67.207.136.195 -p 30000'
-alias ssh_pageaxis='ssh nsingh@67.207.136.78 -p 30000'
 
 # svn
 alias svndm='svn diff | mate'
@@ -27,8 +28,6 @@ alias gits='git status'
 alias gitcm='git commit -m'
 alias gitlog='git log -n 20 --pretty=oneline'
 alias gitb='git show-branch'
-
-alias tree='/usr/nkumar/tree'
 
 # quick directories
 alias t3='ruby /Users/nkumar/dev/working/t3/bin/t3client.rb'
@@ -60,8 +59,7 @@ alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
 
-alias rdbm='rake db:migrate && rake db:test:prepare'
-
+# community services
 alias rsdl='rake rs:sample_data:load'
 
 # MySQL
@@ -85,7 +83,7 @@ function authme {
 #don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 
-#Check the window size after each command and, if necessary,
+# Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
@@ -94,9 +92,9 @@ export PATH="/usr/local/bin:$PATH"
 export EDITOR='/usr/bin/mate -w'
 export SVN_EDITOR='/usr/bin/mate -w'
 
-# configure command prompt
-#export PS1="\n\[\e[36;1m\]\u:\w\n> \[\e[0m\]" 
 
+# configure command prompt
+#
 # \n: newline
 # \u : the username of the current user
 # \w : the current working directory, with $HOME abbreviated with a tilde
@@ -105,3 +103,6 @@ export SVN_EDITOR='/usr/bin/mate -w'
 # 36;1m color pair to use
 # \] end of color scheme
 export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n> "
+
+# misc
+alias tree='/usr/nkumar/tree'

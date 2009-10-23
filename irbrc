@@ -1,4 +1,6 @@
 require 'rubygems'
+
+# sudo gem install utility_belt
 require 'utility_belt'
 
 if ENV['RAILS_ENV']
@@ -9,4 +11,3 @@ if ENV['RAILS_ENV']
   ActiveRecord::Base.connection.select_all(query)
   end
 end
-
