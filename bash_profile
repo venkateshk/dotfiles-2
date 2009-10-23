@@ -14,7 +14,7 @@ alias finder="open -a finder.app ."
 alias sc=' ruby script/console'
 
 # slicehost boxes
-alias ssh_eii='ssh nsingh@67.207.132.88 -p 30000'
+alias ssh_eii='ssh www.eventsinindia.com'
 alias ssh_blog='ssh nkumar@67.207.136.195 -p 30000'
 alias ssh_pageaxis='ssh nsingh@67.207.136.78 -p 30000'
 
@@ -41,7 +41,7 @@ alias workingd='cd /Users/nkumar/dev/working'
 alias guidesd='cd /Users/nkumar/dev/working/guides'
 alias opensourced='cd /Users/nkumar/dev/opensource'
 alias eiid='cd /Users/nkumar/dev/eii/eii'
-alias csd='cd /Users/nkumar/work/community_service'
+alias csd='cd /Users/nkumar/work/community_service_git'
 alias asd='cd /Users/nkumar/work/account_service'
 alias scratchd='cd /Users/nkumar/dev/scratch'
 alias devd='cd /Users/nkumar/dev'
@@ -73,6 +73,7 @@ alias l='ls -lah' # l for list style, a for all including hidden, h for human re
 alias h='history'
 alias ..='cd ..' # move up 1 directory
 alias ...='cd ../..' #  move up 2 directories
+alias dns_flush='dscacheutil -flushcache'
 
 # a nice function to send authorized keys to the server
 # picked up from deploying rails applications ( pragprog.com) 
