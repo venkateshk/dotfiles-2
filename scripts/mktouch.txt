@@ -1,0 +1,10 @@
+# usage: a/b/c/foo.txt 
+#
+# instead of creating directory and then touching a file
+# this script combines two operations into one
+#
+# http://stackoverflow.com/questions/1314334/easy-way-to-create-a-file-nested-in-unavailable-directories
+function mktouch {
+  mkdir -p $( dirname $1 )
+  touch $1
+}
