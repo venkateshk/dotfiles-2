@@ -27,23 +27,23 @@ alias gitlog='git log -n 20 --pretty=oneline'
 alias gitb='git show-branch'
 
 # quick directories
-alias t3='ruby /Users/nkumar/dev/working/t3/bin/t3client.rb'
-alias scriptsd='cd /Users/nkumar/dev/scripts'
-alias t3d='cd /Users/nkumar/dev/working/t3server'
-alias kite_runnerd='cd /Users/nkumar/dev/working/kite_runner'
-alias admin_datad='cd /Users/nkumar/dev/working/admin_data'
-alias admin_data_demod='cd /Users/nkumar/dev/working/admin_data_demo'
-alias workingd='cd /Users/nkumar/dev/working'
-alias guidesd='cd /Users/nkumar/dev/working/guides'
-alias eiid='cd /Users/nkumar/dev/eii/eii'
-alias scratchd='cd /Users/nkumar/dev/scratch'
-alias devd='cd /Users/nkumar/dev'
-alias demod='cd /Users/nkumar/dev/scratch/demo'
-alias workd='cd /Users/nkumar/dev/work'
-alias scrapbookd='cd /Users/nkumar/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
+alias t3='ruby /Users/nsingh/dev/working/t3/bin/t3client.rb'
+alias scriptsd='cd /Users/nsingh/dev/scripts'
+alias t3d='cd /Users/nsingh/dev/working/t3server'
+alias kite_runnerd='cd /Users/nsingh/dev/working/kite_runner'
+alias admin_datad='cd /Users/nsingh/dev/working/admin_data'
+alias admin_data_demod='cd /Users/nsingh/dev/working/admin_data_demo'
+alias workingd='cd /Users/nsingh/dev/working'
+alias guidesd='cd /Users/nsingh/dev/working/guides'
+alias eiid='cd /Users/nsingh/dev/eii/eii'
+alias scratchd='cd /Users/nsingh/dev/scratch'
+alias devd='cd /Users/nsingh/dev'
+alias demod='cd /Users/nsingh/dev/scratch/demo'
+alias workd='cd /Users/nsingh/dev/work'
+alias scrapbookd='cd /Users/nsingh/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
 alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
-alias javascript_labd='cd /Users/nkumar/dev/working/javascript_lab'
-alias vimd='cd /Users/nkumar/dev/working/vim'
+alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
+alias vimd='cd /Users/nsingh/dev/working/vim'
 
 #tail
 alias taild='tail -f log/development.log'
@@ -75,7 +75,7 @@ export HISTCONTROL=ignoredups
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export PATH=$PATH:/Users/nkumar/scripts
+export PATH=$PATH:/Users/nsingh/scripts
 export PATH="/usr/local/bin:$PATH"
 export EDITOR='/usr/bin/mate -w'
 export SVN_EDITOR='/usr/bin/mate -w'
@@ -93,4 +93,4 @@ export SVN_EDITOR='/usr/bin/mate -w'
 export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n> "
 
 # misc
-alias tree='/usr/nkumar/tree'
+alias tree='/usr/nsingh/tree'
