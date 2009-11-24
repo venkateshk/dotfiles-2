@@ -4,13 +4,10 @@ if [ -z "$PS1" ]; then
 fi
 
 source /etc/bashrc
-source ~/scripts/mktouch.txt
+source ~/dev/scripts/mktouch.txt
 
 # mac
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-
-# Usage: finder abc.html xyz.pdf
-alias finder="open -a finder.app ."
 
 # rails
 alias sc=' ruby script/console'
@@ -31,36 +28,27 @@ alias gitb='git show-branch'
 
 # quick directories
 alias t3='ruby /Users/nkumar/dev/working/t3/bin/t3client.rb'
-alias scriptsd='cd /Users/nkumar/scripts'
+alias scriptsd='cd /Users/nkumar/dev/scripts'
 alias t3d='cd /Users/nkumar/dev/working/t3server'
-alias roll_my_blogd='cd /Users/nkumar/dev/working/roll_my_blog'
 alias kite_runnerd='cd /Users/nkumar/dev/working/kite_runner'
 alias admin_datad='cd /Users/nkumar/dev/working/admin_data'
+alias admin_data_demod='cd /Users/nkumar/dev/working/admin_data_demo'
 alias workingd='cd /Users/nkumar/dev/working'
 alias guidesd='cd /Users/nkumar/dev/working/guides'
-alias opensourced='cd /Users/nkumar/dev/opensource'
 alias eiid='cd /Users/nkumar/dev/eii/eii'
-alias csd='cd /Users/nkumar/work/community_service_git'
-alias asd='cd /Users/nkumar/work/account_service'
 alias scratchd='cd /Users/nkumar/dev/scratch'
 alias devd='cd /Users/nkumar/dev'
 alias demod='cd /Users/nkumar/dev/scratch/demo'
-alias workd='cd /Users/nkumar/work'
+alias workd='cd /Users/nkumar/dev/work'
 alias scrapbookd='cd /Users/nkumar/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
 alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
-alias jschatd='cd /Users/nkumar/dev/scratch/jschat'
-alias insyncd='cd /Users/nkumar/dev/working/insync'
 alias javascript_labd='cd /Users/nkumar/dev/working/javascript_lab'
 alias vimd='cd /Users/nkumar/dev/working/vim'
-alias admin_data_labd='cd /Users/nkumar/dev/working/admin_data_lab'
 
 #tail
 alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
-
-# community services
-alias rsdl='rake rs:sample_data:load'
 
 # MySQL
 alias start_mysql='sudo mysqld_safe --user=mysql &'
