@@ -4,7 +4,7 @@ if [ -z "$PS1" ]; then
 fi
 
 source /etc/bashrc
-source ~/dev/scripts/mktouch.txt
+source ~/dev/dotfiles/scripts/mktouch.txt
 
 # mac
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
@@ -34,6 +34,7 @@ alias kite_runnerd='cd /Users/nsingh/dev/working/kite_runner'
 alias admin_datad='cd /Users/nsingh/dev/working/admin_data'
 alias admin_data_demod='cd /Users/nsingh/dev/working/admin_data_demo'
 alias workingd='cd /Users/nsingh/dev/working'
+alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
 alias guidesd='cd /Users/nsingh/dev/working/guides'
 alias eiid='cd /Users/nsingh/dev/eii/eii'
 alias scratchd='cd /Users/nsingh/dev/scratch'
@@ -43,7 +44,7 @@ alias workd='cd /Users/nsingh/dev/work'
 alias scrapbookd='cd /Users/nsingh/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
 alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
 alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
-alias vimd='cd /Users/nsingh/dev/working/vim'
+alias vimd='cd /Users/nsingh/dev/vim'
 
 #tail
 alias taild='tail -f log/development.log'
@@ -75,8 +76,7 @@ export HISTCONTROL=ignoredups
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export PATH=$PATH:/Users/nsingh/scripts
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/nsingh/dev/dotfiles/script:$PATH"
 export EDITOR='/usr/bin/mate -w'
 export SVN_EDITOR='/usr/bin/mate -w'
 
