@@ -1,4 +1,4 @@
-# usage: a/b/c/foo.txt 
+# usage: mktouch a/b/c/foo.txt 
 #
 # instead of creating directory and then touching a file
 # this script combines two operations into one

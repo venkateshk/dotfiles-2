@@ -52,7 +52,7 @@ alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
 
 # MySQL
-alias start_mysql='sudo mysqld_safe --user=mysql &'
+#alias start_mysql='sudo mysqld_safe --user=mysql &'
 
 # GENERAL
 alias home='cd ~' # tilda is too hard to reach
@@ -76,7 +76,7 @@ export HISTCONTROL=ignoredups
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/nsingh/dev/dotfiles/script:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/nsingh/dev/dotfiles/scripts:$PATH"
 export EDITOR='/usr/bin/mate -w'
 export SVN_EDITOR='/usr/bin/mate -w'
 

@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+
+# usage ipfor www.neeraj.name
 require 'resolv'
 
 unless ARGV.size == 1
