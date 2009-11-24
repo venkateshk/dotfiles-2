@@ -1,3 +1,8 @@
+<pre>
+cd ~/dev
+git clone git@github.com:neerajdotname/dotfiles.git
+</pre>
+
 Setup following softlinks
 
 <pre>
