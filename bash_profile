@@ -51,6 +51,8 @@ alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
 
+alias mate='open -a TextMate.app'
+
 # MySQL
 #alias start_mysql='sudo mysqld_safe --user=mysql &'
 
