@@ -51,7 +51,7 @@ alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
 
-alias mate='open -a TextMate.app'
+#alias mate='open -a TextMate.app'
 
 # MySQL
 #alias start_mysql='sudo mysqld_safe --user=mysql &'
@@ -79,8 +79,9 @@ export HISTCONTROL=ignoredups
 shopt -s checkwinsize
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/nsingh/dev/dotfiles/scripts:$PATH"
-export EDITOR='/usr/bin/mate -w'
-export SVN_EDITOR='/usr/bin/mate -w'
+export EDITOR='/usr/local/bin/mate -w'
+export SVN_EDITOR='/usr/local/bin/mate -w'
+export GIT_EDITOR='/usr/local/bin/mate -w'
 
 
 # configure command prompt
