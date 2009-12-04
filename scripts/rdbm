@@ -1,2 +1,2 @@
 #!/bin/sh
-rake db:migrate $1 $2
+rake db:migrate && rake db:test:prepare  $1 $2

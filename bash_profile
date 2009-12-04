@@ -11,7 +11,7 @@ alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 
 # rails
 alias sc=' ruby script/console'
-alias rdbm='rake db:migrate && rake db:test:prepare'
+#alias rdbm='rake db:migrate && rake db:test:prepare'
 
 # slicehost boxes
 alias ssh_eii='ssh www.eventsinindia.com'
@@ -29,6 +29,7 @@ alias gitb='git show-branch'
 # quick directories
 alias t3='ruby /Users/nsingh/dev/working/t3/bin/t3client.rb'
 alias scriptsd='cd /Users/nsingh/dev/scripts'
+alias ttd='cd /Users/nsingh/dev/working/tech_tracker'
 alias t3d='cd /Users/nsingh/dev/working/t3server'
 alias kite_runnerd='cd /Users/nsingh/dev/working/kite_runner'
 alias admin_datad='cd /Users/nsingh/dev/working/admin_data'
@@ -97,3 +98,10 @@ export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{
 
 # misc
 alias tree='/usr/nsingh/tree'
+
+
+export ORACLE_HOME=/Users/oracle/product/10.2.0/db_1
+PATH=$PATH:$ORACLE_HOME/bin
+export DYLD_LIBRARY_PATH=/Users/oracle/product/10.2.0/db_1/lib
+
+
