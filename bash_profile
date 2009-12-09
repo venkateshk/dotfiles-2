@@ -31,6 +31,7 @@ alias t3='ruby /Users/nsingh/dev/working/t3/bin/t3client.rb'
 alias scriptsd='cd /Users/nsingh/dev/scripts'
 alias ttd='cd /Users/nsingh/dev/working/tech_tracker'
 alias t3d='cd /Users/nsingh/dev/working/t3server'
+alias insyncd='cd /Users/nsingh/dev/working/insync'
 alias kite_runnerd='cd /Users/nsingh/dev/working/kite_runner'
 alias admin_datad='cd /Users/nsingh/dev/working/admin_data'
 alias admin_data_demod='cd /Users/nsingh/dev/working/admin_data_demo'
@@ -96,12 +97,10 @@ export GIT_EDITOR='/usr/local/bin/mate -w'
 # \] end of color scheme
 export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n> "
 
-# misc
-alias tree='/usr/nsingh/tree'
-
-
+# if you are using oracle
 export ORACLE_HOME=/Users/oracle/product/10.2.0/db_1
 PATH=$PATH:$ORACLE_HOME/bin
 export DYLD_LIBRARY_PATH=/Users/oracle/product/10.2.0/db_1/lib
 
 
+alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>8000,:DocumentRoot=>Dir::pwd);Signal.trap(2){w.shutdown};w.start"'

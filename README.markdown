@@ -12,5 +12,6 @@ ln -s /Users/nsingh/dev/dotfiles/bashrc .bashrc
 ln -s /Users/nsingh/dev/dotfiles/gitconfig .gitconfig
 ln -s /Users/nsingh/dev/dotfiles/ackrc .ackrc
 ln -s /Users/nsingh/dev/dotfiles/irbrc .irbrc
+ln -s /Users/nsingh/dev/dotfiles/autotest .autotest
 </pre>
 
