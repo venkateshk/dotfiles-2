@@ -60,7 +60,7 @@ alias taily='tail -f log/yell.log'
 
 # GENERAL
 alias home='cd ~' # tilda is too hard to reach
-alias l='ls -lah' # l for list style, a for all including hidden, h for human readable file size
+alias ls='ls -G'
 alias h='history'
 alias ..='cd ..' # move up 1 directory
 alias ...='cd ../..' #  move up 2 directories
