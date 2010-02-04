@@ -33,6 +33,8 @@ alias ttd='cd /Users/nsingh/dev/working/tech_tracker'
 alias t3d='cd /Users/nsingh/dev/working/t3server'
 alias insyncd='cd /Users/nsingh/dev/working/insync'
 alias kite_runnerd='cd /Users/nsingh/dev/working/kite_runner'
+alias jqueryd='cd /Users/nsingh/dev/working/jquery'
+alias jquery_labd='cd /Users/nsingh/dev/working/jquery_lab'
 alias admin_datad='cd /Users/nsingh/dev/working/admin_data'
 alias admin_data_demod='cd /Users/nsingh/dev/working/admin_data_demo'
 alias workingd='cd /Users/nsingh/dev/working'
@@ -81,6 +83,7 @@ export HISTCONTROL=ignoredups
 shopt -s checkwinsize
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/nsingh/dev/dotfiles/scripts:$PATH"
+export PATH="/Users/nsingh/dev/vim/jsl-0.3.0-mac:$PATH"
 export EDITOR='/usr/local/bin/mate -w'
 export SVN_EDITOR='/usr/local/bin/mate -w'
 export GIT_EDITOR='/usr/local/bin/mate -w'
@@ -104,3 +107,21 @@ export DYLD_LIBRARY_PATH=/Users/oracle/product/10.2.0/db_1/lib
 
 
 alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>8000,:DocumentRoot=>Dir::pwd);Signal.trap(2){w.shutdown};w.start"'
+
+##
+# Your previous /Users/nsingh/.bash_profile file was backed up as /Users/nsingh/.bash_profile.macports-saved_2009-12-10_at_22:22:22
+##
+
+# MacPorts Installer addition on 2009-12-10_at_22:22:22: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+##
+# Your previous /Users/nsingh/.bash_profile file was backed up as /Users/nsingh/.bash_profile.macports-saved_2009-12-10_at_22:32:03
+##
+
+# MacPorts Installer addition on 2009-12-10_at_22:32:03: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
