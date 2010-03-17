@@ -1,5 +1,5 @@
 #
-# >>> save this file as .irbrc at ~
+# >>> save this file as .irbrc at ~ (this is tilda) 
 # 
 # this utility will print the sql statement in the ruby script/console instead of regular development.log file
 #
