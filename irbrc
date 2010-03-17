@@ -1,3 +1,8 @@
+#
+# >>> save this file as .irbrc at ~
+# 
+# this utility will print the sql statement in the ruby script/console instead of regular development.log file
+#
 # sudo gem install utility_belt
 # sudo gem install cldwalker-hirb --source http://gems.github.com
 
