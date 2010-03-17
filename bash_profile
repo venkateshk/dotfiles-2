@@ -27,31 +27,6 @@ alias gitcm='git commit -m'
 alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
 alias gitb='git branch -v'
 
-# quick directories
-alias t3='ruby /Users/nsingh/dev/working/t3/bin/t3client.rb'
-alias scriptsd='cd /Users/nsingh/dev/scripts'
-alias ttd='cd /Users/nsingh/dev/working/tech_tracker'
-alias blogd='cd /Users/nsingh/dev/working/blog'
-alias t3d='cd /Users/nsingh/dev/working/t3server'
-alias insyncd='cd /Users/nsingh/dev/working/insync'
-alias kite_runnerd='cd /Users/nsingh/dev/working/kite_runner'
-alias jqueryd='cd /Users/nsingh/dev/working/jquery'
-alias gitlabd='cd /Users/nsingh/dev/working/gitlab'
-alias jquery_labd='cd /Users/nsingh/dev/working/jquery_lab'
-alias admin_datad='cd /Users/nsingh/dev/working/admin_data'
-alias admin_data_demod='cd /Users/nsingh/dev/working/admin_data_demo'
-alias workingd='cd /Users/nsingh/dev/working'
-alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
-alias guidesd='cd /Users/nsingh/dev/working/guides'
-alias eiid='cd /Users/nsingh/dev/eii/eii'
-alias scratchd='cd /Users/nsingh/dev/scratch'
-alias devd='cd /Users/nsingh/dev'
-alias demod='cd /Users/nsingh/dev/scratch/demo'
-alias workd='cd /Users/nsingh/dev/work'
-alias scrapbookd='cd /Users/nsingh/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
-alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
-alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
-alias vimd='cd /Users/nsingh/dev/vim'
 
 #tail
 alias taild='tail -f log/development.log'
@@ -111,20 +86,33 @@ export DYLD_LIBRARY_PATH=/Users/oracle/product/10.2.0/db_1/lib
 
 alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>8000,:DocumentRoot=>Dir::pwd);Signal.trap(2){w.shutdown};w.start"'
 
-##
-# Your previous /Users/nsingh/.bash_profile file was backed up as /Users/nsingh/.bash_profile.macports-saved_2009-12-10_at_22:22:22
-##
-
 # MacPorts Installer addition on 2009-12-10_at_22:22:22: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-
-##
-# Your previous /Users/nsingh/.bash_profile file was backed up as /Users/nsingh/.bash_profile.macports-saved_2009-12-10_at_22:32:03
-##
-
-# MacPorts Installer addition on 2009-12-10_at_22:32:03: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
+# quick directories
+alias t3='ruby /Users/nsingh/dev/working/t3/bin/t3client.rb'
+alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
+alias ttd='cd /Users/nsingh/dev/working/tech_tracker'
+alias blogd='cd /Users/nsingh/dev/working/blog'
+alias t3d='cd /Users/nsingh/dev/working/t3server'
+alias insyncd='cd /Users/nsingh/dev/working/insync'
+alias kite_runnerd='cd /Users/nsingh/dev/working/kite_runner'
+alias jqueryd='cd /Users/nsingh/dev/working/jquery'
+alias gitlabd='cd /Users/nsingh/dev/working/gitlab'
+alias jquery_labd='cd /Users/nsingh/dev/working/jquery_lab'
+alias admin_datad='cd /Users/nsingh/dev/working/admin_data'
+alias admin_data_demod='cd /Users/nsingh/dev/working/admin_data_demo'
+alias workingd='cd /Users/nsingh/dev/working'
+alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
+alias guidesd='cd /Users/nsingh/dev/working/guides'
+alias eiid='cd /Users/nsingh/dev/eii/eii'
+alias scratchd='cd /Users/nsingh/dev/scratch'
+alias devd='cd /Users/nsingh/dev'
+alias demod='cd /Users/nsingh/dev/scratch/demo'
+alias workd='cd /Users/nsingh/dev/work'
+alias scrapbookd='cd /Users/nsingh/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
+alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
+alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
+alias vimd='cd /Users/nsingh/dev/vim'
+alias noded='cd /Users/nsingh/dev/scratch/node'

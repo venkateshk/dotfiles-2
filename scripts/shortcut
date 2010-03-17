@@ -1,0 +1,17 @@
+#! /usr/bin/env ruby
+
+usage =  "usage: shortcut eiid"
+raise "shortcut name missing #{usage}" if ARGV.length == 0
+
+cwd = Dir.getwd
+
+line = "alias #{ARGV[0]}='cd #{cwd}'"
+
+cmd = %{ echo "#{line}" >> ~/.bash_profile }
+puts cmd
+system(cmd)
+
+test = "cat ~/.bash_profile"
+system(test)
+
+`source ~/.bash_profile`
