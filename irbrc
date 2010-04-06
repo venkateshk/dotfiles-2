@@ -7,6 +7,7 @@
 # sudo gem install cldwalker-hirb --source http://gems.github.com
 
 require 'rubygems'
+require 'ab'
 require 'hirb'
 Hirb.enable
 

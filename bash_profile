@@ -26,6 +26,7 @@ alias gits='git status'
 alias gitcm='git commit -m'
 alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
 alias gitb='git branch -v'
+alias gitcd='git add .;gitcm "done"'
 
 
 #tail
@@ -76,7 +77,8 @@ export GIT_EDITOR='/usr/local/bin/mate -w'
 # In this case \e[ starts the color scheme
 # 36;1m color pair to use
 # \] end of color scheme
-export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n> "
+#export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n$ "
+export PS1="\n\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\n\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]$\[\033[00m\] "
 
 # if you are using oracle
 export ORACLE_HOME=/Users/oracle/product/10.2.0/db_1
@@ -116,3 +118,4 @@ alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
 alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
+alias node-repl="rlwrap node-repl"
