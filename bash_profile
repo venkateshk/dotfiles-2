@@ -13,9 +13,6 @@ alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias sc=' ruby script/console'
 #alias rdbm='rake db:migrate && rake db:test:prepare'
 
-# slicehost boxes
-alias ssh_eii='ssh www.eventsinindia.com'
-
 # svn
 alias svndm='svn diff | mate'
 
