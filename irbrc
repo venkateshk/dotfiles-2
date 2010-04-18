@@ -7,9 +7,9 @@
 # sudo gem install cldwalker-hirb --source http://gems.github.com
 
 require 'rubygems'
-require 'ab'
-require 'hirb'
-Hirb.enable
+#require 'ab'
+#require 'hirb'
+#Hirb.enable
 
 require 'utility_belt'
 

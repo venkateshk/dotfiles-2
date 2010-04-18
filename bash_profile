@@ -9,6 +9,11 @@ source ~/dev/dotfiles/scripts/mktouch.txt
 # mac
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 
+# rakeg stands for rake with growl notification
+# Usage: rakeg test
+# http://github.com/porras/rakegrowl
+alias rakeg='rake -rubygems -r rakegrowl'
+
 # rails
 alias sc=' ruby script/console'
 #alias rdbm='rake db:migrate && rake db:test:prepare'
@@ -60,6 +65,10 @@ shopt -s checkwinsize
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/nsingh/dev/dotfiles/scripts:$PATH"
 export PATH="/Users/nsingh/dev/vim/jsl-0.3.0-mac:$PATH"
+
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"  # for postgres
+export PATH="/opt/local/lib/postgresql83/bin:$PATH" # for postgres
+
 export EDITOR='/usr/local/bin/mate -w'
 export SVN_EDITOR='/usr/local/bin/mate -w'
 export GIT_EDITOR='/usr/local/bin/mate -w'
@@ -115,4 +124,7 @@ alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
 alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
+alias railsd='cd /Users/nsingh/dev/scratch/rails'
 alias node-repl="rlwrap node-repl"
+
+if [[ -s /Users/nsingh/.rvm/scripts/rvm ]] ; then source /Users/nsingh/.rvm/scripts/rvm ; fi
