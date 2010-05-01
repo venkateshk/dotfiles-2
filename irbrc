@@ -7,11 +7,14 @@
 # sudo gem install cldwalker-hirb --source http://gems.github.com
 
 require 'rubygems'
+require 'wirble'
+Wirble.init
+Wirble.colorize
 #require 'ab'
 #require 'hirb'
 #Hirb.enable
 
-require 'utility_belt'
+#require 'utility_belt'
 
 if ENV['RAILS_ENV']
   require 'logger'

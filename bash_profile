@@ -125,6 +125,9 @@ alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
 alias railsd='cd /Users/nsingh/dev/scratch/rails'
+alias railstd='cd /Users/nsingh/dev/working/rails_tickets'
+alias bundle_vendor='bundle install vendor --disable-shared-gems'
 alias node-repl="rlwrap node-repl"
+alias rvm18="rvm use ruby-1.8.7"
 
 if [[ -s /Users/nsingh/.rvm/scripts/rvm ]] ; then source /Users/nsingh/.rvm/scripts/rvm ; fi
