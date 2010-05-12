@@ -1,0 +1,35 @@
+#!/usr/local/bin/ruby -w
+
+client_dir = `pwd`
+client_dir = client_dir.chomp
+dumpit_file = File.join(client_dir, 'dumpit.txt')
+content = ''
+
+# Add schema.rb
+schema_file = File.join(client_dir, 'db' , 'schema.rb')
+file = File.new(schema_file, 'r')
+while (line = file.gets)
+  content << line if line !~ /^#/  
+end
+
+# Add models
+Dir.glob(File.join(client_dir, 'app', 'models', '*.rb')).each do |model|
+  puts model
+  file = File.new(File.join(model), 'r')
+  while (line = file.gets)
+    content << line if line !~ /^#/  
+  end
+end
+
+# Add rails version
+rails_version = `rails -v`
+content << "#rails -v : " + rails_version
+
+
+# Add ruby version
+ruby_version = `ruby -v`
+content << "#ruby -v : " + ruby_version
+
+
+puts content
+File.open(dumpit_file, 'w') {|f| f.write(content) }
