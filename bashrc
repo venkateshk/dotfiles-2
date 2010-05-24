@@ -98,6 +98,8 @@ alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>800
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+if [[ -s /Users/nsingh/.rvm/scripts/rvm ]] ; then source /Users/nsingh/.rvm/scripts/rvm ; fi  
+
 # quick directories
 alias t3='ruby /Users/nsingh/dev/working/t3/bin/t3client.rb'
 alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
@@ -125,10 +127,51 @@ alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
 alias railsd='cd /Users/nsingh/dev/scratch/rails'
-alias railstd='cd /Users/nsingh/dev/working/rails_tickets'
 alias bundle_vendor='bundle install vendor --disable-shared-gems'
 alias node-repl="rlwrap node-repl"
 alias rvm18="rvm use ruby-1.8.7"
-alias rc="rails console"
+alias rc="rails console --debugger"
+alias rs="rails s"
+alias railstd='cd /Users/nsingh/dev/working/rails_tickets'
 
-if [[ -s /Users/nsingh/.rvm/scripts/rvm ]] ; then source /Users/nsingh/.rvm/scripts/rvm ; fi  
+alias hg='history | grep $1'
+alias sls='screen -ls'
+
+function ss {
+  if [ -d "./log" ]; then
+    for file in $(find ./log -maxdepth 1 -type f)
+    do
+      cat /dev/null > $file
+    done
+  fi
+
+  if [ -d "./tmp" ]; then
+    for file in $(find ./tmp -maxdepth 1 -type  f)
+    do
+      rm $file
+    done
+  fi
+
+
+  rm -rf coverage
+  rm -f coverage.data
+
+  if [ -e "./script/server" ]; then
+    ./script/server
+  fi
+
+  if [ -e "./script/rails" ]; then
+    ./script/rails server
+  fi
+}
+
+function sc {
+  if [ -e "./script/console" ]; then
+    ./script/console
+  fi
+
+  if [ -e "./script/rails" ]; then
+    ./script/rails console
+  fi
+}
+
