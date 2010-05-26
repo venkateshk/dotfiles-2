@@ -14,10 +14,6 @@ alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 # http://github.com/porras/rakegrowl
 alias rakeg='rake -rubygems -r rakegrowl'
 
-# rails
-alias sc=' ruby script/console'
-#alias rdbm='rake db:migrate && rake db:test:prepare'
-
 # svn
 alias svndm='svn diff | mate'
 
@@ -126,7 +122,7 @@ alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
 alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
-alias railsd='cd /Users/nsingh/dev/scratch/rails'
+alias railsd='cd /Users/nsingh/dev/working/rails_tickets/rails'
 alias bundle_vendor='bundle install vendor --disable-shared-gems'
 alias node-repl="rlwrap node-repl"
 alias rvm18="rvm use ruby-1.8.7"
@@ -152,26 +148,25 @@ function ss {
     done
   fi
 
-
   rm -rf coverage
   rm -f coverage.data
 
   if [ -e "./script/server" ]; then
-    ./script/server
+    ./script/server $1 $2 
   fi
 
   if [ -e "./script/rails" ]; then
-    ./script/rails server
+    ./script/rails server $1 $2 
   fi
 }
 
 function sc {
   if [ -e "./script/console" ]; then
-    ./script/console
+    ./script/console $1 $2 
   fi
 
   if [ -e "./script/rails" ]; then
-    ./script/rails console
+    ./script/rails console $1 $2 
   fi
 }
 
