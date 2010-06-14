@@ -2,3 +2,5 @@
 --type-set=rb=.rb
 --type-set=txt=.txt
 --type-set=erb=.erb
+--type-set=textile=.textile
+--type-set=gemspec=.gemspec
