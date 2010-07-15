@@ -46,7 +46,7 @@ alias ...='cd ../..' #  move up 2 directories
 alias dns_flush='dscacheutil -flushcache'
 
 # a nice function to send authorized keys to the server
-# picked up from deploying rails applications ( pragprog.com) 
+# picked up from deploying rails applications ( pragprog.com)
 # Usage: authme 123.45.67.89
 function authme {
    ssh $1 'cat >> .ssh/authorized_keys' < ~/.ssh/id_dsa.pub
@@ -94,44 +94,43 @@ alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>800
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-if [[ -s /Users/nsingh/.rvm/scripts/rvm ]] ; then source /Users/nsingh/.rvm/scripts/rvm ; fi  
+if [[ -s /Users/nsingh/.rvm/scripts/rvm ]] ; then source /Users/nsingh/.rvm/scripts/rvm ; fi
 
 # quick directories
-alias t3='ruby /Users/nsingh/dev/working/t3/bin/t3client.rb'
 alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
-alias ttd='cd /Users/nsingh/dev/working/tech_tracker'
-alias blogd='cd /Users/nsingh/dev/working/blog'
-alias t3d='cd /Users/nsingh/dev/working/t3server'
-alias insyncd='cd /Users/nsingh/dev/working/insync'
-alias kite_runnerd='cd /Users/nsingh/dev/working/kite_runner'
-alias jqueryd='cd /Users/nsingh/dev/working/jquery'
-alias gitlabd='cd /Users/nsingh/dev/working/gitlab'
-alias jquery_labd='cd /Users/nsingh/dev/working/jquery_lab'
-alias admin_datad='cd /Users/nsingh/dev/working/admin_data'
-alias admin_data_demod='cd /Users/nsingh/dev/working/admin_data_demo'
-alias workingd='cd /Users/nsingh/dev/working'
+alias ttd='cd /Users/nsingh/dev/tech_tracker'
+alias blogd='cd /Users/nsingh/dev/blog'
+alias jqueryd='cd /Users/nsingh/dev/jquery'
+alias gitlabd='cd /Users/nsingh/dev/gitlab'
+alias jquery_labd='cd /Users/nsingh/dev/jquery_lab'
+alias admin_datad='cd /Users/nsingh/dev/admin_data'
+alias admin_data_demod='cd /Users/nsingh/dev/admin_data_demo'
 alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
-alias guidesd='cd /Users/nsingh/dev/working/guides'
-alias eiid='cd /Users/nsingh/dev/eii/eii'
+alias guidesd='mvim /Users/nsingh/dev/guides'
+alias eiid='cd /Users/nsingh/dev/eii'
 alias scratchd='cd /Users/nsingh/dev/scratch'
 alias devd='cd /Users/nsingh/dev'
 alias demod='cd /Users/nsingh/dev/scratch/demo'
 alias workd='cd /Users/nsingh/dev/work'
 alias scrapbookd='cd /Users/nsingh/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
 alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
-alias javascript_labd='cd /Users/nsingh/dev/working/javascript_lab'
+alias javascript_labd='cd /Users/nsingh/dev/javascript_lab'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
-alias railsd='cd /Users/nsingh/dev/working/rails_tickets/rails'
+alias railsd='cd /Users/nsingh/dev/rails_tickets/rails'
 alias bundle_vendor='bundle install vendor --disable-shared-gems'
 alias node-repl="rlwrap node-repl"
-alias rvm18="rvm use ruby-1.8.7"
+alias rvm18="rvm use ruby-1.8.7;rvm use ree;"
 alias rc="rails console --debugger"
 alias rs="rails s"
-alias railstd='cd /Users/nsingh/dev/working/rails_tickets'
+alias railstd='cd /Users/nsingh/dev/rails_tickets'
 
 alias hg='history | grep $1'
 alias sls='screen -ls'
+
+alias rt='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/ticket.rb $1'
+alias create_patch='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/create_patch.rb $1 $2'
+alias dumpit='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/dumpit.rb'
 
 function ss {
   if [ -d "./log" ]; then
@@ -152,21 +151,29 @@ function ss {
   rm -f coverage.data
 
   if [ -e "./script/server" ]; then
-    ./script/server $1 $2 
+    ./script/server $1 $2
   fi
 
   if [ -e "./script/rails" ]; then
-    ./script/rails server $1 $2 
+    ./script/rails server $1 $2
   fi
 }
 
 function sc {
   if [ -e "./script/console" ]; then
-    ./script/console $1 $2 
+    ./script/console $1 $2
   fi
 
   if [ -e "./script/rails" ]; then
-    ./script/rails console $1 $2 
+    ./script/rails console $1 $2
   fi
 }
+
+
+# for REE
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
 
