@@ -98,7 +98,7 @@ if [[ -s /Users/nsingh/.rvm/scripts/rvm ]] ; then source /Users/nsingh/.rvm/scri
 
 # quick directories
 alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
-alias ttd='cd /Users/nsingh/dev/tech_tracker'
+alias ttd='cd /Users/nsingh/dev/tech_tracker_github'
 alias blogd='cd /Users/nsingh/dev/blog'
 alias jqueryd='cd /Users/nsingh/dev/jquery'
 alias gitlabd='cd /Users/nsingh/dev/gitlab'
@@ -128,9 +128,7 @@ alias railstd='cd /Users/nsingh/dev/rails_tickets'
 alias hg='history | grep $1'
 alias sls='screen -ls'
 
-alias rt='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/ticket.rb $1'
-alias create_patch='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/create_patch.rb $1 $2'
-alias dumpit='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/dumpit.rb'
+
 
 function ss {
   if [ -d "./log" ]; then
@@ -176,4 +174,14 @@ export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
+
+alias vendor_rails='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/vendor_rails.rb'
+alias create_patch='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/create_patch.rb $1 $2'
+alias dumpit='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/dumpit.rb'
+#alias rt='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/ticket.rb $1'
+
+function rt() {
+  eval "ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/ticket.rb $1" 
+  cd "/Users/nsingh/dev/rails_tickets/r3_$1"
+}
 
