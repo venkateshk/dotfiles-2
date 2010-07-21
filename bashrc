@@ -178,7 +178,6 @@ export RUBY_HEAP_FREE_MIN=500000
 alias vendor_rails='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/vendor_rails.rb'
 alias create_patch='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/create_patch.rb $1 $2'
 alias dumpit='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/dumpit.rb'
-#alias rt='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/ticket.rb $1'
 
 function rt() {
   eval "ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/ticket.rb $1" 
