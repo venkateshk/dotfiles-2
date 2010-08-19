@@ -14,25 +14,21 @@ alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 # http://github.com/porras/rakegrowl
 alias rakeg='rake -rubygems -r rakegrowl'
 
-# svn
-alias svndm='svn diff | mate'
-
 # git
-alias gitdm='git diff | mate'
-alias gitdm2='git diff --cached | mate'
+alias gdiff='git diff | mvim -R  -'
+alias gdiff2='git diff --cached | mvim -R  -'
 alias gits='git status'
 alias gitcm='git commit -m'
 alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
 alias gitb='git branch -v'
 alias gitcd='git add .;gitcm "done"'
+alias gitcw='git add .;gitcm "wip"'
 
 
 #tail
 alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
-
-#alias mate='open -a TextMate.app'
 
 # MySQL
 #alias start_mysql='sudo mysqld_safe --user=mysql &'
@@ -43,7 +39,9 @@ alias ls='ls -G'
 alias h='history'
 alias ..='cd ..' # move up 1 directory
 alias ...='cd ../..' #  move up 2 directories
+alias ....='cd ../../..' #  move up 3 directories
 alias dns_flush='dscacheutil -flushcache'
+alias v='mvim .'
 
 # a nice function to send authorized keys to the server
 # picked up from deploying rails applications ( pragprog.com)
@@ -66,8 +64,8 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"  # for postgres
 export PATH="/opt/local/lib/postgresql83/bin:$PATH" # for postgres
 
 export EDITOR='/usr/local/bin/mate -w'
-export SVN_EDITOR='/usr/local/bin/mate -w'
 export GIT_EDITOR='/usr/local/bin/mate -w'
+export GEM_OPEN_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 
 
 # configure command prompt
@@ -118,7 +116,9 @@ alias javascript_labd='cd /Users/nsingh/dev/javascript_lab'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
 alias railsd='cd /Users/nsingh/dev/rails_tickets/rails'
-alias bundle_vendor='bundle install vendor --disable-shared-gems'
+alias railsfd='cd /Users/nsingh/dev/rails_tickets/rails_forked'
+alias docrailsd='cd /Users/nsingh/dev/rails_tickets/docrails'
+alias bundle_vendor='bundle install --path vendor'
 alias node-repl="rlwrap node-repl"
 alias rvm18="rvm use ruby-1.8.7;rvm use ree;"
 alias rc="rails console --debugger"
