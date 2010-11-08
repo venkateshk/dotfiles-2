@@ -30,9 +30,6 @@ alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s -
 alias gitb='git branch -v'
 alias gitcml='git add .;gitcm ".."'
 
-alias rdbm="rake db:drop db:create db:migrate db:test:prepare db:seed"
-
-
 #tail
 alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
@@ -111,14 +108,11 @@ alias eiid='cd /Users/nsingh/dev/eii;rvm system;'
 alias scratchd='cd /Users/nsingh/dev/scratch'
 alias devd='cd /Users/nsingh/dev'
 alias demod='cd /Users/nsingh/dev/scratch/demo'
-alias workd='cd /Users/nsingh/dev/work'
 alias scrapbookd='cd /Users/nsingh/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
 alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
-alias javascript_labd='cd /Users/nsingh/dev/javascript_lab'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
 alias railsd='cd /Users/nsingh/dev/rails'
-alias railsfd='cd /Users/nsingh/dev/rails_tickets/rails_forked'
 alias docrailsd='cd /Users/nsingh/dev/docrails'
 alias bundle_vendor='bundle install --path vendor'
 alias node-repl="rlwrap node-repl"
@@ -184,10 +178,6 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
-alias vendor_rails='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/vendor_rails.rb'
-alias create_patch='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/create_patch.rb $1 $2'
-alias dumpit='ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/dumpit.rb'
-
 function rt() {
   eval "ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/ticket.rb $1" 
   cd "/Users/nsingh/dev/rails_tickets/r3_$1"
@@ -200,8 +190,6 @@ fi
 
 alias page41d='cd /Users/nsingh/dev/page41'
 alias admin_data_testd='cd /Users/nsingh/dev/admin_data_test'
-alias bec='bundle exec cucumber  '
-
 
 alias mysql_stop='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
 alias mysql_start='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
