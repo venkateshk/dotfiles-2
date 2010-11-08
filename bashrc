@@ -6,13 +6,20 @@ fi
 source /etc/bashrc
 source ~/dev/dotfiles/scripts/mktouch.txt
 
+# core
+alias home='cd ~' # tilda is too hard to reach
+
+alias ls='ls -G'
+
+alias h='history'
+alias hg='history | grep $1'
+
+alias ..='cd ..' # move up 1 directory
+alias ...='cd ../..' #  move up 2 directories
+alias ....='cd ../../..' #  move up 3 directories
+
 # mac
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-
-# rakeg stands for rake with growl notification
-# Usage: rakeg test
-# http://github.com/porras/rakegrowl
-alias rakeg='rake -rubygems -r rakegrowl'
 
 # git
 alias gdiff='git diff | mvim -R  -'
@@ -21,8 +28,9 @@ alias gits='git status'
 alias gitcm='git commit -m'
 alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
 alias gitb='git branch -v'
-alias gitcd='git add .;gitcm "done"'
-alias gitcw='git add .;gitcm "wip"'
+alias gitcml='git add .;gitcm ".."'
+
+alias rdbm="rake db:drop db:create db:migrate db:test:prepare db:seed"
 
 
 #tail
@@ -30,16 +38,8 @@ alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
 
-# MySQL
-#alias start_mysql='sudo mysqld_safe --user=mysql &'
 
 # GENERAL
-alias home='cd ~' # tilda is too hard to reach
-alias ls='ls -G'
-alias h='history'
-alias ..='cd ..' # move up 1 directory
-alias ...='cd ../..' #  move up 2 directories
-alias ....='cd ../../..' #  move up 3 directories
 alias dns_flush='dscacheutil -flushcache'
 alias v='mvim .'
 
@@ -63,9 +63,12 @@ export PATH="/Users/nsingh/dev/vim/jsl-0.3.0-mac:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"  # for postgres
 export PATH="/opt/local/lib/postgresql83/bin:$PATH" # for postgres
 
-export EDITOR='/usr/local/bin/mate -w'
-export GIT_EDITOR='/usr/local/bin/mate -w'
+#export EDITOR='/usr/local/bin/mate -w'
+#export GIT_EDITOR='/usr/local/bin/mate -w'
+export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
+export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 export GEM_OPEN_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
+export BUNDLE_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 
 
 # configure command prompt
@@ -92,7 +95,6 @@ alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>800
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-if [[ -s /Users/nsingh/.rvm/scripts/rvm ]] ; then source /Users/nsingh/.rvm/scripts/rvm ; fi
 
 # quick directories
 alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
@@ -105,7 +107,7 @@ alias admin_datad='cd /Users/nsingh/dev/admin_data'
 alias admin_data_demod='cd /Users/nsingh/dev/admin_data_demo'
 alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
 alias guidesd='mvim /Users/nsingh/dev/guides'
-alias eiid='cd /Users/nsingh/dev/eii'
+alias eiid='cd /Users/nsingh/dev/eii;rvm system;'
 alias scratchd='cd /Users/nsingh/dev/scratch'
 alias devd='cd /Users/nsingh/dev'
 alias demod='cd /Users/nsingh/dev/scratch/demo'
@@ -115,18 +117,15 @@ alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
 alias javascript_labd='cd /Users/nsingh/dev/javascript_lab'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
-alias railsd='cd /Users/nsingh/dev/rails_tickets/rails'
+alias railsd='cd /Users/nsingh/dev/rails'
 alias railsfd='cd /Users/nsingh/dev/rails_tickets/rails_forked'
-alias docrailsd='cd /Users/nsingh/dev/rails_tickets/docrails'
+alias docrailsd='cd /Users/nsingh/dev/docrails'
 alias bundle_vendor='bundle install --path vendor'
 alias node-repl="rlwrap node-repl"
-alias rvm18="rvm use ruby-1.8.7;rvm use ree;"
-alias rc="rails console --debugger"
-alias rs="rails s"
-alias railstd='cd /Users/nsingh/dev/rails_tickets'
+alias rvm3="rvm use ree@rails3;"
+alias rvm2="rvm use ree@rails2;"
+alias rvms="rvm use system;"
 
-alias hg='history | grep $1'
-alias sls='screen -ls'
 
 
 
@@ -138,12 +137,12 @@ function ss {
     done
   fi
 
-  if [ -d "./tmp" ]; then
-    for file in $(find ./tmp -maxdepth 1 -type  f)
-    do
-      rm $file
-    done
-  fi
+  #if [ -d "./tmp" ]; then
+    #for file in $(find ./tmp -maxdepth 1 -type  f)
+    #do
+      #rm $file
+    #done
+  #fi
 
   rm -rf coverage
   rm -f coverage.data
@@ -167,6 +166,16 @@ function sc {
   fi
 }
 
+function rr {
+  if [ -e "./script/console" ]; then
+    ./script/runner $1
+  fi
+
+  if [ -e "./script/rails" ]; then
+    ./script/rails runner $1
+  fi
+}
+
 
 # for REE
 export RUBY_HEAP_MIN_SLOTS=1000000
@@ -184,3 +193,38 @@ function rt() {
   cd "/Users/nsingh/dev/rails_tickets/r3_$1"
 }
 
+
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then 
+          source $HOME/.rvm/scripts/rvm
+fi
+
+alias page41d='cd /Users/nsingh/dev/page41'
+alias admin_data_testd='cd /Users/nsingh/dev/admin_data_test'
+alias bec='bundle exec cucumber  '
+
+
+alias mysql_stop='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+alias mysql_start='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+
+alias postgresql_stop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
+alias postgresql_start='sudo launchctl load -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
+
+
+#Following function ensures that in a Rails3 project you just need to do spec or cucumber rather than
+# bundle exec cucumber
+# Note that need for this can be removed if you do 
+# bundle install --binstubs
+function run_bundler_cmd () {
+  if [ -e ./Gemfile ]; then
+    echo "bundle exec $@"
+    bundle exec $@
+  else
+    echo "$@"
+    $@
+  fi
+}
+bundle_commands=(spec cucumber)
+for cmd in ${bundle_commands[*]}
+do
+  alias $cmd="run_bundler_cmd $cmd"
+done
