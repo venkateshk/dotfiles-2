@@ -60,12 +60,12 @@ export PATH="/Users/nsingh/dev/vim/jsl-0.3.0-mac:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"  # for postgres
 export PATH="/opt/local/lib/postgresql83/bin:$PATH" # for postgres
 
-#export EDITOR='/usr/local/bin/mate -w'
-#export GIT_EDITOR='/usr/local/bin/mate -w'
-export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
-export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
+#export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
+#export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 export GEM_OPEN_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 export BUNDLE_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
+export EDITOR='/usr/local/bin/mate -w'
+export GIT_EDITOR='/usr/local/bin/mate -w'
 
 
 # configure command prompt
@@ -95,7 +95,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # quick directories
 alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
-alias ttd='cd /Users/nsingh/dev/tech_tracker_github'
+alias ttd='cd /Users/nsingh/dev/office/tech_tracker_github'
 alias blogd='cd /Users/nsingh/dev/blog'
 alias jqueryd='cd /Users/nsingh/dev/jquery'
 alias gitlabd='cd /Users/nsingh/dev/gitlab'
@@ -113,6 +113,7 @@ alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
 alias vimd='cd /Users/nsingh/dev/vim'
 alias noded='cd /Users/nsingh/dev/scratch/node'
 alias railsd='cd /Users/nsingh/dev/rails'
+alias rdbm='rake db:migrate'
 alias docrailsd='cd /Users/nsingh/dev/docrails'
 alias bundle_vendor='bundle install --path vendor'
 alias node-repl="rlwrap node-repl"
@@ -142,21 +143,21 @@ function ss {
   rm -f coverage.data
 
   if [ -e "./script/server" ]; then
-    ./script/server $1 $2
+    ./script/server $1 $2 --debugger
   fi
 
   if [ -e "./script/rails" ]; then
-    ./script/rails server $1 $2
+    ./script/rails server $1 $2 --debugger
   fi
 }
 
 function sc {
   if [ -e "./script/console" ]; then
-    ./script/console $1 $2
+    ./script/console $1 $2 --debugger
   fi
 
   if [ -e "./script/rails" ]; then
-    ./script/rails console $1 $2
+    ./script/rails console $1 $2 --debugger
   fi
 }
 
@@ -211,7 +212,7 @@ function run_bundler_cmd () {
     $@
   fi
 }
-bundle_commands=(spec cucumber)
+bundle_commands=(rspec cucumber)
 for cmd in ${bundle_commands[*]}
 do
   alias $cmd="run_bundler_cmd $cmd"
