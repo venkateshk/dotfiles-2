@@ -19,3 +19,5 @@
 [github]
 	user = neerajdotname
 	token = 9ecb33c426eb02da8bb3c51eb1f61cb6
+[push]
+	default = tracking
