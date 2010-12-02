@@ -28,6 +28,23 @@ if ENV['RAILS_ENV'] || defined?(Rails)
 else
 end
 
+# Following lines make it easy to evaluate the code which is in clipboard.
+# copy the code to clipboard.
+# start irb
+# on the irb prompt type ep which stands for evaluate paste.
+#
+# http://timeless.judofyr.net/copy-paste
+def ep
+  IRB.CurrentContext.workspace.evaluate(self, paste)
+end
+def copy(str)
+  IO.popen('pbcopy', 'w') { |f| f << str.to_s }
+end
+def paste
+  `pbpaste`
+end
+
+
 #require 'wirble'
 #Wirble.init
 #Wirble.colorize
