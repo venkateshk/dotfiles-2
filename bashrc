@@ -6,40 +6,6 @@ fi
 source /etc/bashrc
 source ~/dev/dotfiles/scripts/mktouch.txt
 
-# core
-alias home='cd ~' # tilda is too hard to reach
-
-alias ls='ls -G'
-
-alias h='history'
-alias hg='history | grep $1'
-
-alias ..='cd ..' # move up 1 directory
-alias ...='cd ../..' #  move up 2 directories
-alias ....='cd ../../..' #  move up 3 directories
-
-# mac
-alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-
-# git
-alias gdiff='git diff | mvim -R  -'
-alias gdiff2='git diff --cached | mvim -R  -'
-alias gits='git status'
-alias gitcm='git commit -m'
-alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
-alias gitb='git branch -v'
-alias gitcml='git add .;gitcm ".."'
-
-#tail
-alias taild='tail -f log/development.log'
-alias tailt='tail -f log/test.log'
-alias taily='tail -f log/yell.log'
-
-
-# GENERAL
-alias dns_flush='dscacheutil -flushcache'
-alias v='mvim .'
-
 # a nice function to send authorized keys to the server
 # picked up from deploying rails applications ( pragprog.com)
 # Usage: authme 123.45.67.89
@@ -86,42 +52,9 @@ PATH=$PATH:$ORACLE_HOME/bin
 export DYLD_LIBRARY_PATH=/Users/oracle/product/10.2.0/db_1/lib
 
 
-alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>8000,:DocumentRoot=>Dir::pwd);Signal.trap(2){w.shutdown};w.start"'
-
 # MacPorts Installer addition on 2009-12-10_at_22:22:22: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
-
-
-# quick directories
-alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
-alias ttd='cd /Users/nsingh/dev/office/tech_tracker_github'
-alias blogd='cd /Users/nsingh/dev/blog'
-alias jqueryd='cd /Users/nsingh/dev/jquery'
-alias gitlabd='cd /Users/nsingh/dev/gitlab'
-alias jquery_labd='cd /Users/nsingh/dev/jquery_lab'
-alias admin_datad='cd /Users/nsingh/dev/admin_data'
-alias admin_data_demod='cd /Users/nsingh/dev/admin_data_demo'
-alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
-alias guidesd='mvim /Users/nsingh/dev/guides'
-alias eiid='cd /Users/nsingh/dev/eii;rvm system;'
-alias scratchd='cd /Users/nsingh/dev/scratch'
-alias devd='cd /Users/nsingh/dev'
-alias demod='cd /Users/nsingh/dev/scratch/demo'
-alias scrapbookd='cd /Users/nsingh/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
-alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
-alias vimd='cd /Users/nsingh/dev/vim'
-alias noded='cd /Users/nsingh/dev/scratch/node'
-alias railsd='cd /Users/nsingh/dev/rails'
-alias rdbm='rake db:migrate'
-alias docrailsd='cd /Users/nsingh/dev/docrails'
-alias bundle_vendor='bundle install --path vendor'
-alias node-repl="rlwrap node-repl"
-alias rvm3="rvm use ree@rails3;"
-alias rvm2="rvm use ree@rails2;"
-alias rvms="rvm use system;"
-
-
 
 
 function ss {
@@ -179,29 +112,21 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
-function rt() {
-  eval "ruby /Users/nsingh/dev/rails_tickets/rails_ticket/scripts/ticket.rb $1" 
-  cd "/Users/nsingh/dev/rails_tickets/r3_$1"
+# Usage: t 9999
+function t() {
+  cd "/Users/nsingh/dev/rails_lighthouse/projects/t_$1"
 }
 
-
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then 
+# rvm needs this
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then
           source $HOME/.rvm/scripts/rvm
 fi
 
-alias page41d='cd /Users/nsingh/dev/page41'
-alias admin_data_testd='cd /Users/nsingh/dev/admin_data_test'
-
-alias mysql_stop='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
-alias mysql_start='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
-
-alias postgresql_stop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
-alias postgresql_start='sudo launchctl load -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
 
 
-#Following function ensures that in a Rails3 project you just need to do spec or cucumber rather than
+# Following function ensures that in a Rails3 project you just need to do spec or cucumber rather than
 # bundle exec cucumber
-# Note that need for this can be removed if you do 
+# Note that need for this can be removed if you do
 # bundle install --binstubs
 function run_bundler_cmd () {
   if [ -e ./Gemfile ]; then
@@ -217,3 +142,79 @@ for cmd in ${bundle_commands[*]}
 do
   alias $cmd="run_bundler_cmd $cmd"
 done
+
+
+alias page41d='cd /Users/nsingh/dev/page41'
+alias admin_data_testd='cd /Users/nsingh/dev/admin_data_test'
+
+alias mysql_stop='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+alias mysql_start='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+
+alias postgresql_stop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
+alias postgresql_start='sudo launchctl load -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
+
+# quick directories
+alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
+alias ttd='cd /Users/nsingh/dev/office/tech_tracker_github'
+alias blogd='cd /Users/nsingh/dev/blog'
+alias jqueryd='cd /Users/nsingh/dev/jquery'
+alias gitlabd='cd /Users/nsingh/dev/gitlab'
+alias jquery_labd='cd /Users/nsingh/dev/jquery_lab'
+alias admin_datad='cd /Users/nsingh/dev/admin_data'
+alias admin_data_demod='cd /Users/nsingh/dev/admin_data_demo'
+alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
+alias guidesd='mvim /Users/nsingh/dev/guides'
+alias eiid='cd /Users/nsingh/dev/eii;rvm system;'
+alias scratchd='cd /Users/nsingh/dev/scratch'
+alias devd='cd /Users/nsingh/dev'
+alias demod='cd /Users/nsingh/dev/scratch/demo'
+alias scrapbookd='cd /Users/nsingh/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
+alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
+alias vimd='cd /Users/nsingh/dev/vim'
+alias vim2d='cd /Users/nsingh/dev/vim2'
+alias noded='cd /Users/nsingh/dev/scratch/node'
+alias railsd='cd /Users/nsingh/dev/rails'
+alias rdbm='rake db:migrate'
+alias docrailsd='cd /Users/nsingh/dev/docrails'
+alias bundle_vendor='bundle install --path vendor'
+alias node-repl="rlwrap node-repl"
+alias rvm3="rvm use ree@rails3;"
+alias rvm2="rvm use ree@rails2;"
+alias rvms="rvm use system;"
+
+# core
+alias home='cd ~' # tilda is too hard to reach
+
+alias ls='ls -G'
+
+alias h='history'
+alias hg='history | grep $1'
+
+alias ..='cd ..' # move up 1 directory
+alias ...='cd ../..' #  move up 2 directories
+alias ....='cd ../../..' #  move up 3 directories
+
+# mac
+alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+
+# git
+alias gdiff='git diff | mvim -R  -'
+alias gdiff2='git diff --cached | mvim -R  -'
+alias gits='git status'
+alias gitcm='git commit -m'
+alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
+alias gitb='git branch -v'
+alias gitcml='git add .;gitcm ".."'
+
+#tail
+alias taild='tail -f log/development.log'
+alias tailt='tail -f log/test.log'
+alias taily='tail -f log/yell.log'
+alias bi='bundle install'
+
+
+# GENERAL
+alias dns_flush='dscacheutil -flushcache'
+alias v='mvim .'
+
+alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>8000,:DocumentRoot=>Dir::pwd);Signal.trap(2){w.shutdown};w.start"'
