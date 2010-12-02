@@ -1,6 +1,6 @@
 #
 # save this file as ~/.irbrc
-# 
+#
 # this utility will print the sql statement in the ruby script/console instead of regular development.log file
 #
 # sudo gem install wirble
@@ -12,20 +12,17 @@
 require 'rubygems'
 require 'logger'
 
-if ENV['RAILS_ENV'] || defined?(Rails) 
-  puts 'env is true or Rails is true'
+if ENV['RAILS_ENV'] || defined?(Rails)
   if ENV['RAILS_ENV'] # rails 2.x
-    Object.const_set(:RAILS_DEFAULT_LOGGER, Logger.new(STDOUT)) 
-    ActiveRecord::Base.logger = Logger.new(STDOUT) 
+    Object.const_set(:RAILS_DEFAULT_LOGGER, Logger.new(STDOUT))
+    ActiveRecord::Base.logger = Logger.new(STDOUT)
   elsif defined?(Rails) # rails 3.x
-    ActiveRecord::Base.logger = Logger.new(STDOUT) 
-  else
+    ActiveRecord::Base.logger = Logger.new(STDOUT)
   end
 
   def sql(query)
     ActiveRecord::Base.connection.select_all(query)
   end
-else
 end
 
 # Following lines make it easy to evaluate the code which is in clipboard.
