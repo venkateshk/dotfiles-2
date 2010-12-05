@@ -114,7 +114,7 @@ export RUBY_HEAP_FREE_MIN=500000
 
 # Usage: t 9999
 function t() {
-  cd "/Users/nsingh/dev/rails_lighthouse/projects/t_$1"
+  cd "/Users/nsingh/dev/rails_lighthouse/tickets/t_$1"
 }
 
 # rvm needs this
