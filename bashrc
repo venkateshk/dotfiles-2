@@ -4,6 +4,18 @@ if [ -z "$PS1" ]; then
 fi
 
 source /etc/bashrc
+
+#don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+
+
+# Check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+
+
+
 source ~/dev/dotfiles/scripts/mktouch.txt
 
 # a nice function to send authorized keys to the server
@@ -13,14 +25,10 @@ function authme {
    ssh $1 'cat >> .ssh/authorized_keys' < ~/.ssh/id_dsa.pub
  }
 
-#don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
 
-# Check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/nsingh/dev/dotfiles/scripts:$PATH"
+
 export PATH="/Users/nsingh/dev/vim/jsl-0.3.0-mac:$PATH"
 
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"  # for postgres
@@ -46,6 +54,8 @@ export GIT_EDITOR='/usr/local/bin/mate -w'
 #export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n$ "
 export PS1="\n\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\n\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]$\[\033[00m\] "
 
+
+
 # if you are using oracle
 export ORACLE_HOME=/Users/oracle/product/10.2.0/db_1
 PATH=$PATH:$ORACLE_HOME/bin
@@ -54,7 +64,6 @@ export DYLD_LIBRARY_PATH=/Users/oracle/product/10.2.0/db_1/lib
 
 # MacPorts Installer addition on 2009-12-10_at_22:22:22: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
 
 
 function ss {
