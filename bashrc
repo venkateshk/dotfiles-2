@@ -8,13 +8,9 @@ source /etc/bashrc
 #don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 
-
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-
-
 
 source ~/dev/dotfiles/scripts/mktouch.txt
 
@@ -65,8 +61,35 @@ export DYLD_LIBRARY_PATH=/Users/oracle/product/10.2.0/db_1/lib
 # MacPorts Installer addition on 2009-12-10_at_22:22:22: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
-
+# start a server without --debugger option. User ssd if you want to start server with --debugger mode.
 function ss {
+  if [ -d "./log" ]; then
+    for file in $(find ./log -maxdepth 1 -type f)
+    do
+      cat /dev/null > $file
+    done
+  fi
+
+  #if [ -d "./tmp" ]; then
+    #for file in $(find ./tmp -maxdepth 1 -type  f)
+    #do
+      #rm $file
+    #done
+  #fi
+
+  rm -rf coverage
+  rm -f coverage.data
+
+  if [ -e "./script/server" ]; then
+    ./script/server $1 $2
+  fi
+
+  if [ -e "./script/rails" ]; then
+    ./script/rails server $1 $2
+  fi
+}
+
+function ssd {
   if [ -d "./log" ]; then
     for file in $(find ./log -maxdepth 1 -type f)
     do
@@ -95,6 +118,16 @@ function ss {
 
 function sc {
   if [ -e "./script/console" ]; then
+    ./script/console $1 $2
+  fi
+
+  if [ -e "./script/rails" ]; then
+    ./script/rails console $1 $2
+  fi
+}
+
+function scd {
+  if [ -e "./script/console" ]; then
     ./script/console $1 $2 --debugger
   fi
 
@@ -111,6 +144,15 @@ function rr {
   if [ -e "./script/rails" ]; then
     ./script/rails runner $1
   fi
+}
+
+function gitlab {
+  TMP=''
+  $TMP=$TMP+'Hello world'
+  echo $TMP
+
+  CMD="git commit -m ''"
+  $CMD
 }
 
 
@@ -146,6 +188,7 @@ function run_bundler_cmd () {
     $@
   fi
 }
+
 bundle_commands=(rspec cucumber)
 for cmd in ${bundle_commands[*]}
 do
@@ -153,8 +196,7 @@ do
 done
 
 
-alias page41d='cd /Users/nsingh/dev/page41'
-alias admin_data_testd='cd /Users/nsingh/dev/admin_data_test'
+alias page41d='cd /Users/nsingh/dev/personal/page41'
 
 alias mysql_stop='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
 alias mysql_start='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
@@ -165,24 +207,21 @@ alias postgresql_start='sudo launchctl load -w /Library/LaunchDaemons/org.macpor
 # quick directories
 alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
 alias ttd='cd /Users/nsingh/dev/office/tech_tracker_github'
-alias blogd='cd /Users/nsingh/dev/blog'
+alias blogd='cd /Users/nsingh/dev/personal/blog'
 alias jqueryd='cd /Users/nsingh/dev/jquery'
 alias gitlabd='cd /Users/nsingh/dev/gitlab'
 alias jquery_labd='cd /Users/nsingh/dev/jquery_lab'
-alias admin_datad='cd /Users/nsingh/dev/admin_data'
-alias admin_data_demod='cd /Users/nsingh/dev/admin_data_demo'
+alias admin_datad='cd /Users/nsingh/dev/personal/admin_data'
+alias admin_data_demod='cd /Users/nsingh/dev/personal/admin_data_demo'
 alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
 alias guidesd='mvim /Users/nsingh/dev/guides'
 alias eiid='cd /Users/nsingh/dev/eii;rvm system;'
+alias spreed='cd /Users/nsingh/dev/spree_work/spree'
 alias scratchd='cd /Users/nsingh/dev/scratch'
 alias devd='cd /Users/nsingh/dev'
-alias demod='cd /Users/nsingh/dev/scratch/demo'
 alias scrapbookd='cd /Users/nsingh/Library/Application\ Support/Firefox/Profiles/b0bla48s.default/ScrapBook/data'
-alias rubyd='cd /System/Library/Frameworks/Ruby.framework/Versions/1.8'
 alias vimd='cd /Users/nsingh/dev/vim'
-alias vim2d='cd /Users/nsingh/dev/vim2'
-alias noded='cd /Users/nsingh/dev/scratch/node'
-alias railsd='cd /Users/nsingh/dev/rails'
+alias railsd='cd /Users/nsingh/dev/scratch/rails'
 alias rdbm='rake db:migrate'
 alias docrailsd='cd /Users/nsingh/dev/docrails'
 alias bundle_vendor='bundle install --path vendor'
@@ -202,6 +241,7 @@ alias hg='history | grep $1'
 alias ..='cd ..' # move up 1 directory
 alias ...='cd ../..' #  move up 2 directories
 alias ....='cd ../../..' #  move up 3 directories
+alias .....='cd ../../../..' #  move up 4 directories
 
 # mac
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
@@ -211,15 +251,17 @@ alias gdiff='git diff | mvim -R  -'
 alias gdiff2='git diff --cached | mvim -R  -'
 alias gits='git status'
 alias gitcm='git commit -m'
+alias gitcmw='git commit -m "wip"'
 alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
 alias gitb='git branch -v'
-alias gitcml='git add .;gitcm ".."'
+alias gitcmall='git add .;gitcm "wip"'
 
 #tail
 alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
 alias bi='bundle install'
+alias rs='rake spec'
 
 
 # GENERAL
@@ -227,3 +269,6 @@ alias dns_flush='dscacheutil -flushcache'
 alias v='mvim .'
 
 alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>8000,:DocumentRoot=>Dir::pwd);Signal.trap(2){w.shutdown};w.start"'
+
+# add git command line completion to git
+source /usr/local/Cellar/git/1.7.3.4/etc/bash_completion.d/git-completion.bash
