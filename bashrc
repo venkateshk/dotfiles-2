@@ -33,9 +33,11 @@ export PATH="/opt/local/lib/postgresql83/bin:$PATH" # for postgres
 #export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 #export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 export GEM_OPEN_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
+export GEMEDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
+export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g -f '
 export BUNDLE_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 export EDITOR='/usr/local/bin/mate -w'
-export GIT_EDITOR='/usr/local/bin/mate -w'
+#export GIT_EDITOR='/usr/local/bin/mate -w'
 
 
 # configure command prompt
@@ -146,16 +148,6 @@ function rr {
   fi
 }
 
-function gitlab {
-  TMP=''
-  $TMP=$TMP+'Hello world'
-  echo $TMP
-
-  CMD="git commit -m ''"
-  $CMD
-}
-
-
 # for REE
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
@@ -173,8 +165,6 @@ if [[ -s $HOME/.rvm/scripts/rvm ]] ; then
           source $HOME/.rvm/scripts/rvm
 fi
 
-
-
 # Following function ensures that in a Rails3 project you just need to do spec or cucumber rather than
 # bundle exec cucumber
 # Note that need for this can be removed if you do
@@ -188,6 +178,23 @@ function run_bundler_cmd () {
     $@
   fi
 }
+
+function c () {
+  local cmd="bundle exec cucumber $@"
+  echo $cmd
+  eval $cmd
+}
+
+function r () {
+  if [ $# -eq 0 ]; then
+    local cmd="bundle exec rspec spec"
+  else
+    local cmd="bundle exec rspec $@"
+  fi
+  echo $cmd
+  eval $cmd
+}
+
 
 bundle_commands=(rspec cucumber)
 for cmd in ${bundle_commands[*]}
@@ -250,11 +257,12 @@ alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias gdiff='git diff | mvim -R  -'
 alias gdiff2='git diff --cached | mvim -R  -'
 alias gits='git status'
-alias gitcm='git commit -m'
 alias gitcmw='git commit -m "wip"'
+alias gitcmd='git commit -m "done"'
 alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
 alias gitb='git branch -v'
 alias gitcmall='git add .;gitcm "wip"'
+alias gitco='git checkout $1'
 
 #tail
 alias taild='tail -f log/development.log'
@@ -262,6 +270,7 @@ alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
 alias bi='bundle install'
 alias rs='rake spec'
+alias e='exit'
 
 
 # GENERAL
