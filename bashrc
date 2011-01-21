@@ -180,7 +180,11 @@ function run_bundler_cmd () {
 }
 
 function c () {
-  local cmd="bundle exec cucumber $@"
+  if [ $# -eq 0 ]; then
+    local cmd="bundle exec cucumber"
+  else
+    local cmd="bundle exec cucumber $@ --require features"
+  fi
   echo $cmd
   eval $cmd
 }
