@@ -207,8 +207,6 @@ do
 done
 
 
-alias page41d='cd /Users/nsingh/dev/personal/page41'
-
 alias mysql_stop='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
 alias mysql_start='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
 
@@ -217,14 +215,8 @@ alias postgresql_start='sudo launchctl load -w /Library/LaunchDaemons/org.macpor
 
 # quick directories
 alias ss3='rails server -p 3010'
-alias scriptsd='cd /Users/nsingh/dev/dotfiles/scripts'
-alias ttd='cd /Users/nsingh/dev/office/tech_tracker_github'
 alias blogd='cd /Users/nsingh/dev/personal/blog'
 alias jqueryd='cd /Users/nsingh/dev/jquery'
-alias teams99d='cd /Users/nsingh/dev/personal/teams99_new'
-alias webtvd='cd /Users/nsingh/dev/personal/hamarawebtv'
-alias gitlabd='cd /Users/nsingh/dev/gitlab'
-alias jquery_labd='cd /Users/nsingh/dev/jquery_lab'
 alias admin_datad='cd /Users/nsingh/dev/personal/admin_data'
 alias admin_data_demod='cd /Users/nsingh/dev/personal/admin_data_demo'
 alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
