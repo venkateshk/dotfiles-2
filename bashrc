@@ -282,3 +282,10 @@ alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>800
 source /usr/local/Cellar/git/1.7.3.4/etc/bash_completion.d/git-completion.bash
 
 source /Users/nsingh/dev/personal/bashmarks/bashmarks.sh
+
+alias b="bundle"
+alias bi="b install"
+alias biv="b install --path vendor"
+
+export NODE_PATH="/usr/local/lib/node"
+export PATH="/usr/local/share/npm/bin:$PATH"
