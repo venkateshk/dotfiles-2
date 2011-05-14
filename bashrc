@@ -50,7 +50,12 @@ export EDITOR='/usr/local/bin/mate -w'
 # 36;1m color pair to use
 # \] end of color scheme
 #export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n$ "
-export PS1="\n\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\n\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]$\[\033[00m\] "
+#export PS1="\n\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\n\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]$\[\033[00m\] "
+
+a="\n\[\033[38m\]\u\[\033[01;34m\] \w \[\033[31m\]"
+b="\`ruby -e \"print RUBY_VERSION\"\`"
+c="\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]\n$\[\033[00m\] "
+export PS1=$a$b$c
 
 
 
@@ -211,7 +216,7 @@ alias mysql_stop='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysq
 alias mysql_start='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
 
 alias postgresql_stop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
-alias postgresql_start='sudo launchctl load -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
+alias postgresql_start='postgres -D /usr/local/var/postgres'
 
 # quick directories
 alias ss3='rails server -p 3010'
@@ -220,7 +225,7 @@ alias jqueryd='cd /Users/nsingh/dev/jquery'
 alias admin_datad='cd /Users/nsingh/dev/personal/admin_data'
 alias admin_data_demod='cd /Users/nsingh/dev/personal/admin_data_demo'
 alias dotfilesd='cd /Users/nsingh/dev/dotfiles'
-alias guidesd='mvim /Users/nsingh/dev/guides'
+alias guidesd='mvim /Users/nsingh/dev/personal/guides'
 alias eiid='cd /Users/nsingh/dev/personal/eii'
 alias spreed='cd /Users/nsingh/dev/spree_work/spree'
 alias scratchd='cd /Users/nsingh/dev/scratch'
@@ -289,3 +294,6 @@ alias biv="b install --path vendor"
 
 export NODE_PATH="/usr/local/lib/node"
 export PATH="/usr/local/share/npm/bin:$PATH"
+
+alias rvm18="rvm use ree-1.8.7-2010.02"
+alias rvm19="rvm use ruby-1.9.2-head"
