@@ -54,8 +54,9 @@ export EDITOR='/usr/local/bin/mate -w'
 
 a="\n\[\033[38m\]\u\[\033[01;34m\] \w \[\033[31m\]"
 b="\`ruby -e \"print RUBY_VERSION\"\`"
-c="\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]\n$\[\033[00m\] "
-export PS1=$a$b$c
+c="\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]\n"
+d="$\[\033[00m\] "
+export PS1=$a$b$c$d
 
 
 
