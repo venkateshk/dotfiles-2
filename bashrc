@@ -161,11 +161,6 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
-# Usage: t 9999
-function t() {
-  cd "/Users/nsingh/dev/rails_lighthouse/tickets/t_$1"
-}
-
 # rvm needs this
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then
           source $HOME/.rvm/scripts/rvm
@@ -213,8 +208,7 @@ do
 done
 
 
-alias mysql_stop='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
-alias mysql_start='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+alias mysql_start='mysql.server start'
 
 alias postgresql_stop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
 alias postgresql_start='postgres -D /usr/local/var/postgres'
@@ -236,10 +230,7 @@ alias vimd='cd /Users/nsingh/dev/vim'
 alias railsd='cd /Users/nsingh/dev/scratch/rails'
 alias rdbm='rake db:migrate'
 alias docrailsd='cd /Users/nsingh/dev/docrails'
-alias bundle_vendor='bundle install --path vendor'
 alias node-repl="rlwrap node-repl"
-alias rvm3="rvm use ree@rails3;"
-alias rvm2="rvm use ree@rails2;"
 alias rvms="rvm use system;"
 
 # core
@@ -291,6 +282,7 @@ source /Users/nsingh/dev/personal/bashmarks/bashmarks.sh
 
 alias b="bundle"
 alias bi="b install"
+alias be="b exec"
 alias biv="b install --path vendor"
 
 export NODE_PATH="/usr/local/lib/node"
@@ -298,3 +290,12 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 
 alias rvm18="rvm use ree-1.8.7-2010.02"
 alias rvm19="rvm use ruby-1.9.2-head"
+
+function rake {
+  if [ -e Gemfile ]; then
+    bundle exec rake $@
+  else
+    `which rake` $@
+  fi
+}
+
