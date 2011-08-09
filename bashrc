@@ -61,9 +61,9 @@ export PS1=$a$b$c$d
 
 
 # if you are using oracle
-export ORACLE_HOME=/Users/oracle/product/10.2.0/db_1
-PATH=$PATH:$ORACLE_HOME/bin
-export DYLD_LIBRARY_PATH=/Users/oracle/product/10.2.0/db_1/lib
+#export ORACLE_HOME=/Users/oracle/product/10.2.0/db_1
+#PATH=$PATH:$ORACLE_HOME/bin
+#export DYLD_LIBRARY_PATH=/Users/oracle/product/10.2.0/db_1/lib
 
 
 # MacPorts Installer addition on 2009-12-10_at_22:22:22: adding an appropriate PATH variable for use with MacPorts.
@@ -259,6 +259,7 @@ alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s -
 alias gitb='git branch -v'
 alias gitcmall='git add .;gitcm "wip"'
 alias gitco='git checkout $1'
+alias gpom='git push origin master'
 
 #tail
 alias taild='tail -f log/development.log'
@@ -291,6 +292,7 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 alias rvm18="rvm use ree-1.8.7-2010.02"
 alias rvm19="rvm use ruby-1.9.2-head"
 
+
 function rake {
   if [ -e Gemfile ]; then
     bundle exec rake $@
@@ -298,4 +300,16 @@ function rake {
     `which rake` $@
   fi
 }
+
+
+export DYLD_LIBRARY_PATH=/usr/local/oracle/instantclient10_2:$DYLD_LIBRARY_PATH
+export SQLPATH=/usr/local/oracle/instantclient10_2
+export ORACLE_HOME=/usr/local/oracle/instantclient10_2
+
+alias resque_start='redis-server /usr/local/etc/redis.conf'
+
+
+alias deploy_splitable_staging="ey deploy -e splitable_staging --app splitable --ref master && rake hoptoad:deploy TO=staging"
+
+alias deploy_splitable_production="ey deploy -e splitable_production --app splitable_production --ref master && rake hoptoad:deploy TO=production"
 

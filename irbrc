@@ -41,8 +41,4 @@ def paste
   `pbpaste`
 end
 
-
-#require 'wirble'
-#Wirble.init
-#Wirble.colorize
-#require 'ab'
+IRB.conf[:PROMPT][:RVM].merge!(:PROMPT_I => "> ")
