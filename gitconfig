@@ -10,14 +10,18 @@
 	br = branch
 	df = diff
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [color]
-	diff = auto
+  diff = auto
 	status = auto
 	branch = auto
 	interactive = auto
 [github]
 	user = neerajdotname
-	token = xxx
+	token = 9ecb33c426eb02da8bb3c51eb1f61cb6
 [branch]
 	autosetuprebase = always
+[color "diff"]
+	whitespace = red reverse
+[push]
+	default = current

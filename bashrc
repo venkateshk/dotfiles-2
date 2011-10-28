@@ -201,7 +201,7 @@ function r () {
 }
 
 
-bundle_commands=(rspec cucumber)
+bundle_commands=(rspec cucumber guard)
 for cmd in ${bundle_commands[*]}
 do
   alias $cmd="run_bundler_cmd $cmd"
@@ -307,9 +307,5 @@ export SQLPATH=/usr/local/oracle/instantclient10_2
 export ORACLE_HOME=/usr/local/oracle/instantclient10_2
 
 alias resque_start='redis-server /usr/local/etc/redis.conf'
-
-
-alias deploy_splitable_staging="ey deploy -e splitable_staging --app splitable --ref master && rake hoptoad:deploy TO=staging"
-
-alias deploy_splitable_production="ey deploy -e splitable_production --app splitable_production --ref master && rake hoptoad:deploy TO=production"
-
+alias jsa='jekyll --server --auto'
+alias gphm='git push heroku master'
