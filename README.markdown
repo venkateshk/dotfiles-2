@@ -1,8 +1,11 @@
+# Setup
+
+    cp gitconfig.example giconfig
     cd ~/dev
     git clone git@github.com:neerajdotname/dotfiles.git
 
 
-#Setup following softlinks#
+# Setup following softlinks
 
     cd ~
     ln -s /Users/nsingh/dev/dotfiles/bash_profile .bash_profile
@@ -13,3 +16,6 @@
     ln -s /Users/nsingh/dev/dotfiles/autotest .autotest
     ln -s /Users/nsingh/dev/dotfiles/gemrc .gemrc
 
+# Whey gitconfig is excluded
+
+Because it has token.
