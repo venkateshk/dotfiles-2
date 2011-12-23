@@ -256,6 +256,7 @@ alias gits='git status'
 alias gitcmw='git commit -m "wip"'
 alias gitcmd='git commit -m "done"'
 alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
+alias timesheet='git --no-pager  log -n 200 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges --branches --since=7.days --author=Neeraj'
 alias gitb='git branch -v'
 alias gitcmall='git add .;gitcm "wip"'
 alias gitco='git checkout $1'
@@ -307,5 +308,10 @@ export SQLPATH=/usr/local/oracle/instantclient10_2
 export ORACLE_HOME=/usr/local/oracle/instantclient10_2
 
 alias resque_start='redis-server /usr/local/etc/redis.conf'
+alias splitable_worker="rake resque:work QUEUE='*'"
+
 alias jsa='jekyll --server --auto'
 alias gphm='git push heroku master'
+alias acap='bundle exec rake assets:clean;bundle exec rake assets:precompile'
+alias ap='bundle exec rake assets:precompile'
+alias gp='git push'
