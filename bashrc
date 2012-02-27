@@ -36,7 +36,8 @@ export GEM_OPEN_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 export GEMEDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g -f '
 export BUNDLE_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
-export EDITOR='/usr/local/bin/mate -w'
+export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
+#export EDITOR='/usr/local/bin/mate -w'
 #export GIT_EDITOR='/usr/local/bin/mate -w'
 
 
@@ -255,8 +256,8 @@ alias gdiff2='git diff --cached | mvim -R  -'
 alias gits='git status'
 alias gitcmw='git commit -m "wip"'
 alias gitcmd='git commit -m "done"'
-alias gitlog='git --no-pager  log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
-alias timesheet='git --no-pager  log -n 200 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges --branches --since=7.days --author=Neeraj'
+alias gitlog='git --no-pager log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges'
+alias timesheet='git --no-pager log -n 50 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges --branches --since=30.days --author=Neeraj'
 alias gitb='git branch -v'
 alias gitcmall='git add .;gitcm "wip"'
 alias gitco='git checkout $1'
@@ -267,7 +268,6 @@ alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias taily='tail -f log/yell.log'
 alias bi='bundle install'
-alias rs='rake spec'
 alias e='exit'
 
 
@@ -303,6 +303,7 @@ function rake {
 }
 
 
+
 export DYLD_LIBRARY_PATH=/usr/local/oracle/instantclient10_2:$DYLD_LIBRARY_PATH
 export SQLPATH=/usr/local/oracle/instantclient10_2
 export ORACLE_HOME=/usr/local/oracle/instantclient10_2
@@ -315,3 +316,10 @@ alias gphm='git push heroku master'
 alias acap='bundle exec rake assets:clean;bundle exec rake assets:precompile'
 alias ap='bundle exec rake assets:precompile'
 alias gp='git push'
+alias rs='rake setup_development --trace; rake db:test:prepare'
+
+alias heroku_reset_nimbleshop="heroku pg:reset SHARED_DATABASE_URL --confirm nimbleshopnet; heroku run rake db:migrate --app nimbleshopnet; heroku run rake setup_development --app nimbleshopnet"
+
+alias heroku_reset_tweli="heroku pg:reset SHARED_DATABASE_URL --confirm tweli-staging; heroku run rake db:migrate --app tweli-staging; heroku run rake setup_development --app tweli-staging"
+
+alias greadme='git add .; gitcmd; git push'
