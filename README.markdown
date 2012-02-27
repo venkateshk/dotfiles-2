@@ -8,14 +8,14 @@
 # Setup following softlinks
 
     cd ~
-    ln -s /Users/nsingh/dev/dotfiles/bash_profile .bash_profile
-    ln -s /Users/nsingh/dev/dotfiles/bashrc .bashrc
-    ln -s /Users/nsingh/dev/dotfiles/gitconfig .gitconfig
-    ln -s /Users/nsingh/dev/dotfiles/ackrc .ackrc
-    ln -s /Users/nsingh/dev/dotfiles/irbrc .irbrc
-    ln -s /Users/nsingh/dev/dotfiles/autotest .autotest
-    ln -s /Users/nsingh/dev/dotfiles/gemrc .gemrc
+    ln -s /Users/nsingh/dev/personal/dotfiles/bash_profile .bash_profile
+    ln -s /Users/nsingh/dev/personal/dotfiles/bashrc .bashrc
+    ln -s /Users/nsingh/dev/personal/dotfiles/gitconfig .gitconfig
+    ln -s /Users/nsingh/dev/personal/dotfiles/ackrc .ackrc
+    ln -s /Users/nsingh/dev/personal/dotfiles/irbrc .irbrc
+    ln -s /Users/nsingh/dev/personal/dotfiles/autotest .autotest
+    ln -s /Users/nsingh/dev/personal/dotfiles/gemrc .gemrc
 
-# Whey gitconfig is excluded
+# Why gitconfig is excluded
 
 Because it has token.
