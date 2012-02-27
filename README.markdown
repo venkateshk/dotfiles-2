@@ -1,7 +1,7 @@
 # Setup
 
     cp gitconfig.example giconfig
-    cd ~/dev
+    cd ~/dev/personal
     git clone git@github.com:neerajdotname/dotfiles.git
 
 
