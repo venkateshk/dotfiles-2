@@ -6,3 +6,5 @@
 --type-set=textile=.textile
 --type-set=gemspec=.gemspec
 --type-set=scss=.scss
+--type-set=coffee=.coffee
+--type-set=md=.md

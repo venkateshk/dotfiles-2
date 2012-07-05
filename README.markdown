@@ -15,6 +15,7 @@
     ln -s /Users/nsingh/dev/personal/dotfiles/irbrc .irbrc
     ln -s /Users/nsingh/dev/personal/dotfiles/autotest .autotest
     ln -s /Users/nsingh/dev/personal/dotfiles/gemrc .gemrc
+    ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc .gvimrc
 
 # Why gitconfig is excluded
 

@@ -1,2 +1,0 @@
-# http://www.viget.com/extend/how-why-to-run-autotest-on-your-mac/
-require 'autotest/fsevent'
