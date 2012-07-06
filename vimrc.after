@@ -1,0 +1,28 @@
+"This disables the arrow keys in normal and insert mode. It's a good way to force yourself to use movement commands, especially when learning.
+"http://vimbits.com/bits/8
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Opens a tab edit command with the path of the currently edited file filled in
+" In normal mode do <Leader>e
+map <Leader>e :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+
+" Do not create swap file. In this even if a vim application has loaded a
+" rails application I can open another vim instance and load the same
+" application
+set noswapfile
+
+" Keep large command line history and undo levels
+set history=1000
+set undolevels=1000
+
+" ensure that all aliases also work in mvim command prompt
+" http://stackoverflow.com/questions/4642822/vim-is-not-obeying-command-aliases
+set shell=/bin/bash\ -i

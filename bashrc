@@ -214,3 +214,6 @@ export PATH="/Users/nsingh/dev/scratch/bundler:$PATH"
 
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 eval "$(rbenv init -)"
+
+
+source /Users/nsingh/.rvm/scripts/rvm
