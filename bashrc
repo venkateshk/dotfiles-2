@@ -205,8 +205,6 @@ alias greadme='git add .; gitcmd; git push'
 
 alias rdbma='rake db:rollback STEP=100; rake setup_development --trace'
 
-alias git=hub
-
 alias po='pow open'
 
 export PATH="/Users/nsingh/dev/scratch/bundler/lib:$PATH"
@@ -217,3 +215,7 @@ eval "$(rbenv init -)"
 
 
 source /Users/nsingh/.rvm/scripts/rvm
+
+source /Users/nsingh/dev/neerajdotname/z/z.sh
+
+#PS1='-> '
