@@ -9,7 +9,8 @@ set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window
 "set guifont=Monaco:h22.00
 set guifont=Monaco:h15.00
 
-colorscheme molokai
+"colorscheme molokai
+colorscheme github
 
 set guioptions-=m    " remove menubar
 set guioptions-=T    " remove toolbar
