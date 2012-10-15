@@ -116,7 +116,7 @@ do
   alias $cmd="run_bundler_cmd $cmd"
 done
 
-#alias mysql_start='mysql.server start'
+alias mysql_start='mysql.server start'
 #alias postgresql_stop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
 #alias postgresql_start='postgres -D /usr/local/var/postgres'
 alias pg_start='postgres -D /usr/local/var/postgres &'
@@ -219,3 +219,8 @@ source /Users/nsingh/.rvm/scripts/rvm
 source /Users/nsingh/dev/neerajdotname/z/z.sh
 
 #PS1='-> '
+
+
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
