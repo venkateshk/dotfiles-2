@@ -99,18 +99,18 @@ function scd {
 # bundle exec cucumber
 # Note that need for this can be removed if you do
 # bundle install --binstubs
-function run_bundler_cmd () {
-  if [ -e ./Gemfile ]; then
-    echo "running bundle exec "
-    echo "bundle exec $@"
-    bundle exec $@
-  else
-    echo "$@"
-    $@
-  fi
-}
+#function run_bundler_cmd () {
+  #if [ -e ./Gemfile ]; then
+    #echo "running bundle exec "
+    #echo "bundle exec $@"
+    #bundle exec $@
+  #else
+    #echo "$@"
+    #$@
+  #fi
+#}
 
-bundle_commands=(rake rspec cucumber guard spork)
+bundle_commands=(rspec cucumber guard spork)
 for cmd in ${bundle_commands[*]}
 do
   alias $cmd="run_bundler_cmd $cmd"
@@ -188,14 +188,39 @@ function rake {
   fi
 }
 
-alias resque_start='redis-server /usr/local/etc/redis.conf'
-alias splitable_worker="rake resque:work QUEUE='*'"
+# Mnemonic: gp for "git push"
+# main reason why it exists is to have -u option while pushing. Without that -u option
+# hub pull-request -i xxx does not work.
+function gp {
+
+if git rev-parse --git-dir > /dev/null 2>&1 # Current directory is a git repository
+then
+  # http://stackoverflow.com/questions/1593051/
+  branch_name="$(git symbolic-ref HEAD 2>/dev/null)" ||
+  branch_name="(unnamed branch)"     # detached HEAD
+  branch_name=${branch_name##refs/heads/}
+
+  if [ $branch_name == 'master' ] # Disallow shortcut pushing to master
+  then
+    echo "Error: You cannot use this command to push to master"
+    echo "If you really want to push to master, use 'git push origin master'."
+  elif [ $branch_name == '(unnamed branch)' ]
+  then
+    echo "Error: You cannot use this command when you are in detached head mode"
+  else
+    echo "git push -u origin $branch_name"
+    git push -u origin $branch_name "$@"
+  fi
+else
+  echo "Error: The current directory does not appear to be a git repository"
+fi
+
+}
+
 
 alias gphm='git push heroku master'
 alias acap='bundle exec rake assets:clean;bundle exec rake assets:precompile'
 alias ap='bundle exec rake assets:precompile'
-alias gp='git push'
-alias rs='bundle exec rake setup --trace'
 
 alias heroku_reset_nimbleshop="heroku pg:reset SHARED_DATABASE_URL --confirm nimbleshopnet; heroku run rake db:migrate --app nimbleshopnet; heroku run rake setup --app nimbleshopnet --trace"
 
@@ -215,8 +240,6 @@ eval "$(rbenv init -)"
 
 
 source /Users/nsingh/.rvm/scripts/rvm
-
-source /Users/nsingh/dev/neerajdotname/z/z.sh
 
 #PS1='-> '
 
