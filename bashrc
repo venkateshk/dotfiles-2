@@ -16,7 +16,9 @@ export HISTCONTROL=ignoredups
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/nsingh/dev/personal/dotfiles/scripts:$PATH"
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+export PATH="/Users/nsingh/dev/personal/dotfiles/scripts:$PATH"
 
 export GEM_OPEN_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
 export GEMEDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
@@ -32,8 +34,8 @@ source /Users/nsingh/dev/personal/bashmarks/bashmarks.sh
 export NODE_PATH="/usr/local/lib/node"
 export PATH="/usr/local/share/npm/bin:$PATH"
 
-export PATH="/Users/nsingh/dev/scratch/bundler/lib:$PATH"
-export PATH="/Users/nsingh/dev/scratch/bundler:$PATH"
+#export PATH="/Users/nsingh/dev/scratch/bundler/lib:$PATH"
+#export PATH="/Users/nsingh/dev/scratch/bundler:$PATH"
 
 source /Users/nsingh/.rvm/scripts/rvm
 
