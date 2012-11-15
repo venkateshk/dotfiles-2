@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+ref_head = `git symbolic-ref HEAD`
+issue_number = ref_head.gsub(%r[refs/heads/],'').to_i
+cmd = "hub pull-request -i #{issue_number}"
+puts cmd
+system cmd
