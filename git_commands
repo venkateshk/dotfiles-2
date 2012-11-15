@@ -12,8 +12,10 @@ then
 
   if [ $branch_name == 'master' ] # Disallow shortcut pushing to master
   then
-    echo "Error: You cannot use this command to push to master"
-    echo "If you really want to push to master, use 'git push origin master'."
+    #echo "Error: You cannot use this command to push to master"
+    #echo "If you really want to push to master, use 'git push origin master'."
+    git push origin master
+
   elif [ $branch_name == '(unnamed branch)' ]
   then
     echo "Error: You cannot use this command when you are in detached head mode"
