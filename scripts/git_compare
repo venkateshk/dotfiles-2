@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'launchy'
+
+# Usage:
+# stand in the branch you want to compare against master and execute git_compare
+
+string = `git remote -v | grep fetch`
+regex = /.*:(.*)\/.*/
+match_data = string.match(regex)
+repo_name = match_data.to_a.last
+
+project_name = `git rev-parse --show-toplevel`.split('/').last.strip
+
+ref_head = `git symbolic-ref HEAD`
+branch_name = ref_head.gsub(%r[refs/heads/],'').strip
+
+uri = "https://github.com/#{repo_name}/#{project_name}/compare/master...#{branch_name}"
+puts uri
+Launchy.open( uri )

@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 
+# Usage :
+# gitcm Added support for facebook authentication
+#
+# Notice that I did not have to do -m and quotes etc.
+#
 cmd = "git commit -m '#{ARGV.join(' ')}'"
 puts cmd
 system cmd

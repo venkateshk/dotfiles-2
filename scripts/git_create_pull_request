@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# Usage:
+# stand in the branch for which you want to send pull request and execute git_create_pull_request
 ref_head = `git symbolic-ref HEAD`
 issue_number = ref_head.gsub(%r[refs/heads/],'').to_i
 cmd = "hub pull-request -i #{issue_number}"
