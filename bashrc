@@ -42,3 +42,6 @@ source /Users/nsingh/.rvm/scripts/rvm
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

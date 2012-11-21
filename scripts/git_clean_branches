@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'open3'
+
+
+Dir.chdir(Dir.pwd) do
+
+  cmd = 'git branch'
+  Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
+    while branch = stdout.gets
+      branch = branch.chomp
+      next if branch =~ /master/
+      puts "Do you want to delete branch #{branch} ?"
+      a = gets.chomp
+      if %w(y yes).include? a.downcase
+        cmd = "git branch -D #{branch}"
+        system cmd
+        puts ""
+      end
+    end
+  end
+
+end

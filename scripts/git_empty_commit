@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+cmd = %Q{git commit -m 'empty commit' --allow-empty}
+puts cmd
+system cmd
