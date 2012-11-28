@@ -12,6 +12,7 @@
 
 a="\n\[\033[38m\]\u\[\033[01;34m\] \w \[\033[31m\]"
 b="\`ruby -e \"print RUBY_VERSION\"\`"
-c="\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]\n"
-d="$\[\033[00m\] "
-export PS1=$a$b$c$d
+c="(bigbinary)"
+d="\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]\n"
+e="$\[\033[00m\] "
+export PS1=$a$b$c$d$e
