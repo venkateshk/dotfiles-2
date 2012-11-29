@@ -12,7 +12,11 @@
 
 a="\n\[\033[38m\]\u\[\033[01;34m\] \w \[\033[31m\]"
 b="\`ruby -e \"print RUBY_VERSION\"\`"
-c=`git config --get remote.origin.url | sed 's/^.*:\([^/]*\)\/.*\.git/(\1)/'`
-d="\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]\n"
+
+function parse_github_user {
+  git config --get remote.origin.url | sed 's/^.*:\([^/]*\)\/.*\.git/(\1)/'
+}
+
+d="\`ruby -e \"print (%x{git branch --no-color 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]\n"
 e="$\[\033[00m\] "
-export PS1=$a$b$c$d$e
+PS1="$a$b\$(parse_github_user)$d$e"
