@@ -37,7 +37,7 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 #export PATH="/Users/nsingh/dev/scratch/bundler/lib:$PATH"
 #export PATH="/Users/nsingh/dev/scratch/bundler:$PATH"
 
-source /Users/nsingh/.rvm/scripts/rvm
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
