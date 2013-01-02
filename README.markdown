@@ -11,6 +11,10 @@
     cp gitconfig.example giconfig
     
     
+    
+    cd /Users/nsingh/dev/personal
+    follow readme at https://github.com/huyng/bashmarks
+      
 
 # Setup following softlinks
 
