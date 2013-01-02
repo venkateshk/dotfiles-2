@@ -19,6 +19,7 @@
     cd /Users/nsingh/dev/personal
     follow readme at https://github.com/huyng/bashmarks
     
+    # install Xcode.app at the very end
     brew install macvim --override-system-vim
       
 
