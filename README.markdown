@@ -5,6 +5,9 @@
    
    if getting the error make: /usr/bin/gcc-4.2: No such file or directory in mountain lion
    sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
+   
+
+http://railsapps.github.com/openssl-certificate-verify-failed.html
 
 
 # Setup
