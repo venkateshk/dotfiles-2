@@ -2,8 +2,9 @@
 
     cd /Users/nsingh/dev/personal
     git clone git@github.com:neerajdotname/dotfiles.git
+    cd dotfiles
     cp gitconfig.example giconfig
-    cd ~/dev/personal
+    
     
 
 # Setup following softlinks
