@@ -14,6 +14,8 @@
     
     cd /Users/nsingh/dev/personal
     follow readme at https://github.com/huyng/bashmarks
+    
+    brew install macvim --override-system-vim
       
 
 # Setup following softlinks
