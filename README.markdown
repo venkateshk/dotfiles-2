@@ -1,3 +1,8 @@
+# Installing new machine
+
+   brew install git
+   brew install git bash-completion
+
 # Setup
 
     cd /Users/nsingh/dev/personal
