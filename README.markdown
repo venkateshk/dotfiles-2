@@ -2,6 +2,10 @@
 
    brew install git
    brew install git bash-completion
+   
+   if getting the error make: /usr/bin/gcc-4.2: No such file or directory in mountain lion
+   sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
+
 
 # Setup
 
