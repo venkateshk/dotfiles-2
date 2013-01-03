@@ -9,6 +9,8 @@
    
    rvm reinstall ruby-1.9.3-p194 --with-gcc=clang
    
+   rvm --default use ruby-1.9.3-p194
+   
 
 http://railsapps.github.com/openssl-certificate-verify-failed.html
 
