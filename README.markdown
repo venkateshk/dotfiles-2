@@ -1,10 +1,36 @@
+# Installing new machine
+
+   brew install git
+   brew install git bash-completion
+   brew install automake
+   
+   if getting the error make: /usr/bin/gcc-4.2: No such file or directory in mountain lion
+   sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
+   
+   rvm reinstall ruby-1.9.3-p194 --with-gcc=clang
+   
+   rvm --default use ruby-1.9.3-p194
+   
+
+http://railsapps.github.com/openssl-certificate-verify-failed.html
+
+
 # Setup
 
     cd /Users/nsingh/dev/personal
     git clone git@github.com:neerajdotname/dotfiles.git
+    cd dotfiles
     cp gitconfig.example giconfig
-    cd ~/dev/personal
     
+    
+    
+    cd /Users/nsingh/dev/personal
+    follow readme at https://github.com/huyng/bashmarks
+    ln -s ~/Dropbox/.sdirs .sdirs
+    
+    # install Xcode.app at the very end
+    brew install macvim --override-system-vim
+      
 
 # Setup following softlinks
 
