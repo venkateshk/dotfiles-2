@@ -19,7 +19,7 @@ alias .....='cd ../../../..' #  move up 4 directories
 alias ......='cd ../../../../..' #  move up 5 directories
 
 # mac
-alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+alias mvim='/usr/local/Cellar/macvim/7.3-66/bin/mvim -g'
 
 # git
 alias gdiff='git diff | mvim -R  -'

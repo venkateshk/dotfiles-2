@@ -20,16 +20,17 @@ shopt -s checkwinsize
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 export PATH="/Users/nsingh/dev/personal/dotfiles/scripts:$PATH"
 
-export GEM_OPEN_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
-export GEMEDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
-export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g -f '
-export BUNDLE_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
-export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g '
+export GIT_EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g -f '
+export BUNDLE_EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g '
+export EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g '
 
 # add git command line completion to git
-source /usr/local/Cellar/git/1.7.3.4/etc/bash_completion.d/git-completion.bash
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
 
-source /Users/nsingh/dev/personal/bashmarks/bashmarks.sh
+# load bashmarks
+source ~/.local/bin/bashmarks.sh
 
 export NODE_PATH="/usr/local/lib/node"
 export PATH="/usr/local/share/npm/bin:$PATH"
