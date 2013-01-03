@@ -7,6 +7,8 @@
    if getting the error make: /usr/bin/gcc-4.2: No such file or directory in mountain lion
    sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
    
+   rvm reinstall ruby-1.9.3-p194 --with-gcc=clang
+   
 
 http://railsapps.github.com/openssl-certificate-verify-failed.html
 
