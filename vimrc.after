@@ -26,3 +26,6 @@ set undolevels=1000
 " ensure that all aliases also work in mvim command prompt
 " http://stackoverflow.com/questions/4642822/vim-is-not-obeying-command-aliases
 set shell=/bin/bash\ -i
+
+" do not display dots for trailing whitespace
+set nolist
