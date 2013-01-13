@@ -46,3 +46,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+#mysql_start = mysql.server start
+#You can start the MySQL daemon with:
+#cd /usr/local/opt/mysql ; /usr/local/opt/mysql/bin/mysqld_safe &
