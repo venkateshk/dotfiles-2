@@ -25,3 +25,6 @@
 	whitespace = red reverse
 [push]
 	default = current
+[core]
+	quotepath = false
+	pager = less -r # to see the diff for a long line
