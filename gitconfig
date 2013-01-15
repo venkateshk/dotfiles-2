@@ -28,3 +28,5 @@
 [core]
 	quotepath = false
 	pager = less -r # to see the diff for a long line
+	autocrlf = input
+	safecrlf = true
