@@ -38,8 +38,6 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 #export PATH="/Users/nsingh/dev/scratch/bundler/lib:$PATH"
 #export PATH="/Users/nsingh/dev/scratch/bundler:$PATH"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
@@ -50,3 +48,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #mysql_start = mysql.server start
 #You can start the MySQL daemon with:
 #cd /usr/local/opt/mysql ; /usr/local/opt/mysql/bin/mysqld_safe &
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+
+export SSL_CERT_FILE=/Users/nsingh/dev/personal/dotfiles/cacert.pem
+
+#export RBENV_DEBUG=1

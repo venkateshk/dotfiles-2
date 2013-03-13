@@ -9,6 +9,7 @@
 	ci = commit
 	br = branch
 	df = diff
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [apply]
   whitespace = nowarn
 [color]

@@ -9,23 +9,11 @@ function ss {
   rm -rf coverage
   rm -f coverage.data
 
-  if [ -e "./script/server" ]; then
-    ./script/server $1 $2
-  fi
-
-  if [ -e "./script/rails" ]; then
-    bundle exec rails server $1 $2
-  fi
+  bundle exec rails server $1 $2
 }
 
 function sc {
-  if [ -e "./script/console" ]; then
-    ./script/console $1 $2
-  fi
-
-  if [ -e "./script/rails" ]; then
-    bundle exec rails console $1 $2
-  fi
+  bundle exec rails console $1 $2
 }
 
 function scd {

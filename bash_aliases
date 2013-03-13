@@ -41,6 +41,8 @@ alias taily='tail -f log/yell.log'
 alias bi='bundle install'
 alias e='exit'
 
+alias git_refresh='git fetch upstream;git rebase upstream/master'
+
 # GENERAL
 alias dns_flush='dscacheutil -flushcache'
 alias v='mvim .'
