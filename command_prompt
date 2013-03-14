@@ -17,7 +17,7 @@ function parse_git_info {
   git config --get remote.origin.url | sed 's/^.*:\([^/]*\)\/.*\.git/(\1)/'
 }
 
-c=parse_git_info
+c=$(parse_git_info)
 
 d="\`ruby -e \"print (%x{git branch --no-color 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '\1')\"\`\[\033[37m\]\n"
 e="$\[\033[00m\] "
