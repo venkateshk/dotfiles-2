@@ -14,7 +14,7 @@ a="\n\[\033[38m\]\u\[\033[01;34m\] \w \[\033[31m\]"
 b=" \`ruby -e \"print RUBY_VERSION\"\` "
 
 function parse_git_info {
-  git config --get remote.origin.url | sed 's/^.*:\([^/]*\)\/.*\.git/(\1)/'
+  git config --get remote.origin.url | sed 's/^.*:\([^/]*\/.*\)\.git/(\1)/'
 }
 
 c=$(parse_git_info)
