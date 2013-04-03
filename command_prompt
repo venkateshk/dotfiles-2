@@ -17,8 +17,8 @@ function parse_git_url {
   git config --get remote.origin.url | sed 's/\.git$//;s/\(.*[:/]\)\([^/]*\)\/\([^/]*\)\(\.git\)\{0,1\}$/(\2\/\3)/'
 }
 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+function parse_git_branch {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 function custom_git_prompt {
@@ -26,9 +26,9 @@ function custom_git_prompt {
   echo "$(parse_git_url) -> $(parse_git_branch)" 
 }
 
-function rvm_prompt_info() {
-  echo $(rvm current)
+function ruby_version() {
+  ruby -e "print RUBY_VERSION"
 }
 
 
-PS1="$a\$(rvm_prompt_info) \$(custom_git_prompt)\n$e"
+PS1="$a\$(ruby_version) \$(custom_git_prompt)\n$e"
