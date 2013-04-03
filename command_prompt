@@ -11,14 +11,24 @@
 #export PS1="\n\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\n\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]$\[\033[00m\] "
 
 a="\n\[\033[38m\]\u\[\033[01;34m\] \w \[\033[31m\]"
-b=" \`ruby -e \"print RUBY_VERSION\"\` "
+e="$\[\033[00m\] "
 
-function parse_git_info {
-  git config --get remote.origin.url | sed 's/^.*:\([^/]*\/.*\)\.git/(\1)/'
+function parse_git_url {
+  git config --get remote.origin.url | sed 's/\.git$//;s/\(.*[:/]\)\([^/]*\)\/\([^/]*\)\(\.git\)\{0,1\}$/(\2\/\3)/'
 }
 
-c=$(parse_git_info)
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
 
-d="\`ruby -e \"print (%x{git branch --no-color 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '\1')\"\`\[\033[37m\]\n"
-e="$\[\033[00m\] "
-PS1="$a$b $c -> $d$e"
+function custom_git_prompt {
+  branch=$(git branch 2> /dev/null) || return
+  echo "$(parse_git_url) -> $(parse_git_branch)" 
+}
+
+function rvm_prompt_info() {
+  echo $(rvm current)
+}
+
+
+PS1="$a\$(rvm_prompt_info) \$(custom_git_prompt)\n$e"
