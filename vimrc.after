@@ -13,6 +13,10 @@ inoremap <right> <nop>
 " In normal mode do <Leader>e
 map <Leader>e :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
+" Create a new nested directory or create a new file inside a nested directory
+" In normal mode do <Leader>p
+map <Leader>p :!mktouch <C-R>=expand("%:p:h") . "/" <CR>
+
 
 " Do not create swap file. In this even if a vim application has loaded a
 " rails application I can open another vim instance and load the same
