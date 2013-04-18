@@ -56,3 +56,8 @@ alias biv="b install --path vendor"
 alias berc="b exec rails console"
 
 alias gphm='git push heroku master'
+
+function remigrate {
+  echo "rake db:drop db:create db:migrate" 
+  rake db:drop db:create db:migrate
+}
