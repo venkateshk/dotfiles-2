@@ -53,5 +53,6 @@ alias b="bundle"
 alias bi="b install"
 alias be="b exec"
 alias biv="b install --path vendor"
+alias berc="b exec rails console"
 
 alias gphm='git push heroku master'
