@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+# Creates missing directories and then touches the file. Best
+# used inside vim.
+#
+# Usage :
+# mktouch /Users/nsingh/dev/app/models/user.rb
+
+require 'pathname'
+
+pathname = Pathname.new ARGV.join('')
+dirname = pathname.dirname
+system "mkdir -p #{dirname}"
+system "touch #{pathname}"
