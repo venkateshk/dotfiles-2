@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+# tags the current branch with datetime and pushes the tags.
+#
+# Usage :
+# stand in the production branch and execute
+# tagme
+
+cmd = %Q{ git tag `git name-rev --name-only HEAD`-`date \"+%Y%m%d%H%M%S\"`  }
+system cmd
+
+cmd = %Q{ git push --tags }
+system cmd
