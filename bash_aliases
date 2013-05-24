@@ -62,3 +62,8 @@ function remigrate {
   echo "rake db:drop db:create db:migrate" 
   rake db:drop db:create db:migrate
 }
+
+function start_elasticsearch {
+  echo "elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml"
+  elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+}

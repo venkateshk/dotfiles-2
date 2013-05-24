@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+# Usage :
+# stand in the rails/activerecord directory and execute
+#
+# art test/cases/relation_test.rb
+#
+cmd = "ruby -rdebugger -Itest #{ARGV.join(' ')}"
+puts cmd
+system cmd
