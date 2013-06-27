@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+# Usage :
+# gitcmwp
+#
+# It would add all the changed items. Will commit the changes and will push the commit
+#
+
+commands = []
+commands << "git add -A"
+commands << "git commit -m 'WIP'"
+commands << "git push"
+
+commands.each do |cmd|
+  puts cmd
+  system cmd
+end
