@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+# Usage :
+# pulldown <pull-request-number>
+# 
+# If the pull request url is https://github.com/rails/rails/pull/10798 then execute
+# pulldown 10798
+#
+
+pr_number = ARGV.first
+
+if pr_number.nil?
+  abort "Usage: pulldown <pr-number>"
+end
+
+cmd = "git fetch upstream pull/#{pr_number}/head:pr-#{pr_number}"
+puts cmd
+`#{cmd}`
+
+cmd = "git checkout pr-#{pr_number}"
+puts cmd
+
+`#{cmd}`
+
