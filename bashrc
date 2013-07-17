@@ -9,6 +9,7 @@ source /etc/bashrc
 . "/Users/nsingh/dev/personal/dotfiles/command_prompt"
 . "/Users/nsingh/dev/personal/dotfiles/rails_commands"
 . "/Users/nsingh/dev/personal/dotfiles/git_commands"
+. "/Users/nsingh/dev/personal/dotfiles/add_dotfile_scripts_to_path"
 
 #don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
@@ -18,7 +19,6 @@ export HISTCONTROL=ignoredups
 shopt -s checkwinsize
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
-export PATH="/Users/nsingh/dev/personal/dotfiles/scripts:$PATH"
 
 export GIT_EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g -f '
 export BUNDLE_EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g '
