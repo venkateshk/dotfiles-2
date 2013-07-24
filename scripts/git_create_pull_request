@@ -5,7 +5,7 @@
 ref_head = `git symbolic-ref HEAD`
 issue_number = ref_head.gsub(%r[refs/heads/],'').to_i
 
-organization = 'git config --get remote.origin.url | sed "s/^[^:]*:\([^\/]*\)\/.*/\1/"'
+organization = 'git config --get remote.origin.url | rev | cut -d/ -f2 | cut -d: -f1 | rev'
 organization = %x(#{organization}).chop!
 
 current_branch = ref_head.gsub(%r[refs/heads/],'').strip
