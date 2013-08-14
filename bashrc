@@ -3,6 +3,9 @@ if [ -z "$PS1" ]; then
    return
 fi
 
+# this is needed otherwise pg_dump that is shipped with OSX is activated first
+PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+
 source /etc/bashrc
 
 . "/Users/nsingh/dev/personal/dotfiles/bash_aliases"
