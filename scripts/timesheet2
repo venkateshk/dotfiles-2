@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+# It prints formatted timesheet entry which can be entered in timesheet directly.
+
+# Usage :
+# timesheet | ack 2013-09-09 | timesheet2
+# 
+
+ARGF.each_line do |line|
+  words = line.split(' ').compact
+  words = words[4..-1]
+  words.unshift '-'
+  puts words.join ' '
+end
