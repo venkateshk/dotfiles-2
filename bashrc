@@ -38,9 +38,6 @@ source ~/.local/bin/bashmarks.sh
 export NODE_PATH="/usr/local/lib/node"
 export PATH="/usr/local/share/npm/bin:$PATH"
 
-#export PATH="/Users/nsingh/dev/scratch/bundler/lib:$PATH"
-#export PATH="/Users/nsingh/dev/scratch/bundler:$PATH"
-
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 

@@ -22,8 +22,6 @@ http://railsapps.github.com/openssl-certificate-verify-failed.html
     cd dotfiles
     cp gitconfig.example giconfig
     
-    
-    
     cd /Users/nsingh/dev/personal
     follow readme at https://github.com/huyng/bashmarks
     ln -s ~/Dropbox/.sdirs .sdirs
