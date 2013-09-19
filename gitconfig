@@ -31,3 +31,5 @@
 	pager = less -r # to see the diff for a long line
 	autocrlf = false
 	safecrlf = true
+ [init]
+  templatedir= /Users/nsingh/dev/personal/dotfiles/git_hooks
