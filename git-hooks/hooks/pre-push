@@ -1,21 +1,8 @@
 #!/usr/bin/env ruby
 
-# WHAT IS IT
-# -----------
-# This script is executed everytime code is pushed to github.
-# It will not allow you to FORCE PUSH to MASTER.
+# Read this blog to know more about this script.
 #
-# REQUIREMENT
-# --------
-# - Make sure that you are using git version 1.8.2 or higher. Do `brew upgrade git` to upgrade git.
-#
-# USAGE
-# --------
-# - Place this file under .git/hooks of your repository as pre-push with no extension.
-# - Make this file executable by running chmod a+x pre-push .
-# - make some changes to a file and try to do git push --force in master .
-#
-# Above technique works only for a project. If you want to use this pre-push hook for all projects then take following steps
+# http://blog.bigbinary.com/2013/09/19/do-not-allow-force-pusht-to-master.html
 
 class PrePushHandler
 
