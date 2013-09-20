@@ -1,3 +1,5 @@
+[init]
+  templatedir= ~/dev/personal/dotfiles/git-hooks
 [user]
 	name = Neeraj Singh
 	email = neerajdotname@gmail.com
