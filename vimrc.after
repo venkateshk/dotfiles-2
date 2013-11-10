@@ -33,3 +33,4 @@ set shell=/bin/bash\ -i
 
 " do not display dots for trailing whitespace
 set nolist
+color molokai
