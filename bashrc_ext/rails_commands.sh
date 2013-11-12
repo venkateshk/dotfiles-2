@@ -16,7 +16,12 @@ function ss {
   rm -rf coverage
   rm -f coverage.data
 
-  bundle exec rails server $1 $2
+  if [ -e "./Procfile" ]
+  then
+    foreman start
+  else
+    bundle exec rails server $1 $2
+  fi
 }
 
 function sc {
