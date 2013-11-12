@@ -1,3 +1,10 @@
+alias rdbm='rake db:migrate'
+
+function remigrate! {
+  echo "rake db:drop db:create db:migrate" 
+  rake db:drop db:create db:migrate
+}
+
 function ss {
   if [ -d "./log" ]; then
     for file in $(find ./log -maxdepth 1 -type f)

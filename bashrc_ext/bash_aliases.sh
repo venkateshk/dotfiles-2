@@ -1,11 +1,5 @@
 
 alias mysql_start='mysql.server start'
-#alias postgresql_stop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist'
-#alias postgresql_start='postgres -D /usr/local/var/postgres'
-alias pg_start='postgres -D /usr/local/var/postgres &'
-
-
-alias rdbm='rake db:migrate'
 
 alias ls='ls -G'
 
@@ -58,10 +52,6 @@ alias ar="cd /Users/nsingh/dev/rails_edge/rails/activerecord/lib/active_record"
 
 alias gphm='git push heroku master'
 
-function remigrate {
-  echo "rake db:drop db:create db:migrate" 
-  rake db:drop db:create db:migrate
-}
 
 function start_elasticsearch {
   echo "elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml"
@@ -77,4 +67,3 @@ function start_elasticsearch {
 # Or, if you don't want/need launchctl, you can just run:
 #    redis-server /usr/local/etc/redis.conf
 alias start_redis="redis-server /usr/local/etc/redis.conf"
-

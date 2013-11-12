@@ -2,6 +2,13 @@
 require 'rubygems'
 require 'open3'
 
+# Usage :
+# stand in the project directory and execute git_clearn_branches
+#
+# You will be asked to delete local branches like this
+# Do you want to delete branch   154-roles ?
+#
+# Note: This only deletes local branch. It does NOT delete remote branch.
 
 Dir.chdir(Dir.pwd) do
 
