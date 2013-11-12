@@ -38,31 +38,16 @@ function scd {
   fi
 }
 
-# Following function ensures that in a Rails3 project you just need to do spec or cucumber rather than
-# bundle exec cucumber
-# Note that need for this can be removed if you do
-# bundle install --binstubs
-#function run_bundler_cmd () {
-  #if [ -e ./Gemfile ]; then
-    #echo "running bundle exec "
-    #echo "bundle exec $@"
-    #bundle exec $@
-  #else
-    #echo "$@"
-    #$@
-  #fi
-#}
-
 bundle_commands=(rspec cucumber guard spork)
 for cmd in ${bundle_commands[*]}
 do
   alias $cmd="run_bundler_cmd $cmd"
 done
 
-function rake {
-  if [ -e Gemfile ]; then
-    bundle exec rake $@
-  else
-    `which rake` $@
-  fi
-}
+#function rake {
+  #if [ -e Gemfile ]; then
+    #bundle exec rake $@
+  #else
+    #`which rake` $@
+  #fi
+#}
