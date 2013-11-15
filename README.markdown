@@ -2,26 +2,21 @@
 
 Following steps work in OS X 10.9 .
 
-```
 install dropbox first. Since some of the files are stored in dropbox it
 is better if dropbox is already synced and has downloaded the files
 before we begin setting up things on the new machine.
 
+# Installing brew
+
+```
 # install brew
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
-# download and install xcode
-<!--https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12-->
-
-xcode-select --install
 
 brew install git
 brew install git bash-completion
 brew install automake
 brew install hub
-
-if getting the error make: /usr/bin/gcc-4.2: No such file or directory in mountain lion
-sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
 ```
 
 # Setting up dotfiles
@@ -92,3 +87,6 @@ https://github.com/huyng/bashmarks
 ln -s /Users/nsingh/dev/personal/dotfiles/vimrc .vimrc
 
 ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc ~/.gvimrc
+
+if getting the error make: /usr/bin/gcc-4.2: No such file or directory in mountain lion
+sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
