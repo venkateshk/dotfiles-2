@@ -31,6 +31,7 @@ brew install qt
 ln -s ~/Dropbox/.sdirs ~/.sdirs
 ln -s ~/Dropbox/.ssh ~/.ssh
 ln -s ~/Dropbox/.gitconfig ~/.gitconfig
+ln -s ~/Dropbox/.instapusher ~/.instapusher
 
 mkdir ~/dev
 mkdir ~/dev/personal
