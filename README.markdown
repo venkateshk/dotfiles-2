@@ -4,6 +4,11 @@
 # install brew
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
+# download and install xcode
+<!--https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12-->
+
+xcode-select --install
+
 brew install git
 brew install git bash-completion
 brew install automake
