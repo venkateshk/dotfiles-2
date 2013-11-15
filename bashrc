@@ -23,9 +23,14 @@ shopt -s checkwinsize
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 
-export GIT_EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g -f '
-export BUNDLE_EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g '
-export EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g '
+#export GIT_EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g -f '
+#export BUNDLE_EDITOR='/usr/local/Cellar/macvim/7.3-66/bin/mvim  -g '
+#export EDITOR='mvim  -g '
+
+export GIT_EDITOR='mvim  -g -f '
+export BUNDLE_EDITOR='mvim  -g '
+export EDITOR='mvim  -g '
+
 
 # add git command line completion to git
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
