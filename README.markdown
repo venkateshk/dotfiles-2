@@ -1,6 +1,9 @@
 # Installing new machine
 
 ```
+# install brew
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
 brew install git
 brew install git bash-completion
 brew install automake
@@ -16,6 +19,8 @@ cd /Users/nsingh/dev/personal
 git clone git@github.com:neerajdotname/dotfiles.git
 cd dotfiles
 cp gitconfig.example giconfig
+
+brew install hub
 
 cd /Users/nsingh/dev/personal
 follow readme at https://github.com/huyng/bashmarks
