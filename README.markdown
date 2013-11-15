@@ -46,14 +46,18 @@ brew install macvim --override-system-vim
 # Configure vim
 
 ```
+install xcode. macvim needs it.
+
+# install macvim
 brew install macvim
+
+# install janus
 curl -Lo- https://bit.ly/janus-bootstrap | bash  
 
 ln -s /Users/nsingh/dev/personal/dotfiles/vimrc.after ~/.vimrc.after
-ln -s /Users/nsingh/dev/personal/dotfiles/vimrc .vimrc
 
-ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc .gvimrc
-ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc.before .gvimrc.before
+ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc ~/.gvimrc
+ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc.before ~/.gvimrc.before
 ```
 
 
@@ -87,3 +91,4 @@ Because it has token.
 # References
 
 https://github.com/huyng/bashmarks
+ln -s /Users/nsingh/dev/personal/dotfiles/vimrc .vimrc
