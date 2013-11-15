@@ -23,6 +23,9 @@ sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
 ln -s ~/Dropbox/.sdirs ~/.sdirs
 ln -s ~/Dropbox/.ssh ~/.ssh
 
+mkdir ~/dev
+mkdir ~/dev/personal
+
 cd /Users/nsingh/dev/personal
 git clone git@github.com:neerajdotname/dotfiles.git
 cd dotfiles
