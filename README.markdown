@@ -35,14 +35,9 @@ mkdir ~/dev
 mkdir ~/dev/personal
 
 cd /Users/nsingh/dev/personal
-git clone git@github.com:neerajdotname/dotfiles.git
-
-
-
-
-# install Xcode.app at the very end
-brew install macvim --override-system-vim
+git clone git@github.com:neerajdotname/dotfiles.git ~/dev/personal
 ```
+
 # Configure vim
 
 ```
@@ -59,6 +54,15 @@ ln -s /Users/nsingh/dev/personal/dotfiles/vimrc.after ~/.vimrc.after
 ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc.before ~/.gvimrc.before
 ```
 
+# Install rbenv
+
+```
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+rbenv install 2.0.0-p247
+rbenv install 2.0.0-p247
+```
 
 # Setup following softlinks
 
