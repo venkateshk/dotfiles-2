@@ -1,6 +1,13 @@
 # Installing new machine
 
+Following steps work in OS X 10.9 .
+
 ```
+
+install dropbox first. Since some of the files are stored in dropbox it
+is better if dropbox is already synced and has downloaded the files
+before we begin setting up things on the new machine.
+
 # install brew
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
@@ -12,6 +19,7 @@ xcode-select --install
 brew install git
 brew install git bash-completion
 brew install automake
+brew install hub
 
 if getting the error make: /usr/bin/gcc-4.2: No such file or directory in mountain lion
 sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
@@ -22,16 +30,14 @@ sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
 ```
 ln -s ~/Dropbox/.sdirs ~/.sdirs
 ln -s ~/Dropbox/.ssh ~/.ssh
+ln -s ~/Dropbox/.gitconfig ~/.gitconfig
 
 mkdir ~/dev
 mkdir ~/dev/personal
 
 cd /Users/nsingh/dev/personal
 git clone git@github.com:neerajdotname/dotfiles.git
-cd dotfiles
-cp gitconfig.example giconfig
 
-brew install hub
 
 cd /Users/nsingh/dev/personal
 follow readme at https://github.com/huyng/bashmarks
