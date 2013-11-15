@@ -17,6 +17,12 @@ brew install git
 brew install git bash-completion
 brew install automake
 brew install hub
+
+# this is needed for gem install pg to work
+brew install postgresql
+
+# this is needed otherwise gem install capybara-webkit  will complain
+brew install qt
 ```
 
 # Setting up dotfiles
@@ -84,7 +90,22 @@ rake
 
 http://postgresapp.com
 
+# Gems
 
+```
+gem install bundler
+gem install instapusher
+```
+
+# Installing rubyracergem
+
+```
+gem uninstall libv8
+brew install v8
+gem install therubyracer
+
+sudo ln -s `which g++` /usr/bin/g++-4.2
+```
 
 # References
 

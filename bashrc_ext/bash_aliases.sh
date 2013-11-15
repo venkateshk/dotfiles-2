@@ -44,10 +44,10 @@ alias v='mvim .'
 alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>8000,:DocumentRoot=>Dir::pwd);Signal.trap(2){w.shutdown};w.start"'
 
 alias b="bundle"
-alias bi="b install"
-alias be="b exec"
-alias biv="b install --path vendor"
-alias berc="b exec rails console"
+alias bi="bundle install"
+alias be="bundle exec"
+alias biv="bundle install --path vendor"
+alias berc="bundle exec rails console"
 alias ar="cd /Users/nsingh/dev/rails_edge/rails/activerecord/lib/active_record"
 
 alias gphm='git push heroku master'
