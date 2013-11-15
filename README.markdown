@@ -20,6 +20,9 @@ sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
 # Setting up dotfiles
 
 ```
+ln -s ~/Dropbox/.sdirs .sdirs
+ln -s ~/Dropbox/.ssh .ssh
+
 cd /Users/nsingh/dev/personal
 git clone git@github.com:neerajdotname/dotfiles.git
 cd dotfiles
@@ -29,7 +32,7 @@ brew install hub
 
 cd /Users/nsingh/dev/personal
 follow readme at https://github.com/huyng/bashmarks
-ln -s ~/Dropbox/.sdirs .sdirs
+
 
 # install Xcode.app at the very end
 brew install macvim --override-system-vim
