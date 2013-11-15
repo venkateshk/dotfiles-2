@@ -81,13 +81,10 @@ cd ~/.vim
 rake
 ```
 
-
-# Why gitconfig is excluded
-
-Because it has token.
-
 # References
 
 https://github.com/huyng/bashmarks
+
 ln -s /Users/nsingh/dev/personal/dotfiles/vimrc .vimrc
+
 ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc ~/.gvimrc
