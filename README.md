@@ -41,6 +41,13 @@ cd /Users/nsingh/dev/personal
 git clone git@github.com:neerajdotname/dotfiles.git ~/dev/personal
 ```
 
+# Configuring .ssh
+
+```
+chmod 600 ~/.ssh/id_rsa
+ssh-add -K
+```
+
 # Configure vim
 
 ```
