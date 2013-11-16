@@ -17,6 +17,7 @@ brew install git
 brew install git bash-completion
 brew install automake
 brew install hub
+brew install imagemagick
 
 # this is needed for gem install pg to work
 brew install postgresql
@@ -119,6 +120,7 @@ http://stackoverflow.com/questions/19630154/gem-install-therubyracer-v-0-10-2-on
 
 # SSL issue
 
+https://github.com/neerajdotname/dotfiles/blob/master/bashrc_ext/ssl.sh
 
 
 # References
