@@ -101,12 +101,25 @@ gem install instapusher
 # Installing rubyracergem
 
 ```
-gem uninstall libv8
-brew install v8
+brew install apple-gcc42
+
+sudo ln -s /usr/local/Cellar/apple-gcc42/4.2.1-5666.3/bin/gcc-4.2 /usr/bin/gcc 
+sudo ln -s /usr/local/Cellar/apple-gcc42/4.2.1-5666.3/bin/g++-4.2 /usr/bin/g++ 
+sudo ln -s /usr/local/Cellar/apple-gcc42/4.2.1-5666.3/bin/cpp-4.2 /usr/bin/cpp
+
+brew uninstall v8
+
+gem install libv8
+
 gem install therubyracer
 
-sudo ln -s `which g++` /usr/bin/g++-4.2
+
+http://stackoverflow.com/questions/19630154/gem-install-therubyracer-v-0-10-2-on-osx-mavericks-not-installing
 ```
+
+# SSL issue
+
+
 
 # References
 

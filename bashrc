@@ -8,6 +8,7 @@ PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 source /etc/bashrc
 
+. "/Users/nsingh/dev/personal/dotfiles/bashrc_ext/ssl.sh"
 . "/Users/nsingh/dev/personal/dotfiles/bashrc_ext/bash_aliases.sh"
 . "/Users/nsingh/dev/personal/dotfiles/bashrc_ext/command_prompt.sh"
 . "/Users/nsingh/dev/personal/dotfiles/bashrc_ext/rails_commands.sh"
@@ -56,8 +57,3 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-
-
-export SSL_CERT_FILE=/Users/nsingh/dev/personal/dotfiles/cacert.pem
-
-#export RBENV_DEBUG=1
