@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+# finds and replaces text in all files in a given subdirectory
+
+# Usage :
+# find_replace
+#
+
+puts "Enter the word you are trying to find"
+find = gets.chomp.strip
+
+puts "Enter the word you are trying to replace"
+replace = gets.chomp.strip
+
+pwd = Dir.pwd
+
+cmd = %Q{perl -e "s/#{find}/#{replace}/g;" -pi $(find #{pwd} -type f)}
+
+puts cmd
+`#{cmd}`
+puts 'done'
