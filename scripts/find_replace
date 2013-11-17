@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# finds and replaces text in all files in a given subdirectory
+# finds and replaces text in all files in the directory you are standing in.
 
 # Usage :
 # find_replace
@@ -12,10 +12,22 @@ find = gets.chomp.strip
 puts "Enter the word you are trying to replace"
 replace = gets.chomp.strip
 
+if find.length == 0
+  puts "Error: find word should not be empty" 
+  exit 1
+end
+
+if replace.length == 0
+  puts "Error: replace word should not be empty" 
+  exit 1
+end
+
 pwd = Dir.pwd
 
 cmd = %Q{perl -e "s/#{find}/#{replace}/g;" -pi $(find #{pwd} -type f)}
 
 puts cmd
+
+
 `#{cmd}`
 puts 'done'
