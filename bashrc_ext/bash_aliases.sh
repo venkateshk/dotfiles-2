@@ -28,6 +28,12 @@ alias timesheet='git --no-pager log -n 50 --pretty=format:%h%x09%an%x09%ad%x09%s
 alias gitb='git branch -v'
 alias gitcmall='git add .;gitcm "wip"'
 
+# List only directories
+alias lsd='ls -l | grep "^d"'
+
+# Empty the Trash on all mounted volumes and the main HDD
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
+
 #tail
 alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
