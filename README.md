@@ -129,6 +129,10 @@ http://stackoverflow.com/questions/19630154/gem-install-therubyracer-v-0-10-2-on
 
 https://github.com/neerajdotname/dotfiles/blob/master/bashrc_ext/ssl.sh
 
+# git setup
+
+# do not open edito when I am merging master into production
+git config --global core.mergeoptions --no-edit
 
 # References
 
