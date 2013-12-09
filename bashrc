@@ -57,3 +57,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# this is so that for git merge default message is used and editor is not opened
+GIT_MERGE_AUTOEDIT=no
+export GIT_MERGE_AUTOEDIT

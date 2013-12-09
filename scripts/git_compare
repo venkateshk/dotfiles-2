@@ -16,6 +16,6 @@ project_name = `git rev-parse --show-toplevel`.split('/').last.strip
 ref_head = `git symbolic-ref HEAD`
 branch_name = ref_head.gsub(%r[refs/heads/],'').strip
 
-uri = "https://github.com/#{repo_name}/#{project_name}/compare/master...#{branch_name}"
+uri = "https://github.com/#{repo_name}/#{project_name}/compare/#{branch_name}...master"
 puts uri
 Launchy.open( uri )
