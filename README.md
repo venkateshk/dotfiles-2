@@ -29,10 +29,10 @@ brew install qt
 # Setting up dotfiles
 
 ```
-ln -s ~/Dropbox/.sdirs ~/.sdirs
-ln -s ~/Dropbox/.ssh ~/.ssh
-ln -s ~/Dropbox/.gitconfig ~/.gitconfig
-ln -s ~/Dropbox/.instapusher ~/.instapusher
+ln -s ~/Dropbox/dots/.sdirs ~/.sdirs
+ln -s ~/Dropbox/dots/.ssh ~/.ssh
+ln -s ~/Dropbox/dots/.gitconfig ~/.gitconfig
+ln -s ~/Dropbox/dots/.instapusher ~/.instapusher
 
 mkdir ~/dev
 mkdir ~/dev/personal
