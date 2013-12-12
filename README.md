@@ -85,7 +85,6 @@ ln -s ~/Dropbox/dotfiles/bashrc ~/.bashrc
 ln -s ~/Dropbox/dotfiles/gemrc ~/.gemrc
 
 ln -s ~/Dropbox/dotfiles/irbrc ~/.irbrc
-ln -s ~/Dropbox/dotfiles/autotest ~/.autotest
 ```
 
 # How to update to latest janus
