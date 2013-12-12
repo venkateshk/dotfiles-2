@@ -29,10 +29,10 @@ brew install qt
 # Setting up dotfiles
 
 ```
-ln -s ~/Dropbox/dots/.sdirs ~/.sdirs
-ln -s ~/Dropbox/dots/.ssh ~/.ssh
-ln -s ~/Dropbox/dots/.gitconfig ~/.gitconfig
-ln -s ~/Dropbox/dots/.instapusher ~/.instapusher
+ln -s ~/Dropbox/dotfiles/secret/.sdirs ~/.sdirs
+ln -s ~/Dropbox/dotfiles/secret/.ssh ~/.ssh
+ln -s ~/Dropbox/dotfiles/secret/.gitconfig ~/.gitconfig
+ln -s ~/Dropbox/dotfiles/secret/.instapusher ~/.instapusher
 
 mkdir ~/dev
 mkdir ~/dev/personal
@@ -76,16 +76,16 @@ rbenv global 2.0.0-p247
 
 # Setup following softlinks
 
+
 ```
-ln -s /Users/nsingh/dev/personal/dotfiles/ackrc ~/.ackrc
+ln -s ~/Dropbox/dotfiles/ackrc ~/.ackrc
 
-ln -s /Users/nsingh/dev/personal/dotfiles/bash_profile ~/.bash_profile
-ln -s /Users/nsingh/dev/personal/dotfiles/bashrc ~/.bashrc
-ln -s /Users/nsingh/dev/personal/dotfiles/gemrc ~/.gemrc
+ln -s ~/Dropbox/dotfiles/bash_profile ~/.bash_profile
+ln -s ~/Dropbox/dotfiles/bashrc ~/.bashrc
+ln -s ~/Dropbox/dotfiles/gemrc ~/.gemrc
 
-ln -s /Users/nsingh/dev/personal/dotfiles/irbrc ~/.irbrc
-ln -s /Users/nsingh/dev/personal/dotfiles/autotest ~/.autotest
-
+ln -s ~/Dropbox/dotfiles/irbrc ~/.irbrc
+ln -s ~/Dropbox/dotfiles/autotest ~/.autotest
 ```
 
 # How to update to latest janus
