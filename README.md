@@ -29,10 +29,10 @@ brew install qt
 # Setting up dotfiles
 
 ```
-ln -s ~/Dropbox/dotfiles/secret/.sdirs ~/.sdirs
-ln -s ~/Dropbox/dotfiles/secret/.ssh ~/.ssh
-ln -s ~/Dropbox/dotfiles/secret/.gitconfig ~/.gitconfig
-ln -s ~/Dropbox/dotfiles/secret/.instapusher ~/.instapusher
+ln -s ~/Dropbox/dotfiles/secret/sdirs ~/.sdirs
+ln -s ~/Dropbox/dotfiles/secret/gitconfig ~/.gitconfig
+ln -s ~/Dropbox/dotfiles/secret/instapusher ~/.instapusher
+ln -s ~/Dropbox/dotfiles/secret/ssh ~/.ssh
 
 mkdir ~/dev
 mkdir ~/dev/personal
@@ -59,9 +59,9 @@ brew install macvim
 # install janus
 curl -Lo- https://bit.ly/janus-bootstrap | bash  
 
-ln -s /Users/nsingh/dev/personal/dotfiles/vimrc.after ~/.vimrc.after
+ln -s ~/Dropbox/dotfiles/vimrc.after ~/.vimrc.after
 
-ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc.before ~/.gvimrc.before
+ln -s ~/Dropbox/dotfiles/gvimrc.before ~/.gvimrc.before
 ```
 
 # Install rbenv

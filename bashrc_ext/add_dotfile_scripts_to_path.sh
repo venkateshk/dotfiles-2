@@ -1,1 +1,1 @@
-export PATH="/Users/nsingh/dev/personal/dotfiles/scripts:$PATH"
+export PATH="/Users/nsingh/Dropbox/dotfiles/scripts:$PATH"
