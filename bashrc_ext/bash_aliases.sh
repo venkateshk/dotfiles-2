@@ -57,6 +57,7 @@ alias berc="bundle exec rails console"
 alias ar="cd /Users/nsingh/dev/rails_edge/rails/activerecord/lib/active_record"
 
 alias gphm='git push heroku master'
+alias i='instapusher'
 
 
 function start_elasticsearch {
