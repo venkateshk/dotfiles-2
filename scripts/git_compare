@@ -16,7 +16,8 @@ project_name = `git rev-parse --show-toplevel`.split('/').last.strip
 ref_head = `git symbolic-ref HEAD`
 branch_name = ref_head.gsub(%r[refs/heads/],'').strip
 
-last_unit = "master...#{branch_name}"
+last_unit = "#{branch_name}...master"
 uri = "https://github.com/#{repo_name}/#{project_name}/compare/#{last_unit}"
 puts uri
+puts "this lists all the commits that are present in master but not preset in #{branch_name}"
 Launchy.open( uri )
