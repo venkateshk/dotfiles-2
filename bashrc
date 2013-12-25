@@ -12,7 +12,7 @@ source /etc/bashrc
 . "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/bash_aliases.sh"
 . "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/command_prompt.sh"
 . "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/rails_commands.sh"
-. "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/git_commands.sh"
+#. "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/git_commands.sh"
 . "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/add_dotfile_scripts_to_path.sh"
 
 #don't put duplicate lines in the history. See bash(1) for more options

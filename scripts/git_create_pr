@@ -3,7 +3,7 @@
 # It turns an existing issue into a pull request.
 #
 # Usage:
-# Stand in the branch for which you want to send pull request and execute git_create_pull_request .
+# Stand in the branch for which you want to send pull request and execute git_create_pr .
 #
 ref_head = `git symbolic-ref HEAD`
 issue_number = ref_head.gsub(%r[refs/heads/],'').to_i
