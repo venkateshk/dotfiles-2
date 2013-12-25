@@ -16,8 +16,15 @@ project_name = `git rev-parse --show-toplevel`.split('/').last.strip
 ref_head = `git symbolic-ref HEAD`
 branch_name = ref_head.gsub(%r[refs/heads/],'').strip
 
-last_unit = "master...#{branch_name}"
+if ARGV.shift == '-r'
+  last_unit = "master...#{branch_name}"
+  message = "This lists all extra commits present in master"
+else
+  last_unit = "#{branch_name}...master"
+  message = "This lists all extra commits present in master"
+end
+
 uri = "https://github.com/#{repo_name}/#{project_name}/compare/#{last_unit}"
 puts uri
-puts "This lists all extra commits present in #{branch_name}"
+puts message
 Launchy.open( uri )

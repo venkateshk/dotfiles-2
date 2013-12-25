@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
 # Usage :
-# pulldown <pull-request-number>
+# prd <pull-request-number>
 # 
 # If the pull request url is https://github.com/rails/rails/pull/10798 then execute
-# pulldown 10798
+# prd 10798
 #
 
 pr_number = ARGV.first

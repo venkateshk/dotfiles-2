@@ -3,9 +3,10 @@
 # Usage :
 # gitcmwp
 #
-# It would add all the changed items. Will commit the changes and will push the commit
+# It would add all the changed items. 
+# Will commit the changes with message WIP. 
+# Will push the commit.
 #
-
 commands = []
 commands << "git add -A"
 commands << "git commit -m 'WIP'"

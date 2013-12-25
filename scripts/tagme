@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# tags the current branch with datetime and pushes the tags.
+# Tags the current branch with datetime and pushes the tags.
 #
 # Usage :
 # stand in the production branch and execute

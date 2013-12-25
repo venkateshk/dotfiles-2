@@ -28,6 +28,5 @@ cmd = %Q{perl -e "s/#{find}/#{replace}/g;" -pi $(find #{pwd} -type f)}
 
 puts cmd
 
-
 `#{cmd}`
-puts 'done'
+puts 'Done'

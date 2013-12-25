@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+# This is for running tests for rails whild doing development 
+# work for ActiveRecord.
+#
 # Usage :
 # stand in the rails/activerecord directory and execute
 #
