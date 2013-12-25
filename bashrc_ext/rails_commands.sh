@@ -44,10 +44,12 @@ do
   alias $cmd="run_bundler_cmd $cmd"
 done
 
-#function rake {
-  #if [ -e Gemfile ]; then
-    #bundle exec rake $@
-  #else
-    #`which rake` $@
-  #fi
-#}
+# If there is a Gemfile file then execute
+# bundle exec rake
+function rake {
+  if [ -e Gemfile ]; then
+    bundle exec rake $@
+  else
+    `which rake` $@
+  fi
+}

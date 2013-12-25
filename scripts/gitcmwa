@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Usage :
-# gitcmwp
+# gitcmwa
 #
 # It would add all the changed items. 
 # Will commit the changes with message WIP. 
@@ -10,7 +10,7 @@
 commands = []
 commands << "git add -A"
 commands << "git commit -m 'WIP'"
-commands << "git push"
+commands << "gp"
 
 commands.each do |cmd|
   puts cmd

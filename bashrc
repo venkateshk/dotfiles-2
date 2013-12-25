@@ -9,7 +9,15 @@ PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 source /etc/bashrc
 
 . "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/ssl.sh"
-. "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/bash_aliases.sh"
+
+. "/Users/nsingh/Dropbox/dotfiles/aliases/elastic_search_aliases.sh"
+. "/Users/nsingh/Dropbox/dotfiles/aliases/misc_aliases.sh"          
+. "/Users/nsingh/Dropbox/dotfiles/aliases/rails_aliases.sh"
+. "/Users/nsingh/Dropbox/dotfiles/aliases/git_aliases.sh"            
+. "/Users/nsingh/Dropbox/dotfiles/aliases/mysql_aliases.sh"          
+. "/Users/nsingh/Dropbox/dotfiles/aliases/redis_aliases.sh"
+
+
 . "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/command_prompt.sh"
 . "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/rails_commands.sh"
 #. "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/git_commands.sh"

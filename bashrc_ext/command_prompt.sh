@@ -30,5 +30,4 @@ function ruby_version() {
   ruby -e "print RUBY_VERSION"
 }
 
-
 PS1="$a\$(ruby_version) \$(custom_git_prompt)\n$e"

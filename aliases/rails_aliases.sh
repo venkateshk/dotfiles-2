@@ -1,0 +1,10 @@
+alias taild='tail -f log/development.log'
+alias tailt='tail -f log/test.log'
+alias taily='tail -f log/yell.log'
+alias bi='bundle install'
+alias b="bundle"
+alias bi="bundle install"
+alias be="bundle exec"
+alias biv="bundle install --path vendor"
+alias berc="bundle exec rails console"
+alias ar="cd /Users/nsingh/dev/rails_edge/rails/activerecord/lib/active_record"
