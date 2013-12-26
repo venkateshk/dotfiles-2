@@ -12,4 +12,5 @@ alias timesheet='git --no-pager log -n 50 --pretty=format:%h%x09%an%x09%ad%x09%s
 alias gitb='git branch -v'
 alias git_refresh='git fetch upstream;git rebase upstream/master'
 
+alias gp='git push'
 alias gphm='git push heroku master'
