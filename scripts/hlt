@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+# Makes it easy to tail log from a heroku app.
+#
+# Usage:
+# stand in the branch you want to tail the log from and execute hlt.
+
+project_name = `git rev-parse --show-toplevel`.split('/').last.strip
+
+ref_head = `git symbolic-ref HEAD`
+branch_name = ref_head.gsub(%r[refs/heads/],'').strip
+
+heroku_app_name = project_name.gsub('_','-') + '-' + branch_name
+
+cmd = "heroku logs --tail --app #{heroku_app_name}"
+puts cmd
+system cmd
