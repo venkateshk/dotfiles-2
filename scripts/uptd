@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+# this script 
+# - gets the latest master
+# - merges master to staging or production
+# - pushes staging or production change to github
+#
+# Usage :
+# uptd
+# uptd p - to make production uptodate
+#
+
+# by default bring staging branch upto date with master
+branch_name  = ARGV.shift == 'p' ? 'production' : 'staging'
+
+cmd = 'git checkout master'
+`#{cmd}`
+
+cmd = 'git pull'
+`#{cmd}`
+
+cmd = "git checkout #{branch_name}"
+`#{cmd}`
+
+cmd = 'git merge master'
+`#{cmd}`
+
+cmd = 'git push'
+`#{cmd}`

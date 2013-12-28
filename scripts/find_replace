@@ -9,7 +9,7 @@
 puts "Enter the word you are trying to find"
 find = gets.chomp.strip
 
-puts "Enter the word you are trying to replace"
+puts "Enter the word you are trying to replace the word '#{find}' with"
 replace = gets.chomp.strip
 
 if find.length == 0
