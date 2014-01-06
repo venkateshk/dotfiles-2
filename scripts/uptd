@@ -2,28 +2,43 @@
 
 # this script 
 # - gets the latest master
-# - merges master to staging or production
-# - pushes staging or production change to github
+# - merges master to the current branch 
+# - push the branch to github
 #
 # Usage :
-# uptd
-# uptd p - to make production uptodate
+# stand in a branch and execute uptd
 #
 
-# by default bring staging branch upto date with master
-branch_name  = ARGV.shift == 'p' ? 'production' : 'staging'
+def update_master
 
-cmd = 'git checkout master'
-`#{cmd}`
+  cmd = 'git checkout master'
+  `#{cmd}`
 
-cmd = 'git pull'
-`#{cmd}`
+  cmd = 'git pull'
+  `#{cmd}`
 
-cmd = "git checkout #{branch_name}"
-`#{cmd}`
+end
 
-cmd = 'git merge master'
-`#{cmd}`
+def rebase_current_branch branch_name
+  cmd = "git checkout #{branch_name}"
+  `#{cmd}`
 
-cmd = 'git push'
-`#{cmd}`
+  cmd = 'git merge master'
+  `#{cmd}`
+
+  cmd = 'git push'
+  `#{cmd}`
+
+end
+
+
+current_branch_name = `git symbolic-ref HEAD`.gsub(%r[refs/heads/],'').strip
+
+update_master
+rebase_current_branch(current_branch_name) unless current_branch_name == 'master'
+
+
+
+
+
+
