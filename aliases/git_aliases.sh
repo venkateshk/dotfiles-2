@@ -10,7 +10,12 @@ alias gitlog='git --no-pager log -n 20 --pretty=format:%h%x09%an%x09%ad%x09%s --
 
 alias timesheet='git --no-pager log -n 50 --pretty=format:%h%x09%an%x09%ad%x09%s --date=short --no-merges --branches --since=30.days --author=Neeraj'
 alias gitb='git branch -v'
-alias git_refresh='git fetch upstream;git rebase upstream/master'
 
 alias gp='git push'
 alias gphm='git push heroku master'
+
+# http://blog.bigbinary.com/2013/09/13/how-to-keep-your-fork-uptodate.html
+#
+# useful when you want to bring your local rails repository uptodate with
+# rails/rails repository
+alias git_refresh='git fetch upstream;git rebase upstream/master'

@@ -3,8 +3,11 @@
 require 'rubygems'
 require 'launchy'
 
+# It will list all the commits this branch is ahead of master.
+#
 # Usage:
-# stand in the branch you want to compare against master and execute git_compare
+# stand in the branch you want to compare against master and execute git_ahead
+#
 
 string = `git remote -v | grep fetch`
 regex = /.*:(.*)\/.*/
@@ -16,13 +19,8 @@ project_name = `git rev-parse --show-toplevel`.split('/').last.strip
 ref_head = `git symbolic-ref HEAD`
 branch_name = ref_head.gsub(%r[refs/heads/],'').strip
 
-if ARGV.shift == '-r'
-  last_unit = "master...#{branch_name}"
-  message = "This lists all extra commits present in master"
-else
-  last_unit = "#{branch_name}...master"
-  message = "This lists all extra commits present in master"
-end
+last_unit = "#{branch_name}...master"
+message = "This lists all extra commits present in master"
 
 uri = "https://github.com/#{repo_name}/#{project_name}/compare/#{last_unit}"
 puts uri
