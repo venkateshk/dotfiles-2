@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require_relative 'common.rb'
+
 #
 # Writing a typical commit message is like this
 # git commit -m "added twitter authentication feature"
@@ -12,6 +14,4 @@
 # then the actual message passed to git commit would be only "twitterauth"
 # becase of bash issue. If someone has a good fix for it then lemme know.
 #
-cmd = "git commit -m '#{ARGV.join(' ')}'"
-puts cmd
-system cmd
+execute_cmd "git commit -m '#{ARGV.join(' ')}'"

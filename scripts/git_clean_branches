@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
-require 'rubygems'
-require 'open3'
+
+require_relative 'common.rb'
 
 # Manually deleting local branches can be time consuming. This script
-# can help.
+# helps.
 #
 # Note: This only deletes local branch. It does NOT delete remote branch.
 #
@@ -24,8 +24,7 @@ Dir.chdir(Dir.pwd) do
       puts "Do you want to delete branch #{branch} ?"
       a = gets.chomp
       if %w(y yes).include? a.downcase
-        cmd = "git branch -D #{branch}"
-        system cmd
+        execute_cmd "git branch -D #{branch}"
         puts ""
       end
     end

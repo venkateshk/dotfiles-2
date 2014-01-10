@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# This is for running tests for rails whild doing development 
+# This script is for running tests for Rails while doing development 
 # work for ActiveRecord.
 #
 # Usage :

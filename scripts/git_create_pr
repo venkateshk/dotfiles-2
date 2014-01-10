@@ -1,18 +1,17 @@
 #!/usr/bin/env ruby
 
+require_relative 'common.rb'
+
 # It turns an existing issue into a pull request.
 #
 # Usage:
+#
 # Stand in the branch for which you want to send pull request and execute git_create_pr .
 #
-ref_head = `git symbolic-ref HEAD`
-issue_number = ref_head.gsub(%r[refs/heads/],'').to_i
 
-organization = 'git config --get remote.origin.url | rev | cut -d/ -f2 | cut -d: -f1 | rev'
-organization = %x(#{organization}).chop!
+issue_number = branch_name.to_i
 
-current_branch = ref_head.gsub(%r[refs/heads/],'').strip
+ensure_hub_command_exists
+execute_cmd "hub pull-request -i #{issue_number} -b #{repo_owner}:master -h #{repo_owner}:#{branch_name}"
 
-cmd = "hub pull-request -i #{issue_number} -b #{organization}:master -h #{organization}:#{current_branch}"
-puts cmd
-`#{cmd}`
+open_url "https://github.com/bigbinary/caregeneral/pull/#{issue_number}"

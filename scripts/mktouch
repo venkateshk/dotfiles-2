@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require_relative 'common.rb'
+
 # Creates missing directories and then touches the file. Best
 # used inside vim.
 #
@@ -10,5 +12,5 @@ require 'pathname'
 
 pathname = Pathname.new ARGV.join('')
 dirname = pathname.dirname
-system "mkdir -p #{dirname}"
-system "touch #{pathname}"
+execute_cmd "mkdir -p #{dirname}"
+execute_cmd "touch #{pathname}"

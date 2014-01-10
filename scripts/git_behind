@@ -1,28 +1,14 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'launchy'
+require_relative 'common.rb'
 
-# It will list all the commits this branch is ahead of master.
+# It lists all the commits that is present in master but not in this branch. In other words
+# it lists all the commits by which this branch is behind of master.
 #
 # Usage:
+#
 # stand in the branch you want to compare against master and execute git_ahead
 #
+puts "This lists all extra commits present in master but missing in #{branch_name}"
 
-string = `git remote -v | grep fetch`
-regex = /.*:(.*)\/.*/
-match_data = string.match(regex)
-repo_name = match_data.to_a.last
-
-project_name = `git rev-parse --show-toplevel`.split('/').last.strip
-
-ref_head = `git symbolic-ref HEAD`
-branch_name = ref_head.gsub(%r[refs/heads/],'').strip
-
-last_unit = "#{branch_name}...master"
-message = "This lists all extra commits present in master"
-
-uri = "https://github.com/#{repo_name}/#{project_name}/compare/#{last_unit}"
-puts uri
-puts message
-Launchy.open( uri )
+open_url "https://github.com/#{repo_owner}/#{repo_name}/compare/#{branch_name}...master"

@@ -1,11 +1,16 @@
 #!/usr/bin/env ruby
 
+require_relative 'common.rb'
+
 # Usage :
 # gitcmwa
 #
-# It would add all the changed items. 
-# Will commit the changes with message WIP. 
-# Will push the commit.
+# a stands for all.
+#
+# It would 
+# - add all the changed items. 
+# - will commit the changes with message WIP. 
+# - will push the commit.
 #
 commands = []
 commands << "git add -A"
@@ -13,6 +18,5 @@ commands << "git commit -m 'WIP'"
 commands << "gp"
 
 commands.each do |cmd|
-  puts cmd
-  system cmd
+  execute_cmd cmd
 end

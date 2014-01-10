@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require_relative 'common.rb'
+
 # It prints formatted timesheet entry which can be entered in timesheet directly.
 
 # Usage :

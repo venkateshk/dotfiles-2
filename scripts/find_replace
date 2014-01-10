@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require_relative 'common.rb'
+
 # finds and replaces text in all files in the directory you are standing in.
 
 # Usage :
@@ -24,9 +26,6 @@ end
 
 pwd = Dir.pwd
 
-cmd = %Q{perl -e "s/#{find}/#{replace}/g;" -pi $(find #{pwd} -type f)}
+execute_cmd %Q{perl -e "s/#{find}/#{replace}/g;" -pi $(find #{pwd} -type f)}
 
-puts cmd
-
-`#{cmd}`
 puts 'Done'
