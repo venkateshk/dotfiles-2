@@ -1,6 +1,5 @@
 alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
-alias taily='tail -f log/yell.log'
 alias bi='bundle install'
 alias b="bundle"
 alias be="bundle exec"
