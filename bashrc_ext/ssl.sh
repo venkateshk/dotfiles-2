@@ -11,4 +11,4 @@
 # cd ~
 # echo "export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem" >> ~/.bash_profile
 # 
-export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
+#export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
