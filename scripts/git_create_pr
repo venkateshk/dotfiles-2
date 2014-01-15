@@ -14,4 +14,4 @@ issue_number = branch_name.to_i
 ensure_hub_command_exists
 execute_cmd "hub pull-request -i #{issue_number} -b #{repo_owner}:master -h #{repo_owner}:#{branch_name}"
 
-open_url "https://github.com/bigbinary/caregeneral/pull/#{issue_number}"
+open_url "https://github.com/#{repo_owner}/#{repo_name}/pull/#{issue_number}"

@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require_relative 'common.rb'
+
+# Usage :
+#
+# git_download_branch <branch_name>
+# 
+#
+
+execute_cmd "git fetch"
+
+puts "enter branch name: "
+_branch_name = gets.chomp.strip
+
+execute_cmd "git checkout -t origin/#{_branch_name}" 

@@ -87,6 +87,8 @@ ln -s ~/Dropbox/dotfiles/gemrc ~/.gemrc
 ln -s ~/Dropbox/dotfiles/irbrc ~/.irbrc
 ```
 
+ln -s /Users/bisenbek/code/bashrc ~/.bashrc
+
 # How to update to latest janus
 
 ```

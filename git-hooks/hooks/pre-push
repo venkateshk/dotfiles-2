@@ -51,4 +51,3 @@ class PrePushHandler
 end
 
 PrePushHandler.new.handle
-
