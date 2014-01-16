@@ -1,6 +1,10 @@
 require 'rubygems'
 require 'launchy'
 
+def most_recent_production_tag
+  @_most_recent_production_tag ||= `git tag -l | sort -t. -k 1,1n -k 2,2n -k 3,3n -k 4,4n | grep production`.split(' ').last.strip
+end
+
 def repo_owner
   @_repo_owner ||= begin
     string = `git remote -v | grep fetch | grep origin`
