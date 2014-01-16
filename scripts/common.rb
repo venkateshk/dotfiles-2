@@ -3,7 +3,7 @@ require 'launchy'
 
 def repo_owner
   @_repo_owner ||= begin
-    string = `git remote -v | grep fetch`
+    string = `git remote -v | grep fetch | grep origin`
     regex = /.*:(.*)\/.*/
     match_data = string.match(regex)
     match_data.to_a.last
