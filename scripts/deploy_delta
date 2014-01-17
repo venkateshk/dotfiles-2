@@ -6,7 +6,7 @@ require_relative 'common.rb'
 #
 # Usage:
 #
-# stand in the production branch and execute deploy_delta
+# stand in the production branch and execute the command.
 #
 
 puts "This lists all the commits that will be pushed when this branch is deployed"
