@@ -17,15 +17,18 @@ def execute_cmd cmd
 end
 
 def backup_file file
-  expanded_path = File.expand_path(file)
+  file1 = "~/.#{file}"
+  expanded_path = File.expand_path(file1)
 
   if File.symlink?(expanded_path)
-    puts "#{file} is symlink to #{File.readlink(expanded_path)}"
+    puts ''
+    puts "#{file1} is symlink to #{File.readlink(expanded_path)}"
+    puts ''
     FileUtils.rm expanded_path
   elsif File.exists?(expanded_path)
     execute_cmd "git mv #{expanded_path} #{expanded_path}-#{Time.now.strftime('%Y-%m-%d-T%H%M%S%z')}"
   else
-    puts 'nothign to backup'
+    puts 'nothing to backup'
   end
 end
 
@@ -51,8 +54,8 @@ namespace :machine do
       execute_cmd "git config --global core.mergeoptions --no-edit"
 
       link_to_file_in_this_repo 'bash_profile'
-      link_to_file_in_this_repo 'bashrc'
       link_to_file_in_this_repo 'gemrc'
+      #link_to_file_in_this_repo 'bashrc'
   end
 
   task :brew do
