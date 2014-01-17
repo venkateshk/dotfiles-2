@@ -10,7 +10,29 @@ require_relative 'common.rb'
 # stand in the branch you want to compare against master and execute the command.
 #
 
-puts "This lists all commits present in this branch but not in master. In other words it lists " <<
-     "all the commits this branch is ahead of master"
 
-open_url "https://github.com/#{repo_owner}/#{repo_name}/compare/master...#{branch_name}"
+
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+
+  opts.on("-r", "--reverse", "reverse the compare") do |v|
+    options[:reverse] = v
+  end
+end.parse!
+
+if options[:reverse] 
+  compare_string = "#{branch_name}...master"
+  msg = "This lists all commits present in master but not in this branch. Mostly the result should be empty. If it is not empty then you should bring those changes from master to this branch"
+else
+  compare_string = "master...#{branch_name}"
+  msg = "This lists all commits present in this branch but not in master. In other words it lists all the commits this branch is ahead of master"
+end
+
+puts ''
+puts msg
+puts ''
+
+open_url "https://github.com/#{repo_owner}/#{repo_name}/compare/#{compare_string}"
+
