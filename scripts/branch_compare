@@ -5,6 +5,9 @@ require_relative 'common.rb'
 # It will list all the commits that this branch has but master does not. 
 # In other words it lists all the commits it is ahead of master.
 #
+# If you want to see all the commits present in maste but not in your branch
+# pass option --reverse.
+#
 # Usage:
 #
 # stand in the branch you want to compare against master and execute the command.
