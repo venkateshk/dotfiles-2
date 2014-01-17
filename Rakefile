@@ -16,25 +16,15 @@ def execute_cmd cmd
   end
 end
 
-def backup_file file
-  file1 = "~/.#{file}"
-  expanded_path = File.expand_path(file1)
+def process_file file
+  expanded_path = File.expand_path("~/.#{file}")
+  execute_cmd("touch #{expanded_path}") 
+  execute_cmd "cat #{Dir.pwd}/#{file}  > #{expanded_path}"
 
-  if File.symlink?(expanded_path)
-    puts ''
-    puts "#{file1} is symlink to #{File.readlink(expanded_path)}"
-    puts ''
-    FileUtils.rm expanded_path
-  elsif File.exists?(expanded_path)
-    execute_cmd "git mv #{expanded_path} #{expanded_path}-#{Time.now.strftime('%Y-%m-%d-T%H%M%S%z')}"
-  else
-    puts 'nothing to backup'
+  personal_file = "#{Dir.pwd}/personal/#{file}"
+  if File.exists?(personal_file)
+    execute_cmd "cat #{personal_file}  >> #{expanded_path}"
   end
-end
-
-def link_to_file_in_this_repo file
-  backup_file file
-  execute_cmd "ln -s #{Dir.pwd}/#{file} ~/.#{file}"
 end
 
 namespace :machine do
@@ -53,9 +43,7 @@ namespace :machine do
       # Following code is to silence git.
       execute_cmd "git config --global core.mergeoptions --no-edit"
 
-      link_to_file_in_this_repo 'bash_profile'
-      link_to_file_in_this_repo 'gemrc'
-      #link_to_file_in_this_repo 'bashrc'
+      %w(bash_profile gemrc bashrc).each { |file| process_file(file) }
   end
 
   task :brew do
