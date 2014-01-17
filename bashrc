@@ -25,6 +25,10 @@ eval "$(rbenv init -)"
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Add scripts to PATH
+
+export PATH="/Users/nsingh/Dropbox/dotfiles/scripts:$PATH"
+
 . "/Users/nsingh/Dropbox/dotfiles/bashrc_ext/ssl.sh"
 . "/Users/nsingh/Dropbox/dotfiles/aliases/elastic_search_aliases.sh"
 . "/Users/nsingh/Dropbox/dotfiles/aliases/misc_aliases.sh"          
