@@ -11,12 +11,18 @@ before we begin setting up things on the new machine.
 ```
 # install brew
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+```
 
+# Setting up maching using rake
 
-brew install git
-brew install git bash-completion
-brew install automake
-brew install hub
+```
+rake machine:setup
+rake machine:rbenv
+```
+
+# Installing software using brew
+
+```
 brew install imagemagick
 
 # this is needed for gem install pg to work
@@ -64,30 +70,12 @@ ln -s ~/Dropbox/dotfiles/vimrc.after ~/.vimrc.after
 ln -s ~/Dropbox/dotfiles/gvimrc.before ~/.gvimrc.before
 ```
 
-# Install rbenv
-
-```
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
-rbenv install 2.0.0-p247
-rbenv global 2.0.0-p247
-```
-
 # Setup following softlinks
 
-
 ```
-ln -s ~/Dropbox/dotfiles/ackrc ~/.ackrc
-
-ln -s ~/Dropbox/dotfiles/bash_profile ~/.bash_profile
-ln -s ~/Dropbox/dotfiles/bashrc ~/.bashrc
-ln -s ~/Dropbox/dotfiles/gemrc ~/.gemrc
-
 ln -s ~/Dropbox/dotfiles/irbrc ~/.irbrc
 ```
 
-ln -s /Users/bisenbek/code/bashrc ~/.bashrc
 
 # How to update to latest janus
 
@@ -99,13 +87,6 @@ rake
 # PostgreSQL
 
 http://postgresapp.com
-
-# Gems
-
-```
-gem install bundler
-gem install instapusher
-```
 
 # Installing rubyracergem
 
@@ -129,11 +110,6 @@ http://stackoverflow.com/questions/19630154/gem-install-therubyracer-v-0-10-2-on
 # SSL issue
 
 https://github.com/neerajdotname/dotfiles/blob/master/bashrc_ext/ssl.sh
-
-# git setup
-
-# do not open edito when I am merging master into production
-git config --global core.mergeoptions --no-edit
 
 # References
 

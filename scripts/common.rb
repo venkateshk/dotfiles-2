@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'launchy'
+require 'open3'
 
 def most_recent_production_tag
   @_most_recent_production_tag ||= `git tag -l | sort -t. -k 1,1n -k 2,2n -k 3,3n -k 4,4n | grep production`.split(' ').last.strip
@@ -27,7 +28,6 @@ def open_url url
   Launchy.open url
 end
 
-require 'open3'
 
 def execute_cmd cmd
   Open3.popen2e(cmd) do |stdin, stdout_err, wait_thr|
