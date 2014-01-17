@@ -1,3 +1,4 @@
+alias rdbm='rake db:migrate'
 alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias bi='bundle install'

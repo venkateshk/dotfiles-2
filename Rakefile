@@ -56,11 +56,30 @@ namespace :machine do
   end
 
   task :brew do
+
+    # Make sure we’re using the latest Homebrew
     execute_cmd "brew update"
+
+    # Upgrade any already-installed formulae
+    execute_cmd "brew upgrade"
+
+    # Install Bash 4
+    execute_cmd "brew install bash"
+
+    # Install wget with IRI support
+    execute_cmd "brew install wget --enable-iri"
+
+    execute_cmd "brew install ack"
     execute_cmd "brew install git"
+    execute_cmd "brew install rename"
+    execute_cmd "brew install tree"
+    execute_cmd "brew install ssh-copy-id"
     execute_cmd "brew install git bash-completion"
     execute_cmd "brew install hub"
-    execute_cmd "brew install tree"
+
+    # Remove outdated versions from the cellar
+    exectue_cmd "brew cleanup"
+
   end
 
   task :rbenv do

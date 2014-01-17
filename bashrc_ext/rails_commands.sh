@@ -1,11 +1,9 @@
-alias rdbm='rake db:migrate'
-
 function remigrate! {
   echo "rake db:drop db:create db:migrate" 
   rake db:drop db:create db:migrate
 }
 
-function ss {
+function rs {
   if [ -d "./log" ]; then
     for file in $(find ./log -maxdepth 1 -type f)
     do
@@ -24,18 +22,8 @@ function ss {
   fi
 }
 
-function sc {
+function rc {
   bundle exec rails console $1 $2
-}
-
-function scd {
-  if [ -e "./script/console" ]; then
-    ./script/console $1 $2 --debugger
-  fi
-
-  if [ -e "./script/rails" ]; then
-    bundle exec rails console $1 $2 --debugger
-  fi
 }
 
 bundle_commands=(rspec cucumber guard spork)
@@ -44,8 +32,7 @@ do
   alias $cmd="run_bundler_cmd $cmd"
 done
 
-# If there is a Gemfile file then execute
-# bundle exec rake
+# If there is a Gemfile file then execute bundle exec rake
 function rake {
   if [ -e Gemfile ]; then
     bundle exec rake $@
