@@ -27,6 +27,22 @@ def process_file file
   end
 end
 
+def extend_bashrc_with_aliases_and_other_things
+  statements = []
+  statements << "aliases/misc_aliases.sh"
+  statements << "aliases/rails_aliases.sh"
+  statements << "aliases/git_aliases.sh"
+  statements << "aliases/git_aliases.sh"
+  statements << "bashrc_ext/command_prompt.sh"
+  statements << "bashrc_ext/rails_commands.sh"
+  statements << "bashrc_ext/add_dotfile_scripts_to_path.sh"
+
+  statements.each do |statement| 
+    statement = %Q{ ". '#{Dir.pwd}/#{statement}'" }
+    execute_cmd("echo #{statement} >> ~/.bashrc")
+  end
+end
+
 namespace :machine do
   task :setup do
 
@@ -44,6 +60,8 @@ namespace :machine do
       execute_cmd "git config --global core.mergeoptions --no-edit"
 
       %w(bash_profile gemrc bashrc).each { |file| process_file(file) }
+
+      extend_bashrc_with_aliases_and_other_things
   end
 
   task :brew do
