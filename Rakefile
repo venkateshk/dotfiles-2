@@ -34,7 +34,7 @@ def extend_bashrc_with_aliases_and_other_things
 end
 
 def add_scripts_to_path
-  statement = %Q{export PATH="#{Dir.pwd}/dotfiles/scripts:$PATH"}
+  statement = %Q{export PATH="#{Dir.pwd}/scripts:$PATH"}
   expanded_path = File.expand_path("~/.bashrc")
   File.open(expanded_path, 'a') { |file| file.write(statement) }
 end
