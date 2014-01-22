@@ -1,23 +1,13 @@
 require 'rubygems'
-require 'open3'
-
-def execute_cmd cmd
-  puts cmd
-
-  Open3.popen2e(cmd) do |stdin, stdout_err, wait_thr|
-    while line = stdout_err.gets
-      puts line
-    end
-
-    exit_status = wait_thr.value
-    unless exit_status.success?
-      abort "FAILED !!! #{cmd}"
-    end
-  end
-end
+require_relative './scripts/common'
 
 def process_file file
   expanded_path = File.expand_path("~/.#{file}")
+
+  if File.exist?(expanded_path)
+    suffix = Time.now.to_s.gsub(/[-\s\:\+]+/, '-') 
+    execute_cmd("mv #{expanded_path} #{expanded_path}-#{suffix}")
+  end
   execute_cmd("touch #{expanded_path}") 
   execute_cmd "cat #{Dir.pwd}/#{file}  > #{expanded_path}"
 

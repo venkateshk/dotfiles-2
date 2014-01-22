@@ -30,6 +30,7 @@ end
 
 
 def execute_cmd cmd
+  puts cmd
   Open3.popen2e(cmd) do |stdin, stdout_err, wait_thr|
     while line = stdout_err.gets
       puts line
