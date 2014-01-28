@@ -10,7 +10,7 @@ before we begin setting up things on the new machine.
 
 ```
 # install brew
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
 # Setting up maching using rake
