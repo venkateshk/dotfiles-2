@@ -16,6 +16,10 @@ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 # Setting up maching using rake
 
 ```
+cd ~
+mkdir code
+cd code
+git clone https://github.com/neerajdotname/dotfiles
 rake machine:setup
 rake machine:rbenv
 ```
