@@ -125,3 +125,11 @@ ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc ~/.gvimrc
 
 if getting the error make: /usr/bin/gcc-4.2: No such file or directory in mountain lion
 sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
+
+
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+#test rbenv is working or not by opening a new tab and typing
+$ type rbenv
+#=> "rbenv is a function"
