@@ -31,9 +31,11 @@ end
 
 def execute_cmd cmd
   puts cmd
+  lines = []
   Open3.popen2e(cmd) do |stdin, stdout_err, wait_thr|
     while line = stdout_err.gets
       puts line
+      lines << line
     end
 
     exit_status = wait_thr.value
@@ -41,6 +43,8 @@ def execute_cmd cmd
       abort "FAILED !!! #{cmd}"
     end
   end
+
+  lines
 end
 
 

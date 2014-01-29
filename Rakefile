@@ -49,6 +49,24 @@ def add_scripts_to_path
 end
 
 namespace :machine do
+
+  task :initial_check do
+    result = execute_cmd("sw_vers | grep ProductVersion")
+    unless result.first.include?("10.9")
+      puts "Looks like you are not using OSX maverick."
+      puts "visit http://www.apple.com/osx/how-to-upgrade/ to see how to upgrade your OS to 10.9"
+      abort
+    end
+
+    result = execute_cmd("xcode-select -p")
+    unless result.first.include?("/Applications/Xcode.app/Contents/Developer")
+      execute_cmd "xcode-select --install"
+    end
+
+    puts ""
+    puts "## Everything looks good and you are all set. Go ahead and follow the next instruction. ##"
+  end
+
   task :setup do
 
       execute_cmd "git config --global alias.co checkout"
