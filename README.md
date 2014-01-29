@@ -6,10 +6,27 @@ install dropbox first. Since some of the files are stored in dropbox it
 is better if dropbox is already synced and has downloaded the files
 before we begin setting up things on the new machine.
 
-# Installing brew
+# Check OSX version
+
+Open terminal and execute following command `sw_vers`. The Product
+version must be `10.9.0` or higher.
+
+This is the result I see on my laptop.
 
 ```
-# install brew
+$ sw_vers
+ProductName:	Mac OS X
+ProductVersion:	10.9.1
+BuildVersion:	13B3116
+```
+
+If your ProductionVersion is not `10.9.0` or higher then visit http://www.apple.com/osx/how-to-upgrade/ to see how to upgrade your OS to 10.9 .
+
+# Instal brew
+
+Type following command in terminal.
+
+```
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
@@ -19,6 +36,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 cd ~
 mkdir code
 cd code
+cd dotfiles
 git clone https://github.com/neerajdotname/dotfiles
 rake machine:setup
 rake machine:rbenv
@@ -31,24 +49,6 @@ brew install imagemagick
 
 # this is needed for gem install pg to work
 brew install postgresql
-
-# this is needed otherwise gem install capybara-webkit  will complain
-brew install qt
-```
-
-# Setting up dotfiles
-
-```
-ln -s ~/Dropbox/dotfiles/secret/sdirs ~/.sdirs
-ln -s ~/Dropbox/dotfiles/secret/gitconfig ~/.gitconfig
-ln -s ~/Dropbox/dotfiles/secret/instapusher ~/.instapusher
-ln -s ~/Dropbox/dotfiles/secret/ssh ~/.ssh
-
-mkdir ~/dev
-mkdir ~/dev/personal
-
-cd /Users/nsingh/dev/personal
-git clone git@github.com:neerajdotname/dotfiles.git ~/dev/personal
 ```
 
 # Configuring .ssh
@@ -73,13 +73,6 @@ ln -s ~/Dropbox/dotfiles/vimrc.after ~/.vimrc.after
 
 ln -s ~/Dropbox/dotfiles/gvimrc.before ~/.gvimrc.before
 ```
-
-# Setup following softlinks
-
-```
-ln -s ~/Dropbox/dotfiles/irbrc ~/.irbrc
-```
-
 
 # How to update to latest janus
 
@@ -123,13 +116,12 @@ ln -s /Users/nsingh/dev/personal/dotfiles/vimrc .vimrc
 
 ln -s /Users/nsingh/dev/personal/dotfiles/gvimrc ~/.gvimrc
 
+```
 if getting the error make: /usr/bin/gcc-4.2: No such file or directory in mountain lion
 sudo ln -s /usr/bin/gcc /usr/bin/gcc-4.2
+```
 
 
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 
-#test rbenv is working or not by opening a new tab and typing
-$ type rbenv
-#=> "rbenv is a function"
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
