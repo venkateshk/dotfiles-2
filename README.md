@@ -1,36 +1,4 @@
-# Installing new machine
-
-Following steps work in OS X 10.9 .
-
-install dropbox first. Since some of the files are stored in dropbox it
-is better if dropbox is already synced and has downloaded the files
-before we begin setting up things on the new machine.
-
-# Check OSX version
-
-Open terminal and execute following command `sw_vers`. The Product
-version must be `10.9.0` or higher.
-
-This is the result I see on my laptop.
-
-```
-$ sw_vers
-ProductName:	Mac OS X
-ProductVersion:	10.9.1
-BuildVersion:	13B3116
-```
-
-If your ProductionVersion is not `10.9.0` or higher then visit http://www.apple.com/osx/how-to-upgrade/ to see how to upgrade your OS to 10.9 .
-
-# Instal brew
-
-Type following command in terminal.
-
-```
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-```
-
-# Setting up maching using rake
+# Installing ruby and setting up machine
 
 ```
 cd ~
@@ -38,18 +6,11 @@ mkdir code
 cd code
 cd dotfiles
 git clone https://github.com/neerajdotname/dotfiles
+rake machine:initial_check
 rake machine:setup
 rake machine:rbenv
 ```
 
-# Installing software using brew
-
-```
-brew install imagemagick
-
-# this is needed for gem install pg to work
-brew install postgresql
-```
 
 # Configuring .ssh
 

@@ -55,12 +55,19 @@ namespace :machine do
     unless result.first.include?("10.9")
       puts "Looks like you are not using OSX maverick."
       puts "visit http://www.apple.com/osx/how-to-upgrade/ to see how to upgrade your OS to 10.9"
+      puts "Once the OXS has been upgraded then execute the command rake machine:initial_check again."
       abort
     end
 
     result = execute_cmd("xcode-select -p")
     unless result.first.include?("/Applications/Xcode.app/Contents/Developer")
       execute_cmd "xcode-select --install"
+    end
+
+    result = execute_cmd("brew -v")
+    unless result.first.include?("Homebrew")
+      # install homebrew
+      execute_cmd "ruby -e '$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)'"
     end
 
     puts ""
@@ -110,6 +117,10 @@ namespace :machine do
     execute_cmd "brew install ssh-copy-id"
     execute_cmd "brew install git bash-completion"
     execute_cmd "brew install hub"
+    execute_cmd "brew install imagemagick"
+
+    # this is needed for gem install pg to work
+    execute_cmd "brew install postgresql"
 
     # Remove outdated versions from the cellar
     exectue_cmd "brew cleanup"
