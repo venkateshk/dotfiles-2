@@ -3,7 +3,7 @@ require 'launchy'
 require 'open3'
 
 def most_recent_production_tag
-  @_most_recent_production_tag ||= `git tag -l | sort -t. -k 1,1n -k 2,2n -k 3,3n -k 4,4n | grep production`.split(' ').last.strip
+  @_most_recent_production_tag ||= `git tag -l | grep production | sort -r | head -n 1`.chomp
 end
 
 def repo_owner
