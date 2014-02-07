@@ -3,6 +3,7 @@ require 'launchy'
 require 'open3'
 
 def most_recent_production_tag
+  execute_cmd "git fetch --tags"
   @_most_recent_production_tag ||= `git tag -l | grep production | sort -r | head -n 1`.chomp
 end
 
