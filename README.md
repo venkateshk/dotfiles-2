@@ -1,4 +1,4 @@
-# Installing ruby and setting up machine
+### Installing ruby and setting up machine
 
 ```
 cd ~
@@ -12,12 +12,12 @@ rake machine:brew
 rake machine:setup
 ```
 
-# Installing postgresql server
+### Installing postgresql server
 
 http://postgresapp.com is the easiest way to get started with postgresql
 server.
 
-# How to add custom bash script
+### How to add custom bash script
 
 Please read personal/bashrc.example. I have following code in my
 persona/bashrc file
@@ -31,7 +31,7 @@ export EDITOR='mvim  -g '
 You should add whatever you want to your personal/bashrc to customize or
 to override the values in ~/.bashrc
 
-# Do not change ~/.bashrc directly
+### Do not change ~/.bashrc directly
 
 Every time you run rake command then ~/.bashrc file is regenerated. So
 do not change anything at ~/.bashrc directly. In stead add whatever you
