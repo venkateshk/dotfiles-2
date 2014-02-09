@@ -123,7 +123,7 @@ namespace :machine do
     execute_cmd "brew install postgresql"
 
     # Remove outdated versions from the cellar
-    exectue_cmd "brew cleanup"
+    execute_cmd "brew cleanup"
 
   end
 
