@@ -1,13 +1,30 @@
 require 'rubygems'
 require 'open3'
 
+def execute_cmd cmd
+  puts cmd
+  lines = []
+  Open3.popen2e(cmd) do |stdin, stdout_err, wait_thr|
+    while line = stdout_err.gets
+      puts line
+      lines << line
+    end
+
+    exit_status = wait_thr.value
+    unless exit_status.success?
+      abort "FAILED !!! #{cmd}"
+    end
+  end
+
+  lines
+end
+
 begin
   require 'launchy'
 rescue LoadError
   execute_cmd "gem install 'launchy'"
   require 'launchy'
 end
-
 
 def most_recent_production_tag
   execute_cmd "git fetch --tags"
@@ -37,23 +54,6 @@ def open_url url
 end
 
 
-def execute_cmd cmd
-  puts cmd
-  lines = []
-  Open3.popen2e(cmd) do |stdin, stdout_err, wait_thr|
-    while line = stdout_err.gets
-      puts line
-      lines << line
-    end
-
-    exit_status = wait_thr.value
-    unless exit_status.success?
-      abort "FAILED !!! #{cmd}"
-    end
-  end
-
-  lines
-end
 
 
 def ensure_hub_command_exists
