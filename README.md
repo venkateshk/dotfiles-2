@@ -4,8 +4,8 @@
 cd ~
 mkdir code
 cd code
-cd dotfiles
 git clone https://github.com/neerajdotname/dotfiles
+cd dotfiles
 rake machine:initial_check
 rake machine:rbenv
 rake machine:brew
