@@ -1,6 +1,13 @@
 require 'rubygems'
-require 'launchy'
 require 'open3'
+
+begin
+  require 'launchy'
+rescue LoadError
+  execute_cmd "gem install 'launchy'"
+  require 'launchy'
+end
+
 
 def most_recent_production_tag
   execute_cmd "git fetch --tags"
