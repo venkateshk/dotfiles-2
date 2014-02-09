@@ -19,7 +19,7 @@ server.
 
 ### How to add custom bash script
 
-Please read personal/bashrc.example. I have following code in my
+Please read [personal/bashrc.example](https://github.com/neerajdotname/dotfiles/blob/master/personal/bashrc.example) . I have following code in my
 persona/bashrc file
 
 ```
