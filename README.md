@@ -19,9 +19,9 @@ server.
 
 ### How to add custom bash script
 
-Please read [personal/bashrc.example](https://github.com/neerajdotname/dotfiles/blob/master/personal/bashrc.example) . You should add whatever you want to your personal/bashrc to customize or to override the values in ~/.bashrc
+Please read [personal/bashrc.example](https://github.com/neerajdotname/dotfiles/blob/master/personal/bashrc.example) . You should add whatever you want to your personal/bashrc to customize or to override the values in ~/.bashrc .
 
-Just for example I have following code in my personal/bashrc file
+Just for example I have following code in my personal/bashrc file .
 
 ```
 export GIT_EDITOR='mvim  -g -f '
