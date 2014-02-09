@@ -19,12 +19,6 @@ def execute_cmd cmd
   lines
 end
 
-begin
-  require 'launchy'
-rescue LoadError
-  execute_cmd "gem install 'launchy'"
-  require 'launchy'
-end
 
 def most_recent_production_tag
   execute_cmd "git fetch --tags"
@@ -48,12 +42,6 @@ def branch_name
   @_branch_name ||= (`git symbolic-ref HEAD`).gsub(%r[refs/heads/],'').strip
 end
 
-def open_url url
-  puts url
-  Launchy.open url
-end
-
-
 
 
 def ensure_hub_command_exists
@@ -68,4 +56,17 @@ def ensure_hub_command_exists
   end
 end
 
+def install_launchy_if_needed
+  begin
+    require 'launchy'
+  rescue LoadError
+    execute_cmd "gem install 'launchy'"
+    puts "gem launchy was missing. It has been installed. Please execute the command you ran once again to see the result."
+  end
+end
 
+def open_url url
+  puts url
+  install_launchy_if_needed
+  Launchy.open url
+end
