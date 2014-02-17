@@ -65,11 +65,12 @@ namespace :machine do
       execute_cmd "xcode-select --install"
     end
 
-    result = execute_cmd("brew -v")
-    unless result.first.include?("Homebrew")
-      # install homebrew
-      execute_cmd "ruby -e '$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)'"
-    end
+    #result = execute_cmd("brew -v")
+    #unless result.first.include?("Homebrew")
+      #execute_cmd "ruby -e '$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)'" # install homebrew
+    #end
+    
+    execute_cmd "ruby -e '$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)'"
 
     puts ""
     puts "## Everything looks good and you are all set. Go ahead and follow the next instruction. ##"
