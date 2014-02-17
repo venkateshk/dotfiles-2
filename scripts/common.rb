@@ -2,23 +2,25 @@ require 'rubygems'
 require 'open3'
 
 def execute_cmd cmd
-  puts cmd
   lines = []
-  Open3.popen2e(cmd) do |stdin, stdout_err, wait_thr|
-    while line = stdout_err.gets
-      puts line
-      lines << line
-    end
 
-    exit_status = wait_thr.value
-    unless exit_status.success?
-      abort "FAILED !!! #{cmd}"
+  if Open3.respond_to?(:popen2e)
+    Open3.popen2e(cmd) do |stdin, stdout_err, wait_thr|
+      while line = stdout_err.gets
+        puts line
+        lines << line
+      end
+
+      exit_status = wait_thr.value
+      unless exit_status.success?
+        abort "FAILED !!! #{cmd}"
+      end
     end
+    lines
+  else
+    [`#{cmd}`]
   end
-
-  lines
 end
-
 
 def most_recent_production_tag
   execute_cmd "git fetch --tags"
@@ -41,8 +43,6 @@ end
 def branch_name
   @_branch_name ||= (`git symbolic-ref HEAD`).gsub(%r[refs/heads/],'').strip
 end
-
-
 
 def ensure_hub_command_exists
   cmd = "hub --version"

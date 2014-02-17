@@ -60,7 +60,8 @@ namespace :machine do
     end
 
     result = execute_cmd("xcode-select -p")
-    unless result.first.include?("/Applications/Xcode.app/Contents/Developer")
+    if result.first.include?("/Applications/Xcode.app/Contents/Developer") || result.first.include?("CommandLineTools")
+    else
       execute_cmd "xcode-select --install"
     end
 
