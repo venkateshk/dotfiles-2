@@ -61,41 +61,40 @@ namespace :machine do
 
     result = execute_cmd("xcode-select -p")
     if result.first.include?("/Applications/Xcode.app/Contents/Developer") || result.first.include?("CommandLineTools")
+      ## continue
     else
       execute_cmd "xcode-select --install"
     end
-
-    #result = execute_cmd("brew -v")
-    #unless result.first.include?("Homebrew")
-      #execute_cmd "ruby -e '$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)'" # install homebrew
-    #end
-    
-    execute_cmd "ruby -e '$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)'"
 
     puts ""
     puts "## Everything looks good and you are all set. Go ahead and follow the next instruction. ##"
   end
 
   task :setup do
+    execute_cmd "git config --global alias.co checkout"
+    execute_cmd "git config --global color.branch auto"
+    execute_cmd "git config --global color.diff auto" 
+    execute_cmd "git config --global color.interactive auto"
+    execute_cmd "git config --global color.status auto"
+    execute_cmd "git config --global branch.autosetuprebase always"
+    execute_cmd "git config --global push.default current"
 
-      execute_cmd "git config --global alias.co checkout"
-      execute_cmd "git config --global color.branch auto"
-      execute_cmd "git config --global color.diff auto" 
-      execute_cmd "git config --global color.interactive auto"
-      execute_cmd "git config --global color.status auto"
-      execute_cmd "git config --global branch.autosetuprebase always"
-      execute_cmd "git config --global push.default current"
+    # Typicall when I merge master into production git opens editor for me to type merge message.
+    # Personally I do not want git to ask me to enter anything when I am merging a branch into another.
+    # Following code is to silence git.
+    execute_cmd "git config --global core.mergeoptions --no-edit"
 
-      # Typicall when I merge master into production git opens editor for me to type merge message.
-      # Personally I do not want git to ask me to enter anything when I am merging a branch into another.
-      # Following code is to silence git.
-      execute_cmd "git config --global core.mergeoptions --no-edit"
+    %w(bash_profile gemrc bashrc).each { |file| process_file(file) }
 
-      %w(bash_profile gemrc bashrc).each { |file| process_file(file) }
+    extend_bashrc_with_aliases_and_other_things
 
-      extend_bashrc_with_aliases_and_other_things
+    add_scripts_to_path
+  end
 
-      add_scripts_to_path
+  task :install_ruby do
+    execute_cmd "rbenv install 2.0.0-p247"
+    execute_cmd "rbenv global 2.0.0-p247"
+    execute_cmd "gem install bundler"
   end
 
   task :brew do
@@ -133,11 +132,6 @@ namespace :machine do
     execute_cmd "git clone https://github.com/sstephenson/rbenv.git ~/.rbenv"
     execute_cmd "git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build"
     execute_cmd "git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash"
-    execute_cmd "rbenv install 2.0.0-p247"
-    execute_cmd "rbenv global 2.0.0-p247"
-    execute_cmd "gem install bundler"
   end
 
 end
-
-task :default => "machine:setup"

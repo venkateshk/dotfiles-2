@@ -6,10 +6,14 @@ mkdir code
 cd code
 git clone https://github.com/neerajdotname/dotfiles
 cd dotfiles
+
 rake machine:initial_check
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 rake machine:rbenv
-rake machine:brew
 rake machine:setup
+source ~/.bashrc
+rake machine:install_ruby
+rake machine:brew
 ```
 
 ### Installing postgresql server
