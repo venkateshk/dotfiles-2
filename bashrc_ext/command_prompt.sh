@@ -7,8 +7,7 @@
 # In this case \e[ starts the color scheme
 # 36;1m color pair to use
 # \] end of color scheme
-#export PS1="\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n$ "
-#export PS1="\n\[\033[38m\]\u@\[\033[01;34m\] \w \[\033[31m\]\n\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1)')\"\`\[\033[37m\]$\[\033[00m\] "
+#
 
 a="\n\[\033[38m\]\u\[\033[01;34m\] \w \[\033[31m\]"
 e="$\[\033[00m\] "
