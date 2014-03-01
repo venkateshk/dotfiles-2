@@ -2,10 +2,9 @@
 
 require_relative 'common.rb'
 
-# Manually deleting local branches can be time consuming. This script
-# helps.
+# Manually deleting local branches can be time consuming. This script # helps.
 #
-# Note: This only deletes local branch. It does NOT delete remote branch.
+# This only deletes local branch. It does NOT delete remote branch.
 #
 # Usage :
 # stand in the project directory and execute git_clearn_branches
@@ -20,7 +19,7 @@ Dir.chdir(Dir.pwd) do
   Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
     while branch = stdout.gets
       branch = branch.chomp
-      next if branch =~ /master/
+      next if branch =~ /master|production|staging/
       puts "Do you want to delete branch #{branch} ?"
       a = gets.chomp
       if %w(y yes).include? a.downcase
