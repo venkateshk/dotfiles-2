@@ -22,3 +22,13 @@ alias v='mvim .'
 alias dns_flush='dscacheutil -flushcache'
 
 alias webshare='ruby -e "require\"webrick\";w=WEBrick::HTTPServer.new(:Port=>8000,:DocumentRoot=>Dir::pwd);Signal.trap(2){w.shutdown};w.start"'
+
+function it {
+  echo "API_KEY=xxx /Users/nsingh/code/instapusher_project/instapusher/bin/instapusher --local --debug"
+  API_KEY=xxx /Users/nsingh/code/instapusher_project/instapusher/bin/instapusher --local --debug
+}
+
+function inet {
+  echo "INSTAPUSHER_HOST=www.instapusher.net /Users/nsingh/code/instapusher_project/instapusher/bin/instapusher --debug"
+  INSTAPUSHER_HOST=www.instapusher.net /Users/nsingh/code/instapusher_project/instapusher/bin/instapusher --debug
+}
