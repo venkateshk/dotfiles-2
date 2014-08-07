@@ -38,3 +38,9 @@ export EDITOR='mvim  -g '
 Every time you run rake command then ~/.bashrc file is regenerated. So
 do not change anything at ~/.bashrc directly. In stead add whatever you
 want to add to your personal/bashrc .
+
+### Terminal app
+
+For terminal app I use "dark theme" of https://github.com/noahfrederick/Hemisu-Terminal-app . After downloading I made following changes
+- change font family to "monaco"
+- incresed the font size to 16
