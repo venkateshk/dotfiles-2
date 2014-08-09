@@ -16,6 +16,12 @@ rake machine:install_ruby
 rake machine:brew
 ```
 
+### Setting up bash_profile
+
+``` bash
+ln -s /Users/nsingh/Dropbox/dotfiles/bash_profile ~/.bash_profile
+```
+
 ### Installing postgresql server
 
 http://postgresapp.com is the easiest way to get started with postgresql
