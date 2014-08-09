@@ -24,3 +24,20 @@ eval "$(rbenv init -)"
 
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export GIT_EDITOR='mvim  -g -f '
+export BUNDLE_EDITOR='mvim  -g '
+export EDITOR='mvim  -g '
+
+# Load bashmarks
+source ~/.local/bin/bashmarks.sh
+
+# this is needed otherwise pg_dump that is shipped with OSX is activated first
+PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+
+PATH="/Users/nsingh/code/bigbinary_llc/tiny_scripts:$PATH"
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+
+export NODE_PATH="/usr/local/lib/node"
+export PATH="/usr/local/share/npm/bin:$PATH"

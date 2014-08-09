@@ -1,7 +1,0 @@
-# This is an example bashrc file residing at personal directory.
-# 
-# You should cp bashrc.example bashrc  and then make changes
-# personal/bashrc file.
-#
-# Any content added to personal/bashrc file will be added to
-# ~/.bashrc when you run command `rake`.
