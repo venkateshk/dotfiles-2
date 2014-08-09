@@ -59,7 +59,7 @@ git config --global push.default current
 # Typicall when I merge master into production git opens editor for me to type merge message.
 # Personally I do not want git to ask me to enter anything when I am merging a branch into another.
 # Following code is to silence git.
-execute_cmd "git config --global core.mergeoptions --no-edit"
+git config --global core.mergeoptions --no-edit
 ```
 ### Setting up rbenv
 
@@ -73,7 +73,7 @@ git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/r
 
 ``` bash
 rbenv install 2.0.0-p247
-rbenv global 2.0.0-p247"
-gem install bundler"
+rbenv global 2.0.0-p247
+gem install bundler
 ```
 
