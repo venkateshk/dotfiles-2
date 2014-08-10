@@ -21,6 +21,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ``` bash
 ln -s /Users/nsingh/Dropbox/dotfiles/bash_profile ~/.bash_profile
 ln -s /Users/nsingh/Dropbox/dotfiles/bashrc ~/.bashrc
+ln -s /Users/nsingh/Dropbox/dotfiles/ackrc ~/.ackrc
 ```
 
 ### Installing PostgreSQL database
