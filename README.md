@@ -1,3 +1,7 @@
+### Getting gcc etc
+
+If it is a new machine then execute `xcode-select --install` .
+
 ### Installing ruby and setting up machine
 
 ``` bash
