@@ -24,6 +24,10 @@ ln -s /Users/nsingh/Dropbox/dotfiles/bashrc ~/.bashrc
 ln -s /Users/nsingh/Dropbox/dotfiles/ackrc ~/.ackrc
 ```
 
+### Install janus
+
+[Janus](https://github.com/carlhuda/janus) is a vim distribution I use.
+
 ### Installing PostgreSQL database
 
 [http://postgresapp.com](http://postgresapp.com) is the easiest way to get started with postgresql server.
