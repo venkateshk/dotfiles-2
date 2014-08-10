@@ -28,6 +28,14 @@ ln -s /Users/nsingh/Dropbox/dotfiles/ackrc ~/.ackrc
 
 [Janus](https://github.com/carlhuda/janus) is a vim distribution I use.
 
+### Setting up hemisu theme
+
+``` bash
+cd /Users/nsingh/.vim/janus/vim/colors
+git clone git@github.com:noahfrederick/vim-hemisu.git
+mv vim-hemisu/ hemisu
+```
+
 ### Installing PostgreSQL database
 
 [http://postgresapp.com](http://postgresapp.com) is the easiest way to get started with postgresql server.
