@@ -32,10 +32,15 @@ export EDITOR='mvim  -g '
 # Load bashmarks
 source ~/.local/bin/bashmarks.sh
 
-# this is needed otherwise pg_dump that is shipped with OSX is activated first
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+source "/Users/nsingh/code/bigbinary_llc/tiny_scripts/bash/command_prompt.sh"
+source "/Users/nsingh/code/bigbinary_llc/tiny_scripts/bash/aliases.sh"
+source "/Users/nsingh/code/bigbinary_llc/tiny_scripts/bash/git_command_line_completion.sh"
+source "/Users/nsingh/code/bigbinary_llc/tiny_scripts/bash/utility_functions.sh"
 
-PATH="/Users/nsingh/code/bigbinary_llc/tiny_scripts:$PATH"
+# this is needed otherwise pg_dump that is shipped with OSX is activated first
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+
+export PATH="/Users/nsingh/code/bigbinary_llc/tiny_scripts/scripts:$PATH"
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 
