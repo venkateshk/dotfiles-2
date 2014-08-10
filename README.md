@@ -30,6 +30,8 @@ ln -s /Users/nsingh/Dropbox/dotfiles/ackrc ~/.ackrc
 
 ### Setting up hemisu theme
 
+I use [hemisu](http://noahfrederick.com/vim-color-scheme-hemisu/) theme for vim.
+
 ``` bash
 cd /Users/nsingh/.vim/janus/vim/colors
 git clone git@github.com:noahfrederick/vim-hemisu.git
@@ -74,8 +76,6 @@ gem install bundler
 
 ### Terminal app
 
-For terminal app I use "dark theme" of https://github.com/noahfrederick/Hemisu-Terminal-app . After downloading I made following changes
-- change font family to "monaco"
-- incresed the font size to 16
-
-
+For terminal app I use "dark theme" of [https://github.com/noahfrederick/Hemisu-Terminal-app](https://github.com/noahfrederick/Hemisu-Terminal-app ) . After downloading I made following changes
+- Change font family to "monaco".
+- Incresed font size to 16.
