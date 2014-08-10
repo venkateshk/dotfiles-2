@@ -27,12 +27,6 @@ ln -s /Users/nsingh/Dropbox/dotfiles/bashrc ~/.bashrc
 
 [http://postgresapp.com](http://postgresapp.com) is the easiest way to get started with postgresql server.
 
-### Terminal app
-
-For terminal app I use "dark theme" of https://github.com/noahfrederick/Hemisu-Terminal-app . After downloading I made following changes
-- change font family to "monaco"
-- incresed the font size to 16
-
 ### Setting up git 
 
 ``` bash
@@ -64,4 +58,11 @@ rbenv install 2.0.0-p247
 rbenv global 2.0.0-p247
 gem install bundler
 ```
+
+### Terminal app
+
+For terminal app I use "dark theme" of https://github.com/noahfrederick/Hemisu-Terminal-app . After downloading I made following changes
+- change font family to "monaco"
+- incresed the font size to 16
+
 
