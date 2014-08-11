@@ -79,3 +79,15 @@ gem install bundler
 For terminal app I use "dark theme" of [https://github.com/noahfrederick/Hemisu-Terminal-app](https://github.com/noahfrederick/Hemisu-Terminal-app ) . After downloading I made following changes
 - Change font family to "monaco".
 - Incresed font size to 16.
+
+
+### Installing homebrew
+
+``` bash
+# uninstalling openssl and then installing is needed to get around some rubygems issue.
+# However do not do it unless you run into an issue.
+brew uninstall openssl
+brew install openssl
+
+brew install mvim
+brew install tree
