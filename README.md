@@ -94,6 +94,7 @@ brew install tree
 
 brew install macvim
 brew install hub
+brew install ack
 ```
 
 ### Setting up git command line completion
