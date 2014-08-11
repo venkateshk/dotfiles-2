@@ -93,3 +93,10 @@ brew install mvim
 brew install tree
 
 brew install macvim
+```
+
+### Setting up git command line completion
+
+``` bash
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+```
