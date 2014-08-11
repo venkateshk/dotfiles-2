@@ -91,3 +91,5 @@ brew install openssl
 
 brew install mvim
 brew install tree
+
+brew install macvim
