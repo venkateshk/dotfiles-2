@@ -93,6 +93,7 @@ brew install mvim
 brew install tree
 
 brew install macvim
+brew install hub
 ```
 
 ### Setting up git command line completion
