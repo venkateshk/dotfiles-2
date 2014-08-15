@@ -95,6 +95,7 @@ brew install tree
 brew install macvim
 brew install hub
 brew install ack
+brew install wget
 
 # http://stackoverflow.com/questions/16756287/cannot-execute-rails-console
 brew install readline ruby-build
