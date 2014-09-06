@@ -33,7 +33,7 @@ export EDITOR='mvim  -g '
 source ~/.local/bin/bashmarks.sh
 
 source "/Users/nsingh/Dropbox/dotfiles/bash/command_prompt.sh"
-source "/Users/nsingh/Dropbox/dotfiles/bash/aliases.sh"
+source "/Users/nsingh/Dropbox/dotfiles/bash/bash_aliases.sh"
 source "/Users/nsingh/Dropbox/dotfiles/bash/aliases2.sh"
 source "/Users/nsingh/Dropbox/dotfiles/bash/git_command_line_completion.sh"
 source "/Users/nsingh/Dropbox/dotfiles/bash/utility_functions.sh"
