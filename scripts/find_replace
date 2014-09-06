@@ -15,12 +15,12 @@ puts "Enter the word you are trying to replace the word '#{find}' with"
 replace = gets.chomp.strip
 
 if find.length == 0
-  puts "Error: find word should not be empty" 
+  puts "Error: find word should not be empty"
   exit 1
 end
 
 if replace.length == 0
-  puts "Error: replace word should not be empty" 
+  puts "Error: replace word should not be empty"
   exit 1
 end
 

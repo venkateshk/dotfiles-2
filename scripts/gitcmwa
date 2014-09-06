@@ -7,9 +7,9 @@ require_relative 'common.rb'
 #
 # a stands for all.
 #
-# It would 
-# - add all the changed items. 
-# - will commit the changes with message WIP. 
+# It would
+# - add all the changed items.
+# - will commit the changes with message WIP.
 # - will push the commit.
 #
 commands = []

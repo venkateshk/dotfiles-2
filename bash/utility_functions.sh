@@ -1,5 +1,5 @@
 function remigrate! {
-  echo "rake db:drop db:create db:migrate" 
+  echo "rake db:drop db:create db:migrate"
   rake db:drop db:create db:migrate
 }
 
@@ -14,12 +14,14 @@ function rs {
   rm -rf coverage
   rm -f coverage.data
 
-  if [ -e "./Procfile" ]
-  then
-    foreman start
-  else
-    bundle exec rails server $1 $2
-  fi
+  #if [ -e "./Procfile" ]
+  #then
+    #foreman start
+  #else
+    #bundle exec rails server $1 $2
+  #fi
+
+  bundle exec rails server $1 $2
 }
 
 function rc {

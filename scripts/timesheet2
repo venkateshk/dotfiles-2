@@ -6,7 +6,7 @@ require_relative 'common.rb'
 
 # Usage :
 # timesheet | ack 2013-09-09 | timesheet2
-# 
+#
 
 ARGF.each_line do |line|
   words = line.split(' ').compact
