@@ -22,7 +22,7 @@ function parse_git_branch {
 
 function custom_git_prompt {
   branch=$(git branch 2> /dev/null) || return
-  echo "$(parse_git_url) -> $(parse_git_branch)" 
+  echo "$(parse_git_url) -> $(parse_git_branch)"
 }
 
 function ruby_version() {
