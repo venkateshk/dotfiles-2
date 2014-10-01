@@ -42,7 +42,7 @@ mv vim-hemisu/ hemisu
 
 [http://postgresapp.com](http://postgresapp.com) is the easiest way to get started with postgresql server.
 
-### Setting up git 
+### Setting up git
 
 ``` bash
 git config --global alias.co checkout
@@ -106,4 +106,16 @@ brew install readline ruby-build
 
 ``` bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+```
+
+### Setting up jshint
+
+```
+npm install -g jshint
+```
+
+Add following line to the bottom of `~/.bashrc`.
+
+```
+export PATH="/usr/local/bin:$PATH"
 ```
