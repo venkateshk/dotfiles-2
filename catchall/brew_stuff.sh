@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Usage
-# stand in the current directory and execute  ./brew_stuff.sh 
+# stand in the current directory and execute  ./brew_stuff.sh
 
 require_relative '../common.rb'
 
