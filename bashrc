@@ -32,11 +32,11 @@ export EDITOR='mvim  -g '
 # Load bashmarks
 source ~/.local/bin/bashmarks.sh
 
-source "/Users/nsingh/Dropbox/dotfiles/bash/command_prompt.sh"
-source "/Users/nsingh/Dropbox/dotfiles/bash/bash_aliases.sh"
-source "/Users/nsingh/Dropbox/dotfiles/bash/aliases2.sh"
-source "/Users/nsingh/Dropbox/dotfiles/bash/git_command_line_completion.sh"
-source "/Users/nsingh/Dropbox/dotfiles/bash/utility_functions.sh"
+source "/Users/nsingh/Dropbox/dotfiles/bash/command_prompt.bash"
+source "/Users/nsingh/Dropbox/dotfiles/bash/aliases.bash"
+source "/Users/nsingh/Dropbox/dotfiles/bash/aliases2.bash"
+source "/Users/nsingh/Dropbox/dotfiles/bash/git_command_line_completion.bash"
+source "/Users/nsingh/Dropbox/dotfiles/bash/utility_functions.bash"
 
 # this is needed otherwise pg_dump that is shipped with OSX is activated first
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
