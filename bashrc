@@ -47,3 +47,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 
 export NODE_PATH="/usr/local/lib/node"
 export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="/usr/local/Cellar/smlnj/110.76/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
