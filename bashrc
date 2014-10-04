@@ -41,7 +41,7 @@ source "/Users/nsingh/Dropbox/dotfiles/bash/utility_functions.bash"
 # this is needed otherwise pg_dump that is shipped with OSX is activated first
 export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 
-export PATH="/Users/nsingh/code/bigbinary_llc/tiny_scripts/scripts:$PATH"
+export PATH="/Users/nsingh/vagrant-machine/code/bigbinary_llc/tiny_scripts/scripts:$PATH"
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 
