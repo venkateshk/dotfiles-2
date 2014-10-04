@@ -39,7 +39,7 @@ source "/Users/nsingh/Dropbox/dotfiles/bash/git_command_line_completion.bash"
 source "/Users/nsingh/Dropbox/dotfiles/bash/utility_functions.bash"
 
 # this is needed otherwise pg_dump that is shipped with OSX is activated first
-export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 
 export PATH="/Users/nsingh/code/bigbinary_llc/tiny_scripts/scripts:$PATH"
 
