@@ -46,3 +46,10 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+
+" recompile coffeescript code when code is saved
+autocmd BufWritePost *.coffee silent make!
+
+" show quickfix if there is any error
+autocmd QuickFixCmdPost * nested cwindow | redraw!

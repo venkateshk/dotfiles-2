@@ -100,6 +100,9 @@ brew install wget
 # http://stackoverflow.com/questions/16756287/cannot-execute-rails-console
 brew install readline ruby-build
 
+# coffee command is needed by vim to compile and show error for
+# coffeescript code
+npm install -g coffee-script
 ```
 
 ### Setting up git command line completion
