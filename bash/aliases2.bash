@@ -1,5 +1,6 @@
 alias mvim='mvim -g'
 alias v='mvim .'
+alias js="jekyll -w serve"
 
 # http://blog.bigbinary.com/2013/09/13/how-to-keep-your-fork-uptodate.html
 #
